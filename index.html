@@ -10,19 +10,16 @@
       body {
         margin: 0;
         font-family: 'Merriweather', serif;
-        background: url('logo.png') no-repeat center center fixed;
-        background-size: cover;
+        background: #0a1626; /* tamna pozadina za ceo body */
         color: #d9d4c9;
         line-height: 1.7;
         min-height: 100vh;
         display: flex;
         flex-direction: column;
         align-items: center;
-        position: relative;
-        z-index: 1;
       }
 
-      /* Animacija laganog pomeranja oblaka */
+      /* Animacija laganog pomeranja oblaka u headeru */
       @keyframes cloudMove {
         0% { background-position: 0 0; }
         100% { background-position: 1000px 0; }
@@ -45,7 +42,6 @@
         background: none;
       }
 
-      /* Pozadina i animirani oblaci u header-u */
       header::before {
         content: "";
         position: absolute;
@@ -85,16 +81,23 @@
         line-height: 1.2;
       }
 
+      /* Sadržajni deo sa slikom logo.png u pozadini, donje pozicioniranje */
       main.container {
         max-width: 850px;
         width: 100%;
-        padding: 2.5rem 2rem 4rem;
-        background: rgba(13, 27, 42, 0.85);
+        padding: 3rem 2rem 6rem;
+        margin: 420px auto 3rem; /* da se ne preklapa sa headerom */
+        background: rgba(13, 27, 42, 0.9);
         border-radius: 15px;
-        margin: 420px auto 3rem;
         box-shadow: 0 15px 40px rgba(0,0,0,0.7);
         position: relative;
         z-index: 10;
+
+        /* Pozadina sa slikom, pozicionirana na dno, ne pokriva ceo element */
+        background-image: url('logo.png');
+        background-repeat: no-repeat;
+        background-position: center bottom 20px; /* 20px od dna */
+        background-size: 300px auto; /* prilagođavanje veličine */
       }
 
       h2 {
@@ -170,7 +173,8 @@
         }
         main.container {
           margin: 340px 1rem 2rem;
-          padding: 2rem 1.5rem 3rem;
+          padding: 2rem 1.5rem 4rem;
+          background-size: 200px auto;
         }
         .cta button {
           width: 100%;
