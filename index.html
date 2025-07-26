@@ -5,179 +5,165 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Душанов Златник</title>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
-
-      /* Animacije */
-
-      @keyframes flickerGold {
-        0%, 100% {
-          text-shadow:
-            0 0 5px #f5de50,
-            0 0 10px #f5de50,
-            0 0 20px #b8860b,
-            0 0 30px #b8860b,
-            0 0 40px #ffcc00,
-            0 0 70px #ffcc00;
-          color: #ffd700;
-        }
-        50% {
-          text-shadow:
-            0 0 2px #f5de50,
-            0 0 5px #b8860b,
-            0 0 10px #b8860b,
-            0 0 15px #ffcc00;
-          color: #fffacd;
-        }
-      }
-
-      @keyframes fadeUp {
-        from {
-          opacity: 0;
-          transform: translateY(15px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
+      @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
 
       body {
         margin: 0;
-        font-family: 'Poppins', sans-serif;
-        background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
-        color: #f0e68c;
-        line-height: 1.6;
+        font-family: 'Merriweather', serif;
+        background: #0d1b2a; /* tamno plava */
+        color: #d9d4c9; /* krem */
+        line-height: 1.7;
         min-height: 100vh;
         display: flex;
         flex-direction: column;
         align-items: center;
       }
+
+      /* Animacija laganog pomeranja oblaka */
+      @keyframes cloudMove {
+        0% { background-position: 0 0; }
+        100% { background-position: 1000px 0; }
+      }
+
       header {
-        background-color: #111;
-        width: 100%;
-        padding: 3rem 1rem 2rem;
-        text-align: center;
-        border-bottom: 3px solid gold;
-        box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
         position: relative;
-        z-index: 10;
-      }
-      header img {
-        max-width: 180px;
-        box-shadow: 0 0 25px gold;
-        border-radius: 20px;
-        margin-bottom: 1rem;
-        transition: transform 0.3s ease;
-        animation: fadeUp 1.2s ease forwards;
-      }
-      header img:hover {
-        transform: scale(1.1) rotate(3deg);
-      }
-      header h1 {
-        font-size: 2.6rem;
-        font-weight: 600;
-        color: #ffd700;
-        animation: flickerGold 3s infinite;
-        margin: 0;
-        text-shadow:
-          0 0 8px #b8860b,
-          0 0 15px #ffcc00,
-          0 0 20px #b8860b,
-          0 0 25px #ffcc00;
-      }
-      main.container {
-        max-width: 900px;
         width: 100%;
-        padding: 3rem 2rem;
-        background: rgba(30, 30, 30, 0.85);
+        height: 400px;
+        background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #f0e6d2;
+        text-shadow: 0 0 10px rgba(0,0,0,0.8);
+      }
+
+      /* Prekrivac sa oblacima sa animacijom */
+      header::before {
+        content: "";
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: url('https://cdn.pixabay.com/photo/2016/11/29/06/15/clouds-1868881_1280.png') repeat-x;
+        background-size: contain;
+        opacity: 0.25;
+        animation: cloudMove 120s linear infinite;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      header * {
+        position: relative;
+        z-index: 2;
+      }
+
+      header h1 {
+        font-size: 3.2rem;
+        font-weight: 700;
+        margin: 0 1rem;
+        max-width: 900px;
+        text-align: center;
+        color: #f7f3e9;
+        letter-spacing: 2px;
+        line-height: 1.2;
+      }
+
+      main.container {
+        max-width: 850px;
+        width: 100%;
+        padding: 2.5rem 2rem 4rem;
+        background: rgba(13, 27, 42, 0.9);
         border-radius: 15px;
-        margin: 2rem 0 4rem;
-        box-shadow: 0 8px 30px rgba(255, 215, 0, 0.3);
-        backdrop-filter: blur(8px);
-        animation: fadeUp 1.5s ease forwards;
+        margin: -100px auto 3rem;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.7);
       }
+
       h2 {
-        color: #ffd700;
-        font-weight: 600;
-        margin-top: 3rem;
+        font-weight: 700;
+        margin-top: 2.5rem;
         margin-bottom: 1rem;
-        text-shadow:
-          0 0 6px #b8860b,
-          0 0 12px #ffcc00;
-        animation: flickerGold 4s infinite;
+        color: #b9a46c;
+        border-bottom: 2px solid #b9a46c;
+        padding-bottom: 0.3rem;
       }
+
       p, ul {
-        font-weight: 300;
-        font-size: 1.1rem;
-        animation: fadeUp 1.8s ease forwards;
+        font-weight: 400;
+        font-size: 1.15rem;
       }
+
       ul {
         padding-left: 1.4rem;
       }
+
       ul li {
-        margin-bottom: 0.8rem;
+        margin-bottom: 0.9rem;
         position: relative;
         padding-left: 1.5rem;
-        color: #f5deb3;
-        animation: fadeUp 2s ease forwards;
+        color: #d9d4c9;
       }
+
       ul li::before {
-        content: "•";
+        content: "✦";
         position: absolute;
         left: 0;
-        color: #ffd700;
+        color: #b9a46c;
         font-weight: 700;
-        font-size: 1.4rem;
+        font-size: 1.3rem;
         line-height: 1;
         top: 2px;
-        filter: drop-shadow(0 0 2px #b8860b);
       }
+
       .cta {
         text-align: center;
         margin-top: 3rem;
       }
+
       .cta button {
-        background: linear-gradient(45deg, #ffd700, #b8860b);
-        color: #111;
+        background-color: #b9a46c;
+        color: #0d1b2a;
         padding: 1rem 3rem;
         font-size: 1.3rem;
-        font-weight: 600;
+        font-weight: 700;
         border: none;
-        border-radius: 12px;
+        border-radius: 14px;
         cursor: pointer;
-        box-shadow: 0 6px 15px rgba(255, 215, 0, 0.7);
-        transition: all 0.3s ease;
+        box-shadow: 0 7px 20px rgba(185, 164, 108, 0.8);
+        transition: background-color 0.3s ease, transform 0.3s ease;
         text-transform: uppercase;
-        letter-spacing: 1.2px;
-        animation: fadeUp 2.2s ease forwards;
+        letter-spacing: 1.4px;
       }
+
       .cta button:hover {
-        background: linear-gradient(45deg, #b8860b, #ffd700);
-        box-shadow: 0 10px 25px rgba(255, 215, 0, 0.9);
-        transform: scale(1.05);
+        background-color: #d1c488;
+        transform: scale(1.07);
+        box-shadow: 0 10px 25px rgba(209, 196, 136, 0.95);
       }
+
       /* Responsive */
-      @media (max-width: 600px) {
+      @media (max-width: 700px) {
+        header {
+          height: 320px;
+          padding: 0 1rem;
+        }
         header h1 {
-          font-size: 1.8rem;
+          font-size: 2rem;
         }
         main.container {
-          padding: 2rem 1rem;
-          margin: 1rem;
-          border-radius: 10px;
+          margin: -70px 1rem 2rem;
+          padding: 2rem 1.5rem 3rem;
         }
         .cta button {
           width: 100%;
           padding: 1rem 0;
-          font-size: 1.2rem;
+          font-size: 1.1rem;
         }
       }
     </style>
   </head>
   <body>
     <header>
-      <img src="logo.png" alt="Душанов Златник" />
-      <h1>🛡️ Душанов Златник — digitalni simbol једне идеје</h1>
+      <h1>🛡️ Душанов Златник — digitalni символ једне идеје</h1>
     </header>
 
     <main class="container" role="main">
