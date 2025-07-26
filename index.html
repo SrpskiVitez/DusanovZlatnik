@@ -5,13 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Душанов Златник</title>
     <style>
-      /* Google font for modern look */
       @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
 
-      /* Reset & base */
-      * {
-        box-sizing: border-box;
+      /* Animacije */
+
+      @keyframes flickerGold {
+        0%, 100% {
+          text-shadow:
+            0 0 5px #f5de50,
+            0 0 10px #f5de50,
+            0 0 20px #b8860b,
+            0 0 30px #b8860b,
+            0 0 40px #ffcc00,
+            0 0 70px #ffcc00;
+          color: #ffd700;
+        }
+        50% {
+          text-shadow:
+            0 0 2px #f5de50,
+            0 0 5px #b8860b,
+            0 0 10px #b8860b,
+            0 0 15px #ffcc00;
+          color: #fffacd;
+        }
       }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(15px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
       body {
         margin: 0;
         font-family: 'Poppins', sans-serif;
@@ -35,10 +64,11 @@
       }
       header img {
         max-width: 180px;
-        box-shadow: 0 0 20px gold;
+        box-shadow: 0 0 25px gold;
         border-radius: 20px;
         margin-bottom: 1rem;
         transition: transform 0.3s ease;
+        animation: fadeUp 1.2s ease forwards;
       }
       header img:hover {
         transform: scale(1.1) rotate(3deg);
@@ -46,9 +76,14 @@
       header h1 {
         font-size: 2.6rem;
         font-weight: 600;
-        color: gold;
-        text-shadow: 1px 1px 8px #b8860b;
+        color: #ffd700;
+        animation: flickerGold 3s infinite;
         margin: 0;
+        text-shadow:
+          0 0 8px #b8860b,
+          0 0 15px #ffcc00,
+          0 0 20px #b8860b,
+          0 0 25px #ffcc00;
       }
       main.container {
         max-width: 900px;
@@ -59,17 +94,22 @@
         margin: 2rem 0 4rem;
         box-shadow: 0 8px 30px rgba(255, 215, 0, 0.3);
         backdrop-filter: blur(8px);
+        animation: fadeUp 1.5s ease forwards;
       }
       h2 {
-        color: gold;
+        color: #ffd700;
         font-weight: 600;
         margin-top: 3rem;
         margin-bottom: 1rem;
-        text-shadow: 1px 1px 6px #b8860b;
+        text-shadow:
+          0 0 6px #b8860b,
+          0 0 12px #ffcc00;
+        animation: flickerGold 4s infinite;
       }
       p, ul {
         font-weight: 300;
         font-size: 1.1rem;
+        animation: fadeUp 1.8s ease forwards;
       }
       ul {
         padding-left: 1.4rem;
@@ -79,18 +119,19 @@
         position: relative;
         padding-left: 1.5rem;
         color: #f5deb3;
+        animation: fadeUp 2s ease forwards;
       }
       ul li::before {
         content: "•";
         position: absolute;
         left: 0;
-        color: gold;
+        color: #ffd700;
         font-weight: 700;
         font-size: 1.4rem;
         line-height: 1;
         top: 2px;
+        filter: drop-shadow(0 0 2px #b8860b);
       }
-      /* CTA button */
       .cta {
         text-align: center;
         margin-top: 3rem;
@@ -108,6 +149,7 @@
         transition: all 0.3s ease;
         text-transform: uppercase;
         letter-spacing: 1.2px;
+        animation: fadeUp 2.2s ease forwards;
       }
       .cta button:hover {
         background: linear-gradient(45deg, #b8860b, #ffd700);
