@@ -6,7 +6,9 @@
     <title>Душанов Златник</title>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
-
+      html {
+        font-size: 16px;
+      }
       body {
         margin: 0;
         font-family: 'Merriweather', serif;
@@ -145,41 +147,7 @@
         transform: scale(1.07);
         box-shadow: 0 10px 25px rgba(209, 196, 136, 0.95);
       }
-   
-      /* Responsive */
-      @media (max-width: 700px) {
-        header {
-          height: auto;
-          padding: 1rem;
-        }
-        header h1 {
-          font-size: 2rem;
-        }
-        main.container {
-          margin: 1rem;
-          margin-top: 2rem;
-          padding: 2rem 1.2rem 3rem;
-        }
-        .cta button {
-          width: 100%;
-          padding: 1rem 0;
-          font-size: 1.1rem;
-        }
-        #rotating-wrapper {
-          width: 14rem;
-          height: 14rem;
-          margin: 1rem auto;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-      
-        #rotating-logo {
-          width: 100%;
-          height: auto;
-        }
-      } 
-
+       
      #rotating-wrapper {
         width: 30rem;
         height: 30rem;
@@ -197,7 +165,43 @@
         transform-style: preserve-3d;
         transition: transform 0.05s linear;
       }
-
+      /* Mobile tweaki */
+    @media (max-width: 700px) {
+      /* Header */
+      header {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        height: auto;
+      }
+    
+      header h1 {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
+    
+      header h2 {
+        font-size: 1.1rem;
+      }
+    
+      /* Main kontejner */
+      main.container {
+        margin: 1rem;
+        padding: 1.5rem 1rem 2rem;
+      }
+    
+      /* Novčić wrapper */
+      #rotating-wrapper {
+        width: 10rem;  /* ~160px */
+        height: 10rem;
+        margin: 1rem auto;
+      }
+    
+      /* Sam novčić */
+      #rotating-logo {
+        width: 100%;
+        height: auto;
+      }
+    }
       
     </style>
   </head>
