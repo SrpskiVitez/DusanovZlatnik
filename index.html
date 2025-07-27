@@ -152,6 +152,24 @@
         box-shadow: 0 10px 25px rgba(209, 196, 136, 0.95);
       }
 
+       #rotating-logo {
+          position: fixed;
+          bottom: 20px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 50px;
+          height: 50px;
+          animation: spinY 6s linear infinite;
+          opacity: 0.85;
+          z-index: 999;
+          transform-style: preserve-3d;
+        }
+        
+        @keyframes spinY {
+          from { transform: translateX(-50%) rotateY(0deg); }
+          to   { transform: translateX(-50%) rotateY(360deg); }
+        }
+      
       /* Responsive */
       @media (max-width: 700px) {
         header {
@@ -170,25 +188,7 @@
           padding: 1rem 0;
           font-size: 1.1rem;
         }
-      }
-
-      #rotating-logo {
-        position: fixed;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 50px;
-        height: 50px;
-        animation: spin 6s linear infinite;
-        opacity: 0.7;
-        z-index: 999;
-      }
-      
-      @keyframes spin {
-        from { transform: translateX(-50%) rotate(0deg); }
-        to   { transform: translateX(-50%) rotate(360deg); }
-      }
-      
+      }      
     </style>
   </head>
   <body>
@@ -225,7 +225,7 @@
       </ul>
       <br/>
 
-      <img id="rotating-logo" src="logo_500.png" alt="Душанов Златник" />
+      <img id="rotating-logo" src="logo_500_tra.png" alt="Душанов Златник" />
       
       <br/
       <div class="cta">
