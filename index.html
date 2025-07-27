@@ -58,7 +58,7 @@
       
        h2 {
         font-weight: 700;
-        margin-top: 2rem;
+        margin-top: 1rem;
         margin-bottom: 1rem;
         color: #b9a46c;
         border-bottom: 2px solid #b9a46c;
@@ -166,42 +166,44 @@
         transition: transform 0.05s linear;
       }
       /* Mobile tweaki */
-    @media (max-width: 700px) {
-      /* Header */
-      header {
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        height: auto;
+      @media (max-width: 700px) {
+        /* Header */
+        header {
+          padding-top: 1rem;
+          padding-bottom: 1rem;
+          height: auto;
+        }
+      
+        header h1 {
+          font-size: 2rem;
+          margin-bottom: 0.5rem;
+        }
+      
+        header h2 {
+          font-size: 1.1rem;
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+        }
+      
+        /* Main kontejner */
+        main.container {
+          margin: 1rem;
+          padding: 1.5rem 1rem 2rem;
+        }
+      
+        /* Novčić wrapper */
+        #rotating-wrapper {
+          width: 12rem;  /* ~160px */
+          height: 12rem;
+          margin: 0.5rem auto;
+        }
+      
+        /* Sam novčić */
+        #rotating-logo {
+          width: 100%;
+          height: auto;
+        }
       }
-    
-      header h1 {
-        font-size: 2rem;
-        margin-bottom: 0.5rem;
-      }
-    
-      header h2 {
-        font-size: 1.1rem;
-      }
-    
-      /* Main kontejner */
-      main.container {
-        margin: 1rem;
-        padding: 1.5rem 1rem 2rem;
-      }
-    
-      /* Novčić wrapper */
-      #rotating-wrapper {
-        width: 10rem;  /* ~160px */
-        height: 10rem;
-        margin: 1rem auto;
-      }
-    
-      /* Sam novčić */
-      #rotating-logo {
-        width: 100%;
-        height: auto;
-      }
-    }
       
     </style>
   </head>
@@ -265,7 +267,7 @@
     
       window.addEventListener("scroll", () => {
         const scrollY = window.scrollY;
-        targetRotation = (scrollY * 0.4) % 360; // manja brzina
+        targetRotation = (scrollY * 0.6) % 360; // manja brzina
       });
     
       function animate() {
