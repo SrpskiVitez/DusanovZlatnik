@@ -335,7 +335,7 @@
         currentRotation += (targetRotation - currentRotation) * 0.05;
       
         const rad = (currentRotation % 360) * Math.PI / 180;
-        const scaleX = Math.abs(Math.cos(rad)) * 0.3 + 0.7; // efekat debljine
+        const scaleX = Math.abs(Math.cos(rad)) * 0.7 + 0.3; // efekat debljine
       
         logo.style.transform = `rotateY(${currentRotation}deg) scaleX(${scaleX})`;
       
