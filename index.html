@@ -67,7 +67,7 @@
       }
       h3{
         text-align: center;
-        margin-bottom: 1.5rem;
+        margin-bottom: 2.5rem;
       }
       
       .bold-link {
@@ -166,6 +166,31 @@
         transform-style: preserve-3d;
         transition: transform 0.05s linear;
       }
+
+      .cta-mail {
+          display: inline-block;
+          background-color: #b9a46c;
+          color: #0d1b2a;
+          padding: 1rem 3rem;
+          font-size: 1.3rem;
+          font-weight: 600;
+          border-radius: 14px;
+          box-shadow: 0 7px 20px rgba(185, 164, 108, 0.8);
+          text-decoration: none;
+          text-transform: uppercase;
+          letter-spacing: 1.4px;
+          transition: background-color 0.3s ease, transform 0.3s ease;
+          text-align: center;
+        }
+        
+        .cta-mail:hover {
+          background-color: #d1c488;
+          transform: scale(1.07);
+          box-shadow: 0 10px 25px rgba(209, 196, 136, 0.95);
+        }
+
+
+
       /* Mobile tweaki */
       @media (max-width: 700px) {
         /* Header */
@@ -187,7 +212,7 @@
         }
         h3{
           text-align: center;
-          margin-bottom: 1.5rem;
+          margin-bottom: 2.5rem;
         }
         /* Main kontejner */
         main.container {
@@ -249,7 +274,10 @@
     
       <div class="cta">
         <button>Куповина златника</button> 
-        <button>Златник на дар</button>
+        <a href="mailto:losmimatis@gmail.com?subject=Златник%20на%20дар&body=Желео%20бих%20један%20Душанов%20Златник%20на%20дар.%0AАдреса%20моје%20дигиталне%20ризнице%20је%3A%20__________________________________________%0AЗемља%20у%20којој%20живим%28за%20потребе%20мапе%29%20је%3A%20__________________________________________" class="cta-mail">
+          Златник на дар
+        </a>
+      
       </div>
     </main>
 <!--
