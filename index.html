@@ -20,7 +20,7 @@
       }    
 
       header {      
-        top: 5px;
+        top: 0;
         left: 0;
         width: 100%;
         height: 120px;
@@ -34,19 +34,6 @@
         color: #f0e6d2;
         text-shadow: 0 0 10px rgba(0,0,0,0.8);
         z-index: 999;
-      }
-
-      /* Prekrivac sa oblacima sa animacijom */
-      header::before {
-        content: "";
-        position: absolute;
-        top: 0; left: 0; right: 0; bottom: 0;
-        background: url('https://cdn.pixabay.com/photo/2016/11/29/06/15/clouds-1868881_1280.png') repeat-x;
-        background-size: contain;
-        opacity: 0.25;
-        animation: cloudMove 120s linear infinite;
-        pointer-events: none;
-        z-index: 1;
       }
 
       header * {
@@ -64,7 +51,20 @@
         letter-spacing: 2px;
         line-height: 1.2;
       }
-
+      
+       h2 {
+        font-weight: 700;
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+        color: #b9a46c;
+        border-bottom: 2px solid #b9a46c;
+        padding-bottom: 0.3rem;
+        text-align: center;
+      }
+      h3{
+       text-align: center;
+      }
+      
       .bold-link {
         font-weight: bold;
         color: #b9a46c;
@@ -85,17 +85,7 @@
         background: rgba(13, 27, 42, 0.9);
         border-radius: 15px;
         box-shadow: 0 15px 40px rgba(0,0,0,0.7);
-      }
-
-      h2 {
-        font-weight: 700;
-        margin-top: 2.5rem;
-        margin-bottom: 1rem;
-        color: #b9a46c;
-        border-bottom: 2px solid #b9a46c;
-        padding-bottom: 0.3rem;
-        text-align: center;
-      }
+      }     
 
       p, ul {
         font-weight: 400;
