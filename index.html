@@ -171,29 +171,7 @@
           font-size: 1.1rem;
         }
       } 
-/*
-      #rotating-wrapper {                
-        left: 50%;
-        transform: translateX(-50%);
-        width: 50px;
-        height: 50px;
-        z-index: 999;
-        opacity: 0.85;
-        perspective: 800px; 
-      }
-      
-      #rotating-logo {
-        width: 100%;
-        height: 100%;
-        animation: spinY 6s linear infinite;
-        transform-style: preserve-3d;
-      }
-        
-      @keyframes spinY {
-        from { transform: rotateY(0deg); }
-        to   { transform: rotateY(360deg); }
-      }
-*/
+
      #rotating-wrapper {
         width: 500px;
         height: 500px;
@@ -255,7 +233,7 @@
         <button>Златник на дар</button>
       </div>
     </main>
-
+<!--
     <script>
       const logo = document.getElementById("rotating-logo");
     
@@ -265,7 +243,28 @@
         logo.style.transform = `rotateY(${rotation}deg)`;
       });
     </script>
+-->
+    <script>
+  const logo = document.getElementById("rotating-logo");
 
+  let currentRotation = 0;
+  let targetRotation = 0;
+
+  window.addEventListener("scroll", () => {
+    const scrollY = window.scrollY;
+    targetRotation = (scrollY * 0.2) % 360; // manja brzina
+  });
+
+  function animate() {
+    // Linear interpolation
+    currentRotation += (targetRotation - currentRotation) * 0.05;
+    logo.style.transform = `rotateY(${currentRotation}deg)`;
+
+    requestAnimationFrame(animate);
+  }
+
+  animate(); // pokreni animaciju
+</script>
     
   </body>
 </html>
