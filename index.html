@@ -171,7 +171,7 @@
           font-size: 1.1rem;
         }
       } 
-
+/*
       #rotating-wrapper {                
         left: 50%;
         transform: translateX(-50%);
@@ -179,7 +179,7 @@
         height: 50px;
         z-index: 999;
         opacity: 0.85;
-        perspective: 800px; /* daje 3D efekat */
+        perspective: 800px; 
       }
       
       #rotating-logo {
@@ -193,7 +193,23 @@
         from { transform: rotateY(0deg); }
         to   { transform: rotateY(360deg); }
       }
-
+*/
+     #rotating-wrapper {
+        width: 500px;
+        height: 500px;
+        margin: 2rem auto 1rem auto;
+        opacity: 0.85;
+        perspective: 800px;
+        display: flex;
+        justify-content: center;
+      }
+      
+      #rotating-logo {
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        transition: transform 0.05s linear;
+      }
 
       
     </style>
@@ -202,13 +218,13 @@
     <header>
       
       <h1>Душанов Златник</h1>
-      <h3>~дигитални печат нашег постојања~</h3>
-      <div id="rotating-wrapper">
-        <img id="rotating-logo" src="logo_500_tra.png" alt="Ротациони логотип" />
-      </div>
+      <h3>~дигитални печат нашег постојања~</h3>     
     </header>
 
     <main class="container" role="main">
+       <div id="rotating-wrapper">
+        <img id="rotating-logo" src="logo_500_tra.png" alt="Ротациони логотип" />
+      </div>
       <h2>Инспирисан славом Душановог царства и духом српске историје,<br /> овај токен слави независност и традицију најстаријег народа</h2>
 
       <h2>📜 Шта је Душанов Златник?</h2>
@@ -239,5 +255,17 @@
         <button>Златник на дар</button>
       </div>
     </main>
+
+    <script>
+      const logo = document.getElementById("rotating-logo");
+    
+      window.addEventListener("scroll", () => {
+        const scrollY = window.scrollY;
+        const rotation = (scrollY * 0.6) % 360;
+        logo.style.transform = `rotateY(${rotation}deg)`;
+      });
+    </script>
+
+    
   </body>
 </html>
