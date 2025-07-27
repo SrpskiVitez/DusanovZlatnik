@@ -296,7 +296,7 @@
       });
     </script>
 -->
-
+<!--
     <script>
       const logo = document.getElementById("rotating-logo");
     
@@ -318,6 +318,31 @@
     
       animate(); // pokreni animaciju
     </script>
-   
+   -->
+<script>
+  const logo = document.getElementById("rotating-logo");
+
+let currentRotation = 0;
+let targetRotation = 0;
+
+window.addEventListener("scroll", () => {
+  const scrollY = window.scrollY;
+  targetRotation = (scrollY * 0.6) % 360;
+});
+
+function animate() {
+  currentRotation += (targetRotation - currentRotation) * 0.05;
+
+  const rad = currentRotation * Math.PI / 180;
+  const scaleX = Math.abs(Math.cos(rad)) * 0.7 + 0.3;
+
+  logo.style.transform = `rotateY(${currentRotation}deg) scaleX(${scaleX})`;
+
+  requestAnimationFrame(animate);
+}
+
+animate();
+</script>
+    
   </body>
 </html>
