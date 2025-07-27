@@ -171,6 +171,24 @@
           font-size: 1.1rem;
         }
       }
+
+      #rotating-logo {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+        height: 50px;
+        animation: spin 6s linear infinite;
+        opacity: 0.7;
+        z-index: 999;
+      }
+      
+      @keyframes spin {
+        from { transform: translateX(-50%) rotate(0deg); }
+        to   { transform: translateX(-50%) rotate(360deg); }
+      }
+      
     </style>
   </head>
   <body>
@@ -206,6 +224,10 @@
         <li>Сваки златник, купљен или дарован, биће забележен на мапи бројем, као симбол расподеле Душановог царство</li>
       </ul>
       <br/>
+
+      <img id="rotating-logo" src="logo_500.png" alt="Душанов Златник" />
+      
+      <br/
       <div class="cta">
         <button>Куповина златника</button> 
         <button>Златник на дар</button>
