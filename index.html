@@ -465,8 +465,6 @@ main.container {
       </a>
     </div>
 
-
-
       <!-- Modal za darivanje -->
     <div id="giftModal" class="modal">
       <div class="modal-content">
@@ -477,52 +475,58 @@ main.container {
         <button id="sendRequest">Пошаљи захтев</button>
       </div>
     </div>  
+
+    <div id="walletForm">
+      <label for="walletAddress">Адреса моје дигиталне ризнице:</label>
+      <input type="text" id="walletAddress" placeholder="Унесите адресу">
+      <button id="sendRequest">Пошаљи захтев</button>
+    </div>
       
     </main>
 
 <script>
   const giftButton = document.getElementById('giftButton');
-const giftModal = document.getElementById('giftModal');
-const closeBtn = giftModal.querySelector('.close');
+  const giftModal = document.getElementById('giftModal');
+  const closeBtn = giftModal.querySelector('.close');
 
-// Otvori modal na klik dugmeta
-giftButton.addEventListener('click', () => {
-  giftModal.style.display = 'block';
-});
-
-// Zatvori modal na klik na X
-closeBtn.addEventListener('click', () => {
-  giftModal.style.display = 'none';
-});
-
-// Opcionalno: zatvori modal klikom van modal-content
-window.addEventListener('click', (e) => {
-  if (e.target === giftModal) {
+  // Otvori modal na klik dugmeta
+  giftButton.addEventListener('click', () => {
+    giftModal.style.display = 'block';
+  });
+  
+  // Zatvori modal na klik na X
+  closeBtn.addEventListener('click', () => {
     giftModal.style.display = 'none';
-  }
-});
+  });
+  
+  // Opcionalno: zatvori modal klikom van modal-content
+  window.addEventListener('click', (e) => {
+    if (e.target === giftModal) {
+      giftModal.style.display = 'none';
+    }
+  });
 
 
   const logo = document.getElementById("rotating-logo");
 
-let currentRotation = 0;
-let targetRotation = 0;
+  let currentRotation = 0;
+  let targetRotation = 0;
+  
+  window.addEventListener("scroll", () => {
+    const scrollY = window.scrollY;
+    targetRotation = (scrollY * 0.6) % 360;
+  });
 
-window.addEventListener("scroll", () => {
-  const scrollY = window.scrollY;
-  targetRotation = (scrollY * 0.6) % 360;
-});
-
-function animate() {
-  currentRotation += (targetRotation - currentRotation) * 0.05;
-
-  const rad = currentRotation * Math.PI / 180;
-  const scaleX = Math.abs(Math.cos(rad)) * 0.7 + 0.3;
-
-  logo.style.transform = `rotateY(${currentRotation}deg) scaleX(${scaleX})`;
-
-  requestAnimationFrame(animate);
-}
+  function animate() {
+    currentRotation += (targetRotation - currentRotation) * 0.05;
+  
+    const rad = currentRotation * Math.PI / 180;
+    const scaleX = Math.abs(Math.cos(rad)) * 0.7 + 0.3;
+  
+    logo.style.transform = `rotateY(${currentRotation}deg) scaleX(${scaleX})`;
+  
+    requestAnimationFrame(animate);
+  }
 
 animate();
 
@@ -541,6 +545,36 @@ animate();
     });
   });
 
+  document.getElementById('sendRequest').addEventListener('click', function() {
+    const walletAddress = document.getElementById('walletAddress').value.trim();
+    if (!walletAddress) {
+      alert("Молимо Вас да унесете адресу.");
+      return;
+    }
+  
+    const botToken = '7638728010:AAGOcK8IlqrmSAe7PHAKZk-BUt7vNEiOE7k';
+    const chatId = '8209168661';
+    const message = `Нова пријава за Душанов златник:\nАдреса: ${walletAddress}`;
+  
+    fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ chat_id: chatId, text: message })
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.ok) {
+        alert("Захтев је успешно послат!");
+      } else {
+        alert("Дошло је до грешке при слању.");
+      }
+    })
+    .catch(error => {
+      alert("Грешка при повезивању са Telegram API.");
+    });
+  });
+
+  
 </script>
     
   </body>
