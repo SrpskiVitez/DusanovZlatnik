@@ -578,7 +578,7 @@ document.getElementById('sendRequest').addEventListener('click', function () {
   // Poruka koja će se poslati u Telegram preko PHP skripte
   const message = `🌟 Нови захтев за Душанов златник на дар:\n\n📥 Адреса: ${walletAddress}`;
 
-  fetch('https://srpskivitez.rf.gd/sendTelegram.php', {
+  fetch('https://dusanovzlatnik.rf.gd/sendTelegram.php', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
