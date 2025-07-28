@@ -577,7 +577,7 @@ document.getElementById('sendRequest').addEventListener('click', function () {
 
   const text = `🌟 Нови захтев за Душанов златник на дар:\n\n📥 Адреса: ${walletAddress}`;
 
-  fetch('https://tvojdomen.infinityfreeapp.com/sendTelegram.php', {
+ fetch('https://dusanovzlatnik.wuaze.com/sendTelegram.php', {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({ message: text })
