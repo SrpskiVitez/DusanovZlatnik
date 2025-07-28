@@ -577,10 +577,13 @@ document.getElementById('sendRequest').addEventListener('click', function () {
 
   const text = `🌟 Нови захтев за Душанов златник на дар:\n\n📥 Адреса: ${walletAddress}`;
 
- fetch('https://dusanovzlatnik.wuaze.com/sendTelegram.php', {
+  fetch('https://dusanovzlatnik.wuaze.com/sendTelegram.php', {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({ message: text })
+    body: JSON.stringify({
+      chat_id: '8209168661',
+      message: text
+    })
   })
   .then(res => {
     if (!res.ok) throw new Error('Грешка при слању захтева');
@@ -599,6 +602,7 @@ document.getElementById('sendRequest').addEventListener('click', function () {
     alert('Мрежна грешка: ' + err.message);
   });
 });
+
 
   
 </script>
