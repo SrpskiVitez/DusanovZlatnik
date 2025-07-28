@@ -467,7 +467,7 @@ main.container {
 
 
 
-      <!-- Modal za darivanje 
+      <!-- Modal za darivanje -->
     <div id="giftModal" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
@@ -476,76 +476,72 @@ main.container {
         <input type="text" id="walletInput" placeholder="0x..." />
         <button id="sendRequest">Пошаљи захтев</button>
       </div>
-    </div>  -->
-   
-      <!-- Modal za darivanje -->
-<!-- Modal za darivanje -->
-<div id="giftModal" class="modal">
-  <div class="modal-content" id="giftModalContent" style="max-width: 700px; height: 580px; background-color: #f7f3e9; border-radius: 15px; padding-top: 3.5rem; position: relative; box-shadow: 0 10px 40px rgba(0,0,0,0.4); overflow: hidden;">
-    <span class="close" style="position: absolute; top: 16px; right: 20px; font-size: 28px; font-weight: bold; color: #b9a46c; cursor: pointer;">&times;</span>
-    <h2 style="text-align: center; color: #b9a46c; font-family: 'Merriweather', serif; margin: 0 2rem 1rem;">Желим један Душанов златник на дар</h2>
-    <div id="formContainer" style="width: 100%; height: 85%; padding: 0 1rem 1rem 1rem; box-sizing: border-box;"></div>
-  </div>
-</div>
-
-
-
-          
+    </div>  
+      
     </main>
 
-  <script>
-      const giftButton = document.getElementById('giftButton');
-      const giftModal = document.getElementById('giftModal');
-      const closeBtn = giftModal.querySelector('.close');
-    
-      giftButton.addEventListener('click', () => {
-        giftModal.style.display = 'block';
-    
-        const formContainer = document.getElementById('formContainer');
-        // Ako iframe već ne postoji, dodaj ga
-        if (!formContainer.querySelector('iframe')) {
-          const iframe = document.createElement('iframe');
-          iframe.src = "https://docs.google.com/forms/d/e/1FAIpQLSePMXSSKBGKATbUHuirYtqOl0mvPXLW3wX9CCz2RKNZhWlCjQ/viewform?embedded=true";
-          iframe.style.width = "100%";
-          iframe.style.height = "100%";
-          iframe.style.border = "none";
-          formContainer.appendChild(iframe);
-        }
-      });
-    
-      closeBtn.addEventListener('click', () => {
-        giftModal.style.display = 'none';
-        document.getElementById('formContainer').innerHTML = '';
-      });
-    
-      window.addEventListener('click', (e) => {
-        if (e.target === giftModal) {
-          giftModal.style.display = 'none';
-          document.getElementById('formContainer').innerHTML = '';
-        }
-      });
-    
-      // Animacija rotacije logotipa
-      const logo = document.getElementById("rotating-logo");
-      let currentRotation = 0;
-      let targetRotation = 0;
-    
-      window.addEventListener("scroll", () => {
-        const scrollY = window.scrollY;
-        targetRotation = (scrollY * 0.6) % 360;
-      });
-    
-      function animate() {
-        currentRotation += (targetRotation - currentRotation) * 0.05;
-        const rad = currentRotation * Math.PI / 180;
-        const scaleX = Math.abs(Math.cos(rad)) * 0.7 + 0.3;
-        logo.style.transform = `rotateY(${currentRotation}deg) scaleX(${scaleX})`;
-        requestAnimationFrame(animate);
-      }
-      animate();
-    </script>
+<script>
+  const giftButton = document.getElementById('giftButton');
+const giftModal = document.getElementById('giftModal');
+const closeBtn = giftModal.querySelector('.close');
+
+// Otvori modal na klik dugmeta
+giftButton.addEventListener('click', () => {
+  giftModal.style.display = 'block';
+});
+
+// Zatvori modal na klik na X
+closeBtn.addEventListener('click', () => {
+  giftModal.style.display = 'none';
+});
+
+// Opcionalno: zatvori modal klikom van modal-content
+window.addEventListener('click', (e) => {
+  if (e.target === giftModal) {
+    giftModal.style.display = 'none';
+  }
+});
 
 
+  const logo = document.getElementById("rotating-logo");
+
+let currentRotation = 0;
+let targetRotation = 0;
+
+window.addEventListener("scroll", () => {
+  const scrollY = window.scrollY;
+  targetRotation = (scrollY * 0.6) % 360;
+});
+
+function animate() {
+  currentRotation += (targetRotation - currentRotation) * 0.05;
+
+  const rad = currentRotation * Math.PI / 180;
+  const scaleX = Math.abs(Math.cos(rad)) * 0.7 + 0.3;
+
+  logo.style.transform = `rotateY(${currentRotation}deg) scaleX(${scaleX})`;
+
+  requestAnimationFrame(animate);
+}
+
+animate();
+
+// Dodaj event listener za popup na link "Златник на дар"
+  document.querySelectorAll('.cta-mail[href^="mailto:"]').forEach(link => {
+    link.addEventListener('click', function(event) {
+      event.preventDefault();
+
+      const popupMessage = `Желим један Душанов златник на дар\n\nАдреса моје дигиталне ризнице:\n`;
+      
+      // Ovde možeš napraviti custom popup modal, ili jednostavno alert
+      alert(popupMessage);
+
+      // Ili otvori mailto link nakon alert-a (ako želiš)
+      // window.location.href = this.href;
+    });
+  });
+
+</script>
     
   </body>
 </html>
