@@ -477,17 +477,11 @@ main.container {
         <button id="sendRequest">Пошаљи захтев</button>
       </div>
     </div>  -->
-      <div class="modal-content" style="padding: 0; max-width: 640px; height: 480px;">
+     <div class="modal-content" id="giftModalContent" style="max-width: 700px; height: 520px;">
       <span class="close">&times;</span>
-      <iframe
-        src="https://docs.google.com/forms/d/e/1FAIpQLSePMXSSKBGKATbUHuirYtqOl0mvPXLW3wX9CCz2RKNZhWlCjQ/viewform?embedded=true"
-        width="100%"
-        height="100%"
-        frameborder="0"
-        marginheight="0"
-        marginwidth="0"
-      >Loading…</iframe>
+      <div id="formContainer" style="width: 100%; height: 100%;"></div>
     </div>
+
           
     </main>
 
@@ -551,6 +545,28 @@ animate();
       // window.location.href = this.href;
     });
   });
+
+
+giftButton.addEventListener('click', () => {
+  // Otvori modal
+  giftModal.style.display = 'block';
+
+  // Ubaci iframe forme samo ako nije već ubačen
+  const formContainer = document.getElementById('formContainer');
+  if (!formContainer.querySelector('iframe')) {
+    const iframe = document.createElement('iframe');
+    iframe.src = "https://docs.google.com/forms/d/e/1FAIpQLSePMXSSKBGKATbUHuirYtqOl0mvPXLW3wX9CCz2RKNZhWlCjQ/viewform?embedded=true";
+    iframe.width = "100%";
+    iframe.height = "100%";
+    iframe.style.border = "none";
+    formContainer.appendChild(iframe);
+  }
+});
+
+  // Ukloni formu kada se modal zatvori
+document.getElementById('formContainer').innerHTML = '';
+
+
 
 </script>
     
