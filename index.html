@@ -490,68 +490,58 @@ main.container {
           
     </main>
 
-    <script>
-  const giftButton = document.getElementById('giftButton');
-  const giftModal = document.getElementById('giftModal');
-  const closeBtn = giftModal.querySelector('.close');
+  <script>
+      const giftButton = document.getElementById('giftButton');
+      const giftModal = document.getElementById('giftModal');
+      const closeBtn = giftModal.querySelector('.close');
+    
+      giftButton.addEventListener('click', () => {
+        giftModal.style.display = 'block';
+    
+        const formContainer = document.getElementById('formContainer');
+        // Ako iframe već ne postoji, dodaj ga
+        if (!formContainer.querySelector('iframe')) {
+          const iframe = document.createElement('iframe');
+          iframe.src = "https://docs.google.com/forms/d/e/1FAIpQLSePMXSSKBGKATbUHuirYtqOl0mvPXLW3wX9CCz2RKNZhWlCjQ/viewform?embedded=true";
+          iframe.style.width = "100%";
+          iframe.style.height = "100%";
+          iframe.style.border = "none";
+          formContainer.appendChild(iframe);
+        }
+      });
+    
+      closeBtn.addEventListener('click', () => {
+        giftModal.style.display = 'none';
+        document.getElementById('formContainer').innerHTML = '';
+      });
+    
+      window.addEventListener('click', (e) => {
+        if (e.target === giftModal) {
+          giftModal.style.display = 'none';
+          document.getElementById('formContainer').innerHTML = '';
+        }
+      });
+    
+      // Animacija rotacije logotipa
+      const logo = document.getElementById("rotating-logo");
+      let currentRotation = 0;
+      let targetRotation = 0;
+    
+      window.addEventListener("scroll", () => {
+        const scrollY = window.scrollY;
+        targetRotation = (scrollY * 0.6) % 360;
+      });
+    
+      function animate() {
+        currentRotation += (targetRotation - currentRotation) * 0.05;
+        const rad = currentRotation * Math.PI / 180;
+        const scaleX = Math.abs(Math.cos(rad)) * 0.7 + 0.3;
+        logo.style.transform = `rotateY(${currentRotation}deg) scaleX(${scaleX})`;
+        requestAnimationFrame(animate);
+      }
+      animate();
+    </script>
 
-  // Otvori modal na klik dugmeta + ubaci formu
-  giftButton.addEventListener('click', () => {
-    giftModal.style.display = 'block';
-
-    const formContainer = document.getElementById('formContainer');
-    if (!formContainer.querySelector('iframe')) {
-      const iframe = document.createElement('iframe');
-      iframe.src = "https://docs.google.com/forms/d/e/1FAIpQLSePMXSSKBGKATbUHuirYtqOl0mvPXLW3wX9CCz2RKNZhWlCjQ/viewform?embedded=true";
-      iframe.width = "100%";
-      iframe.height = "100%";
-      iframe.style.border = "none";
-      formContainer.appendChild(iframe);
-    }
-  });
-
-  // Zatvori modal na klik na X i očisti iframe
-  closeBtn.addEventListener('click', () => {
-    giftModal.style.display = 'none';
-    document.getElementById('formContainer').innerHTML = '';
-  });
-
-  // Zatvori modal klikom van sadržaja
-  window.addEventListener('click', (e) => {
-    if (e.target === giftModal) {
-      giftModal.style.display = 'none';
-      document.getElementById('formContainer').innerHTML = '';
-    }
-  });
-
-  // Animacija rotacije logotipa
-  const logo = document.getElementById("rotating-logo");
-  let currentRotation = 0;
-  let targetRotation = 0;
-
-  window.addEventListener("scroll", () => {
-    const scrollY = window.scrollY;
-    targetRotation = (scrollY * 0.6) % 360;
-  });
-
-  function animate() {
-    currentRotation += (targetRotation - currentRotation) * 0.05;
-    const rad = currentRotation * Math.PI / 180;
-    const scaleX = Math.abs(Math.cos(rad)) * 0.7 + 0.3;
-    logo.style.transform = `rotateY(${currentRotation}deg) scaleX(${scaleX})`;
-    requestAnimationFrame(animate);
-  }
-  animate();
-
-  // (ne koristiš mailto više, pa ovo možeš obrisati ako želiš)
-  document.querySelectorAll('.cta-mail[href^="mailto:"]').forEach(link => {
-    link.addEventListener('click', function(event) {
-      event.preventDefault();
-      const popupMessage = `Желим један Душанов златник на дар\n\nАдреса моје дигиталне ризнице:\n`;
-      alert(popupMessage);
-    });
-  });
-</script>
 
     
   </body>
