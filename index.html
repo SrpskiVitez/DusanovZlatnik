@@ -191,23 +191,25 @@
           transform: scale(1.07);
           box-shadow: 0 10px 25px rgba(209, 196, 136, 0.95);
         }
-    .header-icons {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        display: flex;
-        gap: 16px;
-        z-index: 10;
+  
+    .social-icons {
+        margin-top: 3rem;
+        text-align: center;
       }
       
-      .header-icons .icon-link img {
+      .social-icons a {
+        display: inline-block;
+        margin: 0 1rem;
+        transition: transform 0.2s ease;
+      }
+      
+      .social-icons img {
         width: 32px;
         height: 32px;
         filter: invert(88%) sepia(12%) saturate(223%) hue-rotate(5deg) brightness(90%) contrast(85%);
-        transition: transform 0.2s ease, filter 0.2s ease;
       }
       
-      .header-icons .icon-link img:hover {
+      .social-icons a:hover img {
         transform: scale(1.2);
         filter: invert(65%) sepia(35%) saturate(741%) hue-rotate(15deg) brightness(100%) contrast(92%);
       }
@@ -241,7 +243,12 @@
           margin: 1rem auto;
           padding: 1.5rem 1rem 2rem;
         }
-       
+
+        .social-icons {
+          margin-top: 2rem;
+        }
+
+        
         /* Novčić wrapper */
         #rotating-wrapper {
           width: 15rem;  /* ~160px */
@@ -259,18 +266,9 @@
     </style>
   </head>
   <body>
-    <header>
-      
+    <header>      
       <h1>Душанов Златник</h1>
       <h2>~ дигитални завет нашег постојања ~</h2>     
-
-      <div class="header-icons">
-        <a href="https://linkedin.com/company/dusanov-zlatnik" target="_blank" rel="noopener noreferrer" class="icon-link">
-          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" />
-        </a>
-    </div>
-
-      
     </header>
 
     <main class="container" role="main">
@@ -309,6 +307,18 @@
         <a href="#" class="cta-mail">Куповина златника</a> 
         <a href="mailto:dusanov.zlatnik@gmail.com?subject=Златник%20на%20дар&body=Желео%20бих%20један%20Душанов%20Златник%20на%20дар.%0AАдреса%20моје%20дигиталне%20ризнице%20је%3A%20%0AЗемља%20у%20којој%20живим%20%28за%20потребе%20мапе%29%20је%3A%20" class="cta-mail">
           Златник на дар
+        </a>
+      </div>
+
+      <div class="social-icons">
+        <a href="https://linkedin.com/company/dusanov-zlatnik" target="_blank" rel="noopener noreferrer">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn">
+        </a>
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram">
+        </a>
+        <a href="#" title="Whitelist uskoro">
+          <img src="https://cdn.jsdelivr.net/gh/tabler/tabler-icons/icons/user-plus.svg" alt="Whitelist">
         </a>
       </div>
     </main>
