@@ -132,7 +132,8 @@
       }
 
       .cta {
-        margin-top: 2rem; /* или више ако желиш већи размак */
+        margin-top: 3.5rem;
+        margin-bottom: 3.5rem;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
         gap: 1rem;
@@ -224,6 +225,17 @@
         transform: scale(1.2);
         filter: invert(65%) sepia(35%) saturate(741%) hue-rotate(15deg) brightness(100%) contrast(92%);
       }
+      .fa-icon {
+          font-size: 24px;
+          color: #b9a46c;
+          vertical-align: middle;
+          transition: transform 0.2s ease;
+        }
+        
+        .social-icons a:hover .fa-icon {
+          transform: scale(1.2);
+          color: #d1c488;
+        }
 
 
       /* Mobile tweaki */
@@ -328,17 +340,18 @@
         © 2025 Dušanov Zлатnik. All rights reserved.
       </div>
       
-      <div class="social-icons">
-        <a href="https://linkedin.com/company/dusanov-zlatnik" target="_blank" rel="noopener noreferrer">
-          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn">
-        </a>
-        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram">
-        </a>
-        <a href="whitepaper.pdf" target="_blank" title="Whitepaper">
-          <i class="fas fa-file-alt fa-2x" style="color: #b9a46c; margin: 0 10px;"></i>
-        </a>
-      </div>
+     <div class="social-icons">
+      <a href="https://linkedin.com/company/dusanov-zlatnik" target="_blank" rel="noopener noreferrer">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn">
+      </a>
+      <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram">
+      </a>
+      <a href="whitepaper.pdf" target="_blank" title="Whitepaper">
+        <i class="fas fa-file-alt fa-icon"></i>
+      </a>
+    </div>
+
     </main>
 <!--
     <script>
