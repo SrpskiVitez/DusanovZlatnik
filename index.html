@@ -525,9 +525,23 @@ function animate() {
 }
 
 animate();
-  
+/*
+// Dodaj event listener za popup na link "Златник на дар"
+  document.querySelectorAll('.cta-mail[href^="mailto:"]').forEach(link => {
+    link.addEventListener('click', function(event) {
+      event.preventDefault();
+
+      const popupMessage = `Желим један Душанов златник на дар\n\nАдреса моје дигиталне ризнице:\n`;
+      
+      // Ovde možeš napraviti custom popup modal, ili jednostavno alert
+      alert(popupMessage);
+
+      // Ili otvori mailto link nakon alert-a (ako želiš)
+      // window.location.href = this.href;
+    });
+  });
+*/
 // Slanje adrese na Telegram
-  /*
 document.getElementById('sendRequest').addEventListener('click', function () {
   const walletAddress = document.getElementById('walletInput').value.trim();
 
@@ -565,44 +579,6 @@ document.getElementById('sendRequest').addEventListener('click', function () {
     alert('Мрежна грешка: ' + error.message);
   });
 });
-*/
-
-document.getElementById('sendRequest').addEventListener('click', function () {
-  const walletAddress = document.getElementById('walletInput').value.trim();
-
-  if (!walletAddress) {
-    alert('Молимо унесите адресу ваше дигиталне ризнице.');
-    return;
-  }
-
-  const text = `🌟 Нови захтев за Душанов златник на дар:\n\n📥 Адреса: ${walletAddress}`;
-
-  fetch('https://dusanovzlatnik.wuaze.com/sendTelegram.php', {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({
-      chat_id: '8209168661',
-      message: text
-    })
-  })
-  .then(res => {
-    if (!res.ok) throw new Error('Грешка при слању захтева');
-    return res.json();
-  })
-  .then(data => {
-    if (data.ok) {
-      alert('Захтев је успешно послат!');
-      document.getElementById('walletInput').value = '';
-      document.getElementById('giftModal').style.display = 'none';
-    } else {
-      alert('Грешка у слању поруке: ' + (data.description || ''));
-    }
-  })
-  .catch(err => {
-    alert('Мрежна грешка: ' + err.message);
-  });
-});
-
 
   
 </script>
