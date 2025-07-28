@@ -525,7 +525,7 @@ function animate() {
 }
 
 animate();
-
+/*
 // Dodaj event listener za popup na link "Златник на дар"
   document.querySelectorAll('.cta-mail[href^="mailto:"]').forEach(link => {
     link.addEventListener('click', function(event) {
@@ -540,7 +540,47 @@ animate();
       // window.location.href = this.href;
     });
   });
+*/
+// Slanje adrese na Telegram
+document.getElementById('sendRequest').addEventListener('click', function () {
+  const walletAddress = document.getElementById('walletInput').value.trim();
 
+  if (!walletAddress) {
+    alert('Молимо унесите адресу ваше дигиталне ризнице.');
+    return;
+  }
+
+  const chatId = '8209168661';
+  const botToken = '7638728010:AAGOcK8IlqrmSAe7PHAKZk-BUt7vNEiOE7k';
+  const text = `🌟 Нови захтев за Душанов златник на дар:\n\n📥 Адреса: ${walletAddress}`;
+
+  const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+
+  fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      chat_id: chatId,
+      text: text
+    })
+  })
+  .then(response => {
+    if (response.ok) {
+      alert('Захтев је успешно послат!');
+      document.getElementById('walletInput').value = '';
+      document.getElementById('giftModal').style.display = 'none';
+    } else {
+      alert('Грешка при слању. Покушајте поново.');
+    }
+  })
+  .catch(error => {
+    alert('Мрежна грешка: ' + error.message);
+  });
+});
+
+  
 </script>
     
   </body>
