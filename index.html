@@ -244,6 +244,83 @@
           color: #d1c488;
         }
 
+      .modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+  background-color: #f7f3e9;
+  color: #0d1b2a;
+  margin: 10% auto;
+  padding: 2rem;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+  font-family: 'Merriweather', serif;
+  text-align: center;
+  position: relative;
+}
+
+.modal-content h2 {
+  margin-bottom: 1rem;
+  color: #b9a46c;
+}
+
+.modal-content label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  box-sizing: border-box;
+}
+
+.modal-content button {
+  background-color: #b9a46c;
+  border: none;
+  padding: 12px 30px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #0d1b2a;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+}
+
+.modal-content button:hover {
+  background-color: #d1c488;
+}
+
+.close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #b9a46c;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close:hover {
+  color: #d1c488;
+}
+      
 
       /* Mobile tweaki */
       @media (max-width: 700px) {
@@ -337,10 +414,8 @@
 
       
       <div class="cta">
-        <a href="#" class="cta-mail">Куповина златника</a> 
-        <a href="mailto:dusanov.zlatnik@gmail.com?subject=Златник%20на%20дар&body=Желео%20бих%20један%20Душанов%20Златник%20на%20дар.%0AАдреса%20моје%20дигиталне%20ризнице%20је%3A%20%0AЗемља%20у%20којој%20живим%20%28за%20потребе%20мапе%29%20је%3A%20" class="cta-mail">
-          Златник на дар
-        </a>
+       <button id="buy" class="cta-mail">Куповина златника</button> 
+       <button id="giftButton" class="cta-mail">Златник на дар</button>
       </div>
 
       <div class="footer-note">
@@ -360,41 +435,19 @@
 
     </div>
 
+      <!-- Modal za darivanje -->
+    <div id="giftModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Желим један Душанов златник на дар</h2>
+        <label for="walletInput">Адреса моје дигиталне ризнице:</label>
+        <input type="text" id="walletInput" placeholder="0x..." />
+        <button id="sendRequest">Пошаљи захтев</button>
+      </div>
+    </div>  
+      
     </main>
-<!--
-    <script>
-      const logo = document.getElementById("rotating-logo");
-    
-      window.addEventListener("scroll", () => {
-        const scrollY = window.scrollY;
-        const rotation = (scrollY * 0.2) % 360;
-        logo.style.transform = `rotateY(${rotation}deg)`;
-      });
-    </script>
--->
-<!--
-    <script>
-      const logo = document.getElementById("rotating-logo");
-    
-      let currentRotation = 0;
-      let targetRotation = 0;
-    
-      window.addEventListener("scroll", () => {
-        const scrollY = window.scrollY;
-        targetRotation = (scrollY * 0.6) % 360; // manja brzina
-      });
-    
-      function animate() {
-        // Linear interpolation
-        currentRotation += (targetRotation - currentRotation) * 0.05;
-        logo.style.transform = `rotateY(${currentRotation}deg)`;
-    
-        requestAnimationFrame(animate);
-      }
-    
-      animate(); // pokreni animaciju
-    </script>
-   -->
+
 <script>
   const logo = document.getElementById("rotating-logo");
 
@@ -418,6 +471,22 @@ function animate() {
 }
 
 animate();
+
+// Dodaj event listener za popup na link "Златник на дар"
+  document.querySelectorAll('.cta-mail[href^="mailto:"]').forEach(link => {
+    link.addEventListener('click', function(event) {
+      event.preventDefault();
+
+      const popupMessage = `Желим један Душанов златник на дар\n\nАдреса моје дигиталне ризнице:\n`;
+      
+      // Ovde možeš napraviti custom popup modal, ili jednostavno alert
+      alert(popupMessage);
+
+      // Ili otvori mailto link nakon alert-a (ako želiš)
+      // window.location.href = this.href;
+    });
+  });
+
 </script>
     
   </body>
