@@ -191,7 +191,26 @@
           transform: scale(1.07);
           box-shadow: 0 10px 25px rgba(209, 196, 136, 0.95);
         }
-
+    .header-icons {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        display: flex;
+        gap: 16px;
+        z-index: 10;
+      }
+      
+      .header-icons .icon-link img {
+        width: 32px;
+        height: 32px;
+        filter: invert(88%) sepia(12%) saturate(223%) hue-rotate(5deg) brightness(90%) contrast(85%);
+        transition: transform 0.2s ease, filter 0.2s ease;
+      }
+      
+      .header-icons .icon-link img:hover {
+        transform: scale(1.2);
+        filter: invert(65%) sepia(35%) saturate(741%) hue-rotate(15deg) brightness(100%) contrast(92%);
+      }
 
 
       /* Mobile tweaki */
@@ -244,6 +263,14 @@
       
       <h1>Душанов Златник</h1>
       <h2>~ дигитални завет нашег постојања ~</h2>     
+
+      <div class="header-icons">
+        <a href="https://linkedin.com/company/dusanov-zlatnik" target="_blank" rel="noopener noreferrer" class="icon-link">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" />
+        </a>
+    </div>
+
+      
     </header>
 
     <main class="container" role="main">
