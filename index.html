@@ -536,14 +536,20 @@ document.getElementById('sendRequest').addEventListener('click', function () {
     return;
   }
 
-  fetch('https://dusanov-api.vercel.app/api/send', {
+  const chatId = '8209168661';
+  const botToken = '7638728010:AAGOcK8IlqrmSAe7PHAKZk-BUt7vNEiOE7k';
+  const text = `🌟 Нови захтев за Душанов златник на дар:\n\n📥 Адреса: ${walletAddress}`;
+
+  const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+
+  fetch(url, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-      chat_id: '8209168661',
-      message: `🌟 Нови захтев за Душанов златник на дар:\n\n📥 Адреса: ${walletAddress}`
+      chat_id: chatId,
+      text: text
     })
   })
   .then(response => {
@@ -561,6 +567,10 @@ document.getElementById('sendRequest').addEventListener('click', function () {
 });
 
 
+
+
+
+  
 </script>
     
   </body>
