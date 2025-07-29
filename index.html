@@ -531,10 +531,13 @@ animate();
 document.getElementById('sendRequest').addEventListener('click', function () {
   const walletAddress = document.getElementById('walletInput').value.trim();
 
-  if (!walletAddress) {
-    alert('Молимо унесите адресу ваше дигиталне ризнице.');
+  const isValidWallet = /^0x[a-fA-F0-9]{40}$/.test(walletAddress);
+
+  if (!isValidWallet) {
+    alert('Молимо унесите исправну адресу (почиње са 0x и садржи 42 карактера).');
     return;
   }
+
 
   const url = `https://dusanov-api.vercel.app/api/send`;
   
