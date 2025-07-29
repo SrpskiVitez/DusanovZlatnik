@@ -543,13 +543,12 @@ document.getElementById('sendRequest').addEventListener('click', function () {
   const url = `https://dusanov-api.vercel.app/api/send`;
 
   fetch(url, {
-    method: 'POST',
+  method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-      chat_id: chatId,
-      text: text
+      address: walletAddress  // ✅ OVO backend traži
     })
   })
   .then(response => {
