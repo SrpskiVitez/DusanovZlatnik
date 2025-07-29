@@ -526,7 +526,7 @@ function animate() {
 
 animate();
 
-
+/*
 // Slanje adrese na Telegram
 document.getElementById('sendRequest').addEventListener('click', function () {
   const walletAddress = document.getElementById('walletInput').value.trim();
@@ -566,6 +566,29 @@ document.getElementById('sendRequest').addEventListener('click', function () {
   });
 });
 
+*/
+
+  fetch('https://dusanov-api.vercel.app/api/send', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    chat_id: '8209168661',
+    message: `🌟 Нови захтев за Душанов златник на дар:\n\n📥 Адреса: ${walletAddress}`
+  })
+})
+.then(response => {
+  if (response.ok) {
+    alert('Захтев је успешно послат!');
+    // ...
+  } else {
+    alert('Грешка при слању. Покушајте поново.');
+  }
+})
+.catch(error => {
+  alert('Мрежна грешка: ' + error.message);
+});
 
 
 
