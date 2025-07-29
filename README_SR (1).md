@@ -1,87 +1,83 @@
-# 🪙 ДушановЗлатник
+🪙 ДушановЗлатник
+ДушановЗлатник (ZLATNIK) је симболични дигитални токен инспирисан историјским златницима цара Душана Силног. Представља дигитални завет нашем културном наслеђу, јединству и историјском поносу. Са фиксированом укупном понудом од 11,000,000 токена, сваки токен је омаж сваком Србину широм света.
 
-**ДушановЗлатник (ZLATNIK)** je simbolični digitalni token inspirisan istorijskim zlatnicima cara Dušana Silnog. Predstavlja digitalni zavet našem kulturnom nasleđu, jedinstvu i istorijskom ponosu. Sa fiksiranom ukupnom ponudom od 11,000,000 tokena, svaki token je omaž svakom Srbinu širom sveta.
+🔗 Званична страница: https://srpskivitez.github.io/DusanovZlatnik/
 
-🔗 Zvanična stranica: [https://srpskivitez.github.io/DusanovZlatnik/](https://srpskivitez.github.io/DusanovZlatnik/)
+🔹 Основне информације
+Назив: ДушановЗлатник (Dusanov Zlatnik)
 
----
+Симбол (тикер): ZLATNIK
 
-## 🔹 Osnovne informacije
+Блокчејн: BNB Smart Chain
 
-- **Naziv:** ДушановЗлатник (Dusanov Zlatnik)
-- **Simbol (ticker):** ZLATNIK
-- **Blockchain:** BNB Smart Chain
-- **Standard:** BEP-20
-- **Ukupna ponuda:** 11,000,000 (fiksno)
-- **Decimal places:** 18
-- **Pametni ugovor (verifikovan):** `0x926f0D256C064FEA68158C80568Acc4A6b2fE496`
+Стандард: BEP-20
 
----
+Укупна понуда: 11,000,000 (фиксно)
 
-## 🎯 Misija i Vizija
+Децимална места: 18
 
-Naša misija je očuvanje i promocija srpskog kulturnog identiteta u digitalnom dobu. Vizija je stvaranje tokena koji ima **duhovnu i simboličnu vrednost**, a ne spekulativnu ili komercijalnu.
+Паметни уговор (верификован): 0x926f0D256C064FEA68158C80568Acc4A6b2fE496
 
----
+🎯 Мисија и Визија
+Наша мисија је очување и промоција српског културног идентитета у дигиталном добу. Визија је стварање токена који има духовну и симболичну вредност, а не спекулативну или комерцијалну.
 
-## 🛠️ Svrha tokena (Utility)
+🛠️ Сврха токена (Utility)
+ZLATNIK токени нису намењени за трговину нити профит. Њихова основна сврха је:
 
-ZLATNIK tokeni nisu namenjeni za trgovinu niti profit. Njihova osnovna svrha je:
+Очување културног идентитета
 
-- Očuvanje kulturnog identiteta
-- Osnaživanje zajednice
-- Transparentne donacije za obnovu kulturnog nasleđa
-- Vizuelna distribucija tokena na globalnoj mapi
+Оснаживање заједнице
 
----
+Транспарентне донације за обнову културног наслеђа
 
-## 📊 Tokenomika
+Визуелна дистрибуција токена на глобалној мапи
 
-Ukupna ponuda od **11,000,000 ZLATNIK** biće raspoređena na sledeći način:
+📊 Токеномика
+Укупна понуда од 11,000,000 ZLATNIK биће распоређена на следећи начин:
 
-- 📢 Public Presale: 10%  
-- 🛠️ Development Fund: 20%  
-- 📣 Marketing & Promocija: 15%  
-- 🎁 Nagrade zajednici: 20%  
-- 🏛️ Kulturne donacije (grants): 10%  
-- 💧 Likvidnost: 10%  
-- 👥 Tim i savetnici: 10% (sa vestingom)  
-- 🏦 Rezerva / Trezor: 5%
+📢 Public Presale: 10%
 
----
+🛠️ Development Fund: 20%
 
-## ⏳ Vesting raspored
+📣 Marketing & Промоција: 15%
 
-Tokeni dodeljeni timu i savetnicima biće oslobađani postepeno u periodu od **12 meseci**, sa početnim **zadržavanjem od 3 meseca** (cliff) radi očuvanja dugoročne posvećenosti.
+🎁 Награде заједници: 20%
 
----
+🏛️ Културне донације (grants): 10%
 
-## 🗺️ Mapa puta (Roadmap)
+💧 Ликвидност: 10%
 
-- **Q3 2025** – Pokretanje projekta, web sajt, pametni ugovor  
-- **Q4 2025** – Public presale, whitelist faza, okupljanje zajednice  
-- **Q1 2026** – Start kulturnih grantova, mapa distribucije uživo  
-- **Q2 2026** – Prve donacije za kulturno nasleđe, razmatranje listiranja  
-- **Q3 2026** – Globalna promocija, proširenje ekosistema  
+👥 Тим и саветници: 10% (са vesting-ом)
 
----
+🏦 Резерва / Трезор: 5%
 
-## 📝 Whitepaper
+⏳ Вестинг распоред
+Токени додељени тиму и саветницима биће ослобађани постепено у периоду од 12 месеци, са почетним задржавањем од 3 месеца (cliff) ради очувања дугорочне посвећености.
 
-📄 [Pogledaj whitepaper (PDF)](./whitepaper.pdf)
+🗺️ Мапа пута (Roadmap)
+Q3 2025 – Покретање пројекта, веб сајт, паметни уговор
 
----
+Q4 2025 – Public presale, whitelist фаза, окупљање заједнице
 
-## ⚖️ Pravno obaveštenje
+Q1 2026 – Старт културних грантова, мапа дистрибуције уживо
 
-ДушановЗлатник je **kulturna i simbolična inicijativa**. Nije namenjen kao investicioni proizvod. Sve odluke i distribucije biće **javno dokumentovane i vođene od strane zajednice**.
+Q2 2026 – Прве донације за културно наслеђе, разматрање листинга
 
----
+Q3 2026 – Глобална промоција, проширење екосистема
 
-## 🤝 Zajednica
+📝 Whitepaper
+📄 Погледај whitepaper (PDF)
 
-📢 Uskoro dostupno:
-- Discord
-- Telegram
-- Twitter
-- GitHub Issues za predloge i podršku
+⚖️ Правно обавештење
+ДушановЗлатник је културна и симболична иницијатива. Није намењен као инвестициони производ. Све одлуке и дистрибуције биће јавно документоване и вођене од стране заједнице.
+
+🤝 Заједница
+📢 Ускоро доступно:
+
+Discord
+
+Telegram
+
+Twitter
+
+GitHub Issues за предлоге и подршку
