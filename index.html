@@ -538,10 +538,9 @@ document.getElementById('sendRequest').addEventListener('click', function () {
 
   const chatId = '8209168661';
  // const botToken = '7638728010:AAGOcK8IlqrmSAe7PHAKZk-BUt7vNEiOE7k';
-const botToken = process.env.TELEGRAM_BOT_TOKEN;
   const text = `🌟 Нови захтев за Душанов златник на дар:\n\n📥 Адреса: ${walletAddress}`;
 
-  const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+  const url = `https://dusanov-api.vercel.app/api/send`;
 
   fetch(url, {
     method: 'POST',
