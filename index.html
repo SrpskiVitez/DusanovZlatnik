@@ -5,23 +5,552 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="icon" href="favicon.png" type="image/png">
+
     <title>Душанов Златник</title>
     <style>
-      /* CSS ovde */
+      @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+      html {
+        font-size: 16px;
+      }
+      body {
+        margin: 0;
+        font-family: 'Merriweather', serif;
+        background: #0d1b2a; /* tamno plava */
+        color: #d9d4c9; /* krem */
+        line-height: 1.7;
+        min-height: 100vh;
+        /*display: flex;
+        flex-direction: column;
+        align-items: center;*/
+      }    
+
+      header {      
+        padding-top: 2rem;
+        text-align: center;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 120px;
+        /*background: url('back.png') no-repeat center center/cover;*/
+        background: #0d1b2a; /* tamno plava */
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #f0e6d2;
+        text-shadow: 0 0 10px rgba(0,0,0,0.8);
+        z-index: 999;
+      }
+
+      header * {
+        position: relative;
+        z-index: 2;
+      }
+
+      header h1 {
+        font-size: 3.2rem;
+        font-weight: 700;
+        margin: 0 1rem;
+        max-width: 900px;
+        text-align: center;
+        color: #f7f3e9;
+        letter-spacing: 2px;
+        line-height: 1.2;
+      }
+      
+       h2 {
+        font-weight: 700;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        color: #b9a46c;
+        border-bottom: 2px solid #b9a46c;
+        padding-bottom: 0.3rem;
+        text-align: center;
+      }
+      h3{
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+      
+      .bold-link {
+        font-weight: bold;
+        color: #b9a46c;
+        text-decoration:none;
+        transition: all 0.2s ease-in-out;
+      }
+      
+      .bold-link:hover {
+        color: #b9a46c;
+        text-decoration: underline solid;
+      }
+
+      
+      main.container {
+        max-width: 850px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 2.5rem 2rem 4rem;
+        background: rgba(13, 27, 42, 0.9);
+        border-radius: 15px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.7);
+        box-sizing: border-box;
+      }     
+      .footer-note {
+        text-align: center;
+        color: #d9d4c9;
+        font-size: 0.9rem;
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+        font-family: 'Merriweather', serif;
+        opacity: 0.8;
+      }
+      p, ul {
+        font-weight: 400;
+        font-size: 1.15rem;
+      }
+
+      ul {
+        padding-left: 1.4rem;
+      }
+
+      ul li {
+        margin-bottom: 0.9rem;
+        position: relative;
+        padding-left: 1.5rem;
+        color: #d9d4c9;
+      }
+
+      ul li::before {
+        content: "✦";
+        position: absolute;
+        left: 0;
+        color: #b9a46c;
+        font-weight: 700;
+        font-size: 1.3rem;
+        line-height: 1;
+        top: 2px;
+      }
+
+      .cta {
+        margin-top: 3.5rem;
+        margin-bottom: 5rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1rem;
+      }
+
+      .cta button {
+        background-color: #b9a46c;
+        color: #0d1b2a;
+        padding: 1rem 2.5rem;
+        font-size: 1.2rem;
+        font-weight: 600;
+        border: none;
+        border-radius: 14px;
+        cursor: pointer;
+        box-shadow: 0 7px 20px rgba(185, 164, 108, 0.8);
+        transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        will-change: transform, box-shadow;
+        text-transform: uppercase;
+        letter-spacing: 1.4px;
+      }
+
+      .cta button:hover {
+        background-color: #d1c488;
+        transform: scale(1.07);
+        box-shadow: 0 10px 25px rgba(209, 196, 136, 0.95);
+      }
+       
+     #rotating-wrapper {
+        width: 30rem;
+        height: 30rem;
+        margin: 1rem auto;
+        opacity: 0.85;
+        perspective: 800px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      #rotating-logo {
+        width: 100%;
+        height: auto;
+        transform-style: preserve-3d;
+        transition: transform 0.05s linear;
+      }
+
+      .cta-mail {
+          display: inline-block;
+          background-color: #b9a46c;
+          color: #0d1b2a;
+          padding: 1rem 3rem;
+          font-size: 1.2rem;
+          font-weight: 600;
+          border-radius: 14px;
+          box-shadow: 0 7px 20px rgba(185, 164, 108, 0.8);
+          text-decoration: none;
+          text-transform: uppercase;
+          letter-spacing: 1.4px;
+          transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+          will-change: transform, box-shadow;
+          text-align: center;
+          font-family: 'Merriweather', serif;
+        }
+        
+        .cta-mail:hover {
+          background-color: #d1c488;
+          transform: scale(1.07);
+          box-shadow: 0 10px 25px rgba(209, 196, 136, 0.95);
+        }
+  
+      .social-icons {
+        margin-top: 5rem;
+        margin-bottom: 2rem;
+        text-align: center;
+      }
+      
+      .social-icons a {
+        display: inline-block;
+        margin: 0 1rem;
+        transition: transform 0.2s ease;
+      }
+
+      .social-icons i {
+        font-size: 24px;
+        vertical-align: middle;
+        color: #b9a46c;
+      }
+      
+      .social-icons img {
+        width: 24px;
+        height: 24px;
+        filter: invert(88%) sepia(12%) saturate(223%) hue-rotate(5deg) brightness(90%) contrast(85%);
+      }
+      
+      .social-icons a:hover img {
+        transform: scale(1.2);
+        filter: invert(65%) sepia(35%) saturate(741%) hue-rotate(15deg) brightness(100%) contrast(92%);
+      }
+      .fa-icon {
+          font-size: 24px;
+          color: #b9a46c;
+          vertical-align: middle;
+          transition: transform 0.2s ease;
+        }
+        
+        .social-icons a:hover .fa-icon {
+          transform: scale(1.2);
+          color: #d1c488;
+        }
+
+      .modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+  background-color: #f7f3e9;
+  color: #0d1b2a;
+  margin: 10% auto;
+  padding: 2rem;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+  font-family: 'Merriweather', serif;
+  text-align: center;
+  position: relative;
+}
+
+.modal-content h2 {
+  margin-bottom: 1rem;
+  color: #b9a46c;
+}
+
+.modal-content label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  box-sizing: border-box;
+}
+
+.modal-content button {
+  background-color: #b9a46c;
+  border: none;
+  padding: 12px 30px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #0d1b2a;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+}
+
+.modal-content button:hover {
+  background-color: #d1c488;
+}
+
+.close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #b9a46c;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close:hover {
+  color: #d1c488;
+}
+      html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+main.container {
+  width: 95%;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+      /* Mobile tweaki */
+      @media (max-width: 700px) {
+        .modal-content {
+            width: 90vw; /* koristi viewport širinu umesto % */
+            max-width: 90vw;
+            padding: 1rem;
+            margin: 15% auto;
+          }
+  
+        form {
+          margin-left: 0;
+          margin-right: 0;
+          width: 100%;
+          box-sizing: border-box;
+        }
+        /* Header */
+        header {
+          padding-top: 1rem;
+          padding-bottom: 1rem;
+          height: auto;
+        }
+      
+        header h1 {
+          font-size: 2rem;
+          margin-bottom: 0.5rem;
+        }
+      
+        header h2 {
+          font-size: 1.1rem;
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+        }
+        h3{
+          text-align: center;
+          margin-bottom: 3rem;
+        }
+        /* Main kontejner */
+        main.container {
+          margin: 1rem auto;
+          padding: 1.5rem 1rem 2rem;
+        }
+
+        .social-icons {
+          margin-top: 2rem;
+        }
+        .social-icons img {
+          width: 20px;
+          height: 20px;
+        }
+        
+        /* Novčić wrapper */
+        #rotating-wrapper {
+          width: 15rem;  /* ~160px */
+          height: 15rem;
+          margin: 0.5rem auto;
+        }
+      
+        /* Sam novčić */
+        #rotating-logo {
+          width: 100%;
+          height: auto;
+        }
+      }
+      
     </style>
   </head>
   <body>
-    <header>
+    <header>      
       <h1>Душанов Златник</h1>
-      <h2>~ дигитални завет нашег постојања ~</h2>
+      <h2>~ дигитални завет нашег постојања ~</h2>     
     </header>
 
     <main class="container" role="main">
-      <!-- Sadrzaj stranice -->
+       <div id="rotating-wrapper">
+        <img id="rotating-logo" src="logo_500_tra.png" alt="Ротациони логотип" />
+      </div>
+      
+      <h3>Инспирисан славом Душановог царства и духом српске историје,<br /> овај токен слави независност, традицију, народ</h3>
+
+      <h2>📜 Шта је Душанов Златник?</h2>
+      <ul>
+        <li>Назван по првој српској златној валути из времена <a href="https://sr.wikipedia.org/wiki/%D0%A1%D1%82%D0%B5%D1%84%D0%B0%D0%BD_%D0%94%D1%83%D1%88%D0%B0%D0%BD" class="bold-link" target="_blank" rel="noopener noreferrer"> цара Душана Силног</a></li>
+        <li>Није за трговину. Није за профит. Ово је дигитални завет нашег постојања</li>  
+        <li>Искованих 11.000.000 Душанових Златника — по један за сваког Србина, где год да је у свету</li>   
+        <li>Златнике неуморно чува први српски дигитални витез у ризници знаној као <a href="https://www.bnbchain.org/en" class="bold-link" target="_blank" rel="noopener noreferrer">BNB Smart Chain</a></li>        
+      </ul>
+
+     <h2>🪙 Колико кошта?</h2>
+      <ul>
+        <li>Ако желиш да куповином златника преузмеш део бремена, цена златника је стотину српских динара</li>
+        <li>Ако не можеш да га приуштиш, добићеш га на дар, јер свакоме по један припада</li>
+        <li>Цена је историјска, а не тржишна</li>
+      </ul>
+
+      <h2>🛡️ Шта са златником?</h2>
+      <ul>       
+        <li>Када се сакупи довољан број српских витезoвa, сазваћемо збор о ликвидности и додавању златника на берзу</li>
+        <li>Сваког месеца део прихода биће, документовано, усмерен за обнову српских светиња</li>
+        <li>Сваки златник, купљен или дарован, биће забележен на мапи бојом, као симбол расподеле Душановог царствa</li>
+      </ul>
+
+      <img src="svet_2.png" alt="царство Душаново" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+
+      
+      <div class="cta">
+       <button id="buy" class="cta-mail">Куповина златника</button> 
+       <button id="giftButton" class="cta-mail">Златник на дар</button>
+      </div>
+
+      <div class="footer-note">
+        © 2025 Dušanov Zлатnik. All rights reserved.
+      </div>
+      
+    <div class="social-icons">
+      <a href="https://linkedin.com/company/dusanov-zlatnik" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" title="LinkedIn">
+      </a>
+      <a href="https://www.instagram.com/dusanovzlatnik/" target="_blank" rel="noopener noreferrer" title="Instagram">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" title="Instagram">
+      </a>
+      <a href="Dusanov_Zlatnik_Whitepaper.pdf" target="_blank" rel="noopener noreferrer" title="Whitepaper">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/readthedocs.svg" alt="Whitepaper" title="Whitepaper">
+      </a>
+      <!-- Telegram kanal – zvanična obaveštenja -->
+      <a href="https://t.me/+aLOYL9EVnck1NjBk" target="_blank" rel="noopener noreferrer" title="Telegram канал | обавештења">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/telegram.svg" alt="Telegram канал" title="Telegram канал | обавештења">
+      </a>
+      <!-- Telegram grupa – zajednica -->
+      <a href="https://t.me/+27cw4oGMNiQ4N2Q0" target="_blank" rel="noopener noreferrer" title="Telegram група | заједница">
+        <img src="https://cdn.jsdelivr.net/gh/lucide-icons/lucide/icons/message-circle.svg" alt="Telegram група" title="Telegram група | заједница">
+      </a>
+    </div>
+
+
+
+      <!-- Modal za darivanje -->
+    <div id="giftModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Желим један Душанов златник на дар</h2>
+        <label for="walletInput">Адреса моје дигиталне ризнице:</label>
+        <input type="text" id="walletInput" placeholder="0x..." />
+        <button id="sendRequest">Пошаљи захтев</button>
+      </div>
+    </div>  
+      
     </main>
 
-    <script>
-      // JavaScript funkcionalnosti
-    </script>
+<script>
+  const giftButton = document.getElementById('giftButton');
+const giftModal = document.getElementById('giftModal');
+const closeBtn = giftModal.querySelector('.close');
+
+// Otvori modal na klik dugmeta
+giftButton.addEventListener('click', () => {
+  giftModal.style.display = 'block';
+});
+
+// Zatvori modal na klik na X
+closeBtn.addEventListener('click', () => {
+  giftModal.style.display = 'none';
+});
+
+// Opcionalno: zatvori modal klikom van modal-content
+window.addEventListener('click', (e) => {
+  if (e.target === giftModal) {
+    giftModal.style.display = 'none';
+  }
+});
+
+
+  const logo = document.getElementById("rotating-logo");
+
+let currentRotation = 0;
+let targetRotation = 0;
+
+window.addEventListener("scroll", () => {
+  const scrollY = window.scrollY;
+  targetRotation = (scrollY * 0.6) % 360;
+});
+
+function animate() {
+  currentRotation += (targetRotation - currentRotation) * 0.05;
+
+  const rad = currentRotation * Math.PI / 180;
+  const scaleX = Math.abs(Math.cos(rad)) * 0.7 + 0.3;
+
+  logo.style.transform = `rotateY(${currentRotation}deg) scaleX(${scaleX})`;
+
+  requestAnimationFrame(animate);
+}
+
+animate();
+
+
+// Slanje adrese na Telegram
+  fetch('https://dusanov-api.vercel.app/api/send', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    chat_id: '8209168661',
+    message: `🌟 Нови захтев за Душанов златник на дар:\n\n📥 Адреса: ${walletAddress}`
+  })
+})
+.then(response => {
+  if (response.ok) {
+    alert('Захтев је успешно послат!');
+    // ...
+  } else {
+    alert('Грешка при слању. Покушајте поново.');
+  }
+})
+.catch(error => {
+  alert('Мрежна грешка: ' + error.message);
+});
+
+</script>
+    
   </body>
 </html>
