@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Статус токена | Душанов Златник</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+      background: #0d1b2a;
+      color: #d9d4c9;
+    }
+    h1, h2 {
+      color: #f7f3e9;
+    }
+    p {
+      line-height: 1.6;
+    }
+    footer {
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #bbb;
+      text-align: center;
+    }
+
+    .lang-btns {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    button.lang-btn {
+      margin: 0 10px;
+      padding: 10px 20px;
+      cursor: pointer;
+      border: 2px solid #f7f3e9;
+      background: transparent;
+      color: #f7f3e9;
+      font-weight: 700;
+      font-size: 1rem;
+      border-radius: 30px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    button.lang-btn:hover {
+      background-color: #f7f3e9;
+      color: #0d1b2a;
+    }
+    button.lang-btn.active {
+      background-color: #f7f3e9;
+      color: #0d1b2a;
+    }
+
+    .lang-section {
+      display: none;
+    }
+    .lang-section.active {
+      display: block;
+    }
+
+    a {
+      color: #f7f3e9;
+    }
+    a:hover {
+      color: #d9d4c9;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="lang-btns">
+    <button class="lang-btn active" data-lang="cyr">Ћирилица</button>
+    <button class="lang-btn" data-lang="lat">Latinica</button>
+    <button class="lang-btn" data-lang="eng">English</button>
+  </div>
+
+  <!-- Ћирилица -->
+  <section id="cyr" class="lang-section active">
+    <h1>Статус токена</h1>
+    <p>„Душанов Златник“ није хартија од вредности (security), нити се тако представља. Он је симбол заједништва, културне свести и дигиталног наслеђа. Токен нема за циљ профит, удео у власништву или права гласа.</p>
+    <p>Намењен је искључиво за употребу унутар заједнице и као део културно-историјске иницијативе. Не постоји обећање повраћаја инвестиције или зараде. Уколико се у будућности појави тржишна вредност, то ће бити резултат спонтане понуде и потражње, а не гаранција од стране оснивача.</p>
+    <p><em>Последње ажурирање: јул 2025.</em></p>
+  </section>
+
+  <!-- Latinica -->
+  <section id="lat" class="lang-section">
+    <h1>Status tokena</h1>
+    <p>„Dušanov Zlatnik“ nije hartija od vrednosti (security), niti se tako predstavlja. On je simbol zajedništva, kulturne svesti i digitalnog nasleđa. Token nema za cilj profit, udeo u vlasništvu ili prava glasa.</p>
+    <p>Namenjen je isključivo za upotrebu unutar zajednice i kao deo kulturno-istorijske inicijative. Ne postoji obećanje povraćaja investicije ili zarade. Ukoliko se u budućnosti pojavi tržišna vrednost, to će biti rezultat spontane ponude i potražnje, a ne garancija od strane osnivača.</p>
+    <p><em>Poslednje ažuriranje: jul 2025.</em></p>
+  </section>
+
+  <!-- English -->
+  <section id="eng" class="lang-section">
+    <h1>Token Status</h1>
+    <p>“Dušanov Zlatnik” is not a security, nor is it presented as such. It is a symbol of unity, cultural awareness, and digital heritage. The token is not intended for profit, ownership stake, or voting rights.</p>
+    <p>It is strictly for community use and as part of a cultural-historical initiative. No promise of investment return or profit is made. Any future market value will be the result of organic demand and supply, not a guarantee by the project founders.</p>
+    <p><em>Last updated: July 2025.</em></p>
+  </section>
+
+  <footer>
+    &copy; 2025 Dušanov Zlatnik Project
+  </footer>
+
+  <script>
+    function showLanguage(lang) {
+      document.querySelectorAll(".lang-section").forEach(section => {
+        section.classList.remove("active");
+      });
+      document.getElementById(lang).classList.add("active");
+
+      document.querySelectorAll(".lang-btn").forEach(btn => {
+        btn.classList.remove("active");
+      });
+      document.querySelector(`.lang-btn[data-lang="${lang}"]`).classList.add("active");
+    }
+
+    document.querySelectorAll(".lang-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const lang = btn.getAttribute("data-lang");
+        showLanguage(lang);
+      });
+    });
+
+    // Početno stanje
+    showLanguage("cyr");
+  </script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Политика приватности | Душанов Златник</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+      background: #0d1b2a;
+      color: #d9d4c9;
+    }
+    h1 {
+      color: #f7f3e9;
+    }
+    p {
+      line-height: 1.6;
+    }
+    footer {
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #bbb;
+      text-align: center;
+    }
+
+    .lang-btns {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    button.lang-btn {
+      margin: 0 10px;
+      padding: 10px 20px;
+      cursor: pointer;
+      border: 2px solid #f7f3e9;
+      background: transparent;
+      color: #f7f3e9;
+      font-weight: 700;
+      font-size: 1rem;
+      border-radius: 30px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    button.lang-btn:hover {
+      background-color: #f7f3e9;
+      color: #0d1b2a;
+    }
+    button.lang-btn.active {
+      background-color: #f7f3e9;
+      color: #0d1b2a;
+    }
+
+    .lang-section {
+      display: none;
+    }
+    .lang-section.active {
+      display: block;
+    }
+
+    a {
+      color: #f7f3e9;
+    }
+    a:hover {
+      color: #d9d4c9;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="lang-btns">
+    <button class="lang-btn active" data-lang="cyr">Ћирилица</button>
+    <button class="lang-btn" data-lang="lat">Latinica</button>
+    <button class="lang-btn" data-lang="eng">English</button>
+  </div>
+
+  <!-- Ћирилица -->
+  <section id="cyr" class="lang-section active">
+    <h1>Политика приватности</h1>
+    <p>Овај сајт не прикупља личне податке корисника осим ако се то експлицитно не уради (нпр. путем контакт форме или другог облика комуникације).</p>
+    <p>Сви прикупљени подаци користе се искључиво за сврхе пројекта Душанов Златник и неће бити дељени трећим странама без пристанка.</p>
+    <p>Пројекат користи колачиће (cookies) искључиво за побољшање корисничког искуства, а не за праћење или оглашавање.</p>
+    <p><em>Последње ажурирање: јул 2025.</em></p>
+  </section>
+
+  <!-- Latinica -->
+  <section id="lat" class="lang-section">
+    <h1>Politika privatnosti</h1>
+    <p>Ovaj sajt ne prikuplja lične podatke korisnika osim ako se to eksplicitno ne uradi (npr. putem kontakt forme ili drugog oblika komunikacije).</p>
+    <p>Svi prikupljeni podaci koriste se isključivo za svrhe projekta Dušanov Zlatnik i neće biti deljeni trećim stranama bez pristanka.</p>
+    <p>Projekat koristi kolačiće (cookies) isključivo za poboljšanje korisničkog iskustva, a ne za praćenje ili oglašavanje.</p>
+    <p><em>Poslednje ažuriranje: jul 2025.</em></p>
+  </section>
+
+  <!-- English -->
+  <section id="eng" class="lang-section">
+    <h1>Privacy Policy</h1>
+    <p>This site does not collect personal user data unless explicitly done so (e.g., via contact forms or other communication methods).</p>
+    <p>All collected data is used solely for the purposes of the Dušanov Zlatnik project and will not be shared with third parties without consent.</p>
+    <p>The project uses cookies only to improve user experience, not for tracking or advertising.</p>
+    <p><em>Last updated: July 2025.</em></p>
+  </section>
+
+  <footer>
+    &copy; 2025 Dušanov Zlatnik Project
+  </footer>
+
+  <script>
+    function showLanguage(lang) {
+      document.querySelectorAll(".lang-section").forEach(section => {
+        section.classList.remove("active");
+      });
+      document.getElementById(lang).classList.add("active");
+
+      document.querySelectorAll(".lang-btn").forEach(btn => {
+        btn.classList.remove("active");
+      });
+      document.querySelector(`.lang-btn[data-lang="${lang}"]`).classList.add("active");
+    }
+
+    document.querySelectorAll(".lang-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const lang = btn.getAttribute("data-lang");
+        showLanguage(lang);
+      });
+    });
+
+    // Default state
+    showLanguage("cyr");
+  </script>
+</body>
+</html>
