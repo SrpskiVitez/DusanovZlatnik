@@ -589,9 +589,13 @@
       <div class="modal-content">
         <span class="close">&times;</span>
         <h2>Желим један Душанов златник на дар</h2>
+        <label>
+          <input type="checkbox" id="termsCheckbox" />
+          Прихватам <a href="docs/terms.html" target="_blank">услове коришћења</a>
+        </label>
         <label for="walletInput">Адреса моје дигиталне ризнице:</label>
-        <input type="text" id="walletInput" placeholder="0x..." />
-        <button id="sendRequest">Пошаљи захтев</button>
+        <input type="text" id="walletInput" placeholder="0x..." disabled />
+        <button id="sendRequest" disabled>Пошаљи захтев</button>
       </div>
     </div>
 
@@ -602,6 +606,7 @@
     const giftModal = document.getElementById('giftModal');
     const closeBtn = giftModal.querySelector('.close');
 
+   
     // Otvori modal na klik dugmeta
     giftButton.addEventListener('click', () => {
       giftModal.style.display = 'block';
@@ -644,6 +649,29 @@
     animate();
 
 
+    //checkbox prihvatam uslove
+    const termsCheckbox = document.getElementById('termsCheckbox');
+    const walletInput = document.getElementById('walletInput');
+    const sendRequestButton = document.getElementById('sendRequest');
+
+    // Kada korisnik čekira "Prihvatam uslove", omogući input
+    termsCheckbox.addEventListener('change', () => {
+      walletInput.disabled = !termsCheckbox.checked;
+      validateWallet(); // odmah proverava da li je adresa dobra
+    });
+
+    // Kada korisnik unosi adresu, proverava se validnost
+    walletInput.addEventListener('input', validateWallet);
+
+    function validateWallet() {
+      const address = walletInput.value.trim();
+      const isValid = /^0x[a-fA-F0-9]{40}$/.test(address);
+      const termsAccepted = termsCheckbox.checked;
+
+      sendRequestButton.disabled = !(isValid && termsAccepted);
+    }
+
+
     // Slanje adrese na Telegram
     document.getElementById('sendRequest').addEventListener('click', function () {
       const walletAddress = document.getElementById('walletInput').value.trim();
@@ -680,11 +708,6 @@
           alert('Мрежна грешка: ' + error.message);
         });
     });
-
-
-
-
-
 
   </script>
 
