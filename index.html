@@ -160,12 +160,14 @@
       .legal-links a {
         color: #d9d4c9;
         text-decoration: none;
-        padding: 0 0.4rem;         /* levo i desno padding */
-        margin-right: 0.3rem;      /* razmak između linkova */
+        padding-right: 0.4rem;  /* razmak između teksta i linije */
         border-right: 1px solid #d9d4c9;
+        margin-left: 0.4rem;    /* razmak sa desnim linkom */
         transition: color 0.3s ease;        
       }          
-
+      .legal-links a:first-child {
+        margin-left: 0;         /* prvi link da ne beži ulevo */
+      }
       .legal-links a:last-child {
         border-right: none;
         margin-right: 0;
