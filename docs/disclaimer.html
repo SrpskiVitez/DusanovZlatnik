@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html lang="sr">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="manifest" href="../site.webmanifest">
   <title>Одрицање одговорности | Душанов Златник</title>
   <style>
     body {
@@ -13,23 +18,51 @@
       background: #0d1b2a;
       color: #d9d4c9;
     }
-    h1 {
+
+    h1,
+    h2 {
       color: #f7f3e9;
     }
-    p {
+
+    p,
+    li {
       line-height: 1.6;
     }
-    footer {
-      margin-top: 40px;
-      font-size: 0.9em;
-      color: #bbb;
-      text-align: center;
+
+    ol {
+      margin-left: 20px;
     }
+
+    footer {
+      margin-top: 2.5rem;
+      font-size: 0.9em;
+      color: #d9d4c9;
+      text-align: center;
+      border-top: 1px solid #d9d4c9;
+      padding: 1.5rem 0 2.5rem;
+    }
+
+    footer a {
+      display: block;
+      margin-top: 1.5rem;
+      margin-bottom: 1rem;
+      color: #f7f3e9;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      font-size: 1.5em;
+    }
+
+    footer a:hover {
+      color: #b9a46c;
+      text-decoration: underline;
+    }
+
 
     .lang-btns {
       text-align: center;
       margin-bottom: 20px;
     }
+
     button.lang-btn {
       margin: 0 10px;
       padding: 10px 20px;
@@ -42,10 +75,12 @@
       border-radius: 30px;
       transition: background-color 0.3s ease, color 0.3s ease;
     }
+
     button.lang-btn:hover {
       background-color: #f7f3e9;
       color: #0d1b2a;
     }
+
     button.lang-btn.active {
       background-color: #f7f3e9;
       color: #0d1b2a;
@@ -54,6 +89,7 @@
     .lang-section {
       display: none;
     }
+
     .lang-section.active {
       display: block;
     }
@@ -61,11 +97,10 @@
     a {
       color: #f7f3e9;
     }
+
     a:hover {
       color: #d9d4c9;
     }
-
-
 
     @media (max-width: 600px) {
       body {
@@ -73,19 +108,27 @@
         padding: 15px 10px;
         box-sizing: border-box;
       }
-    
+
       button.lang-btn {
         margin: 5px 5px;
         padding: 8px 12px;
         font-size: 0.9rem;
       }
+
+      footer {
+        font-size: 0.85em;
+        padding-top: 0.8rem;
+        margin-top: 2rem;
+      }
+
+      footer a {
+        display: block;
+        margin-top: 1.5rem;
+      }
     }
-
-
-
-    
   </style>
 </head>
+
 <body>
 
   <div class="lang-btns">
@@ -100,10 +143,13 @@
     <p>Овај пројекат није финансијски савет, инвестициона понуда, нити подстицај за профит.</p>
     <p>Све информације и токени се пружају „као што јесу“, без било каквих гаранција.</p>
     <p>Корисници сами преузимају ризик учешћа у пројекту.</p>
-    <p>Токен није доступан за куповину особама из држава са строгом регулативом дигиталних средстава (нпр. САД, Канада, Кина).</p>
+    <p>Куповина токена није доступна особама из држава са строгом регулативом дигиталних средстава, укључујући, али
+        не ограничавајући се на, Сједињене Америчке Државе, Канаду и Кину.</p>
+    <br />
     <p><em>Последње ажурирање: јул 2025.</em></p>
     <footer>
-        © 2025 Душанов Златник. Сва права задржана.
+      © 2025 Душанов Златник. Сва права задржана.
+      <a href="https://srpskivitez.github.io/DusanovZlatnik">← Назад на почетну</a>
     </footer>
   </section>
 
@@ -113,11 +159,14 @@
     <p>Ovaj projekat nije finansijski savet, investiciona ponuda, niti podsticaj za profit.</p>
     <p>Sve informacije i tokeni se pružaju „kao što jesu“, bez bilo kakvih garancija.</p>
     <p>Korisnici sami preuzimaju rizik učešća u projektu.</p>
-    <p>Token nije dostupan za kupovinu osobama iz država sa strogom regulativom digitalnih sredstava (npr. SAD, Kanada, Kina).</p>
+    <p>Kupovina tokena nije dostupna osobama iz država sa strogom regulativom digitalnih sredstava, uključujući, ali
+        ne ograničavajući se na, Sjedinjene Američke Države, Kanadu i Kinu.</p>
+    <br />
     <p><em>Poslednje ažuriranje: jul 2025.</em></p>
     <footer>
       © 2025 Dušanov Zlatnik. Sva prava zadržana.
-     </footer>
+      <a href="https://srpskivitez.github.io/DusanovZlatnik">← Nazad na početnu</a>
+    </footer>
   </section>
 
   <!-- English -->
@@ -126,11 +175,14 @@
     <p>This project does not constitute financial advice, investment offer, or profit incentive.</p>
     <p>All information and tokens are provided “as is” without any warranties.</p>
     <p>Users participate in the project at their own risk.</p>
-    <p>The token is not available for purchase by persons from countries with strict digital asset regulations (e.g., USA, Canada, China).</p>
+    <p>Purchase of the token is not available to persons from countries with strict digital asset regulations,
+        including but not limited to the United States, Canada, and China.</p>
+    <br />
     <p><em>Last updated: July 2025.</em></p>
-     <footer>
+    <footer>
       © 2025 Dusanov Zlatnik. All rights reserved.
-     </footer>
+      <a href="https://srpskivitez.github.io/DusanovZlatnik">← Back to Home</a>
+    </footer>
   </section>
 
   <script>
@@ -157,4 +209,5 @@
     showLanguage("cyr");
   </script>
 </body>
+
 </html>
