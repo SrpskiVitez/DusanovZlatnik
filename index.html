@@ -104,11 +104,17 @@
       .footer-note {
         text-align: center;
         color: #d9d4c9;
-        font-size: 0.9rem;
-        margin-top: 3rem;
-        margin-bottom: 1rem;
+        font-size: 0.9rem;       
         font-family: 'Merriweather', serif;
         opacity: 0.8;
+        /*
+         margin-top: 3rem;
+        margin-bottom: 1rem;
+        */
+        padding: 1.5rem 1rem;
+  background-color: rgba(185, 164, 108, 0.1); /* bledo krem boja transparentna */
+  border-top: 1px solid #b9a46c;
+  border-radius: 0 0 15px 15px;
       }
       p, ul {
         font-weight: 400;
@@ -139,19 +145,29 @@
       .legal-links {
         margin-top: 0.5rem;
         font-size: 0.9rem;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        color: #d9d4c9;/*?*/
       }
       
       .legal-links a {
         color: #d9d4c9;
         text-decoration: none;
         margin: 0 0.3rem;
+        border-right: 1px solid #b9a46c;/*?*/
         transition: color 0.3s ease;
+      }          
+      .legal-links a:last-child {
+        border-right: none;
       }
-      
       .legal-links a:hover {
-        color: #b9a46c;
+       
+        color: #f7f3e9;/*?   #b9a46c;  */
         text-decoration: underline;
       }
+      
       .cta {
         margin-top: 3.5rem;
         margin-bottom: 5rem;
@@ -460,11 +476,7 @@ main.container {
        <button id="buy" class="cta-mail">Куповина златника</button> 
        <button id="giftButton" class="cta-mail">Златник на дар</button>
       </div>
-<!--
-      <div class="footer-note">
-        © 2025 Dušanov Zлатnik. All rights reserved.
-      </div>
-  -->
+
     <div class="social-icons">
       <a href="https://linkedin.com/company/dusanov-zlatnik" target="_blank" rel="noopener noreferrer" title="LinkedIn">
         <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" title="LinkedIn">
@@ -472,8 +484,8 @@ main.container {
       <a href="https://www.instagram.com/dusanovzlatnik/" target="_blank" rel="noopener noreferrer" title="Instagram">
         <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" title="Instagram">
       </a>
-      <a href="docs/whitepaper.html" target="_blank" rel="noopener noreferrer" title="Whitepaper">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/readthedocs.svg" alt="Whitepaper" title="Whitepaper">
+     <a href="mailto:Dusanov.Zlatnik@gmail.com?subject=Порука%20са%20званичног%20сајта%20Душанов%20Златник&body=Поштовање,%0D%0A%0D%0Aконтактирам Вас поводом пројекта Душанов Златник. Молим Вас за више информација или могућност сарадње.%0D%0A%0D%0AСрдачан поздрав,%0D%0A[Ваше име]" target="_blank" rel="noopener noreferrer" title="Пошаљи имејл">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/maildotru.svg" alt="Пошаљи имејл" title="Пошаљи имејл">
       </a>
       <!-- Telegram kanal – zvanična obaveštenja -->
       <a href="https://t.me/+aLOYL9EVnck1NjBk" target="_blank" rel="noopener noreferrer" title="Telegram канал | обавештења">
@@ -493,6 +505,7 @@ main.container {
           <a href="docs/disclaimer.html" class="bold-link" target="_blank" rel="noopener noreferrer">Правна напомена</a> |
           <a href="docs/privacy.html" class="bold-link" target="_blank" rel="noopener noreferrer">Политика приватности</a> |         
           <a href="docs/utility-status.html" class="bold-link" target="_blank" rel="noopener noreferrer">Статус корисности</a>
+          <a href="docs/whitepaper.html" class="bold-link" target="_blank" rel="noopener noreferrer">Бела књига(Tех. док.)</a>
       </div>
     </div>
 
