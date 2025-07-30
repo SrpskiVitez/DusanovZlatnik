@@ -426,7 +426,14 @@
       margin-top: 0.5em;
       flex-wrap: nowrap;
       white-space: nowrap;
+      font-size: 0.95rem;
     }
+
+    .modal-content label.terms-inline input[type="checkbox"] {
+      vertical-align: middle;
+      transform: translateY(1px);
+    }
+
 
     /* Mobile tweaki */
     @media (max-width: 700px) {
@@ -500,7 +507,7 @@
       }
 
       .modal-content label.terms-inline {
-        font-size: 0.7rem;
+        font-size: 0.6rem;
         flex-wrap: wrap;
       }
 
@@ -618,12 +625,12 @@
       <div class="modal-content">
         <span class="close">&times;</span>
         <h2>Желим један Душанов златник на дар</h2>
-       
+
         <label class="terms-inline">
           <input type="checkbox" id="termsCheckbox" />
           <span>Прихватам&nbsp;<a href="docs/terms.html" target="_blank">услове коришћења</a></span>
         </label>
-       
+
         <label for="walletInput">Адреса моје дигиталне ризнице:</label>
         <input type="text" id="walletInput" placeholder="0x..." disabled />
         <button id="sendRequest" disabled>Пошаљи захтев</button>
