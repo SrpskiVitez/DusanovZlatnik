@@ -419,20 +419,39 @@
     }
 
     .modal-content label.terms-inline {
-      display: inline-flex;
+      display: flex;
       align-items: center;
+      justify-content: center;
       gap: 0.4em;
       font-weight: normal;
-      margin-top: 0.5em;
+      margin-top: 1em;
       flex-wrap: nowrap;
       white-space: nowrap;
       font-size: 0.95rem;
     }
 
     .modal-content label.terms-inline input[type="checkbox"] {
-      vertical-align: middle;
-      transform: translateY(1px);
-    }
+  appearance: none;
+  width: 1.1em;
+  height: 1.1em;
+  border: 2px solid #b9a46c;
+  border-radius: 3px;
+  margin: 0;
+  position: relative;
+  top: 0.05em;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.modal-content label.terms-inline input[type="checkbox"]:checked::before {
+  content: '✓';
+  position: absolute;
+  font-size: 0.8em;
+  top: -0.1em;
+  left: 0.15em;
+  color: #b9a46c;
+}
 
 
     /* Mobile tweaki */
@@ -507,8 +526,7 @@
       }
 
       .modal-content label.terms-inline {
-        font-size: 0.6rem;
-        flex-wrap: wrap;
+        overflow-x: auto;
       }
 
       /* Novčić wrapper */
