@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="sr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="manifest" href="../site.webmanifest">
+
+  <title>Упутство за MetaMask | Душанов Златник</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+      background: #0d1b2a;
+      color: #d9d4c9;
+    }
+
+    h1,
+    h2 {
+      color: #f7f3e9;
+    }
+
+    p,
+    li {
+      line-height: 1.6;
+    }
+
+    ol {
+      margin-left: 20px;
+    }
+
+    footer {
+      margin-top: 2.5rem;
+      font-size: 0.9em;
+      color: #d9d4c9;
+      text-align: center;
+      border-top: 1px solid #d9d4c9;
+      padding: 1.5rem 0 2.5rem;
+    }
+
+    footer a {
+      display: block;
+      margin-top: 1.5rem;
+      margin-bottom: 1rem;
+      color: #f7f3e9;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      font-size: 1.5em;
+    }
+
+    footer a:hover {
+      color: #b9a46c;
+      text-decoration: underline;
+    }
+
+    .lang-btns {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    button.lang-btn {
+      margin: 0 10px;
+      padding: 10px 20px;
+      cursor: pointer;
+      border: 2px solid #f7f3e9;
+      background: transparent;
+      color: #f7f3e9;
+      font-weight: 700;
+      font-size: 1rem;
+      border-radius: 30px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    button.lang-btn:hover {
+      background-color: #f7f3e9;
+      color: #0d1b2a;
+    }
+
+    button.lang-btn.active {
+      background-color: #f7f3e9;
+      color: #0d1b2a;
+    }
+
+    .lang-section {
+      display: none;
+    }
+
+    .lang-section.active {
+      display: block;
+    }
+
+    a {
+      color: #f7f3e9;
+    }
+
+    a:hover {
+      color: #d9d4c9;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        max-width: 100%;
+        padding: 15px 10px;
+        box-sizing: border-box;
+      }
+
+      button.lang-btn {
+        margin: 5px 5px;
+        padding: 8px 12px;
+        font-size: 0.9rem;
+      }
+
+      footer {
+        font-size: 0.85em;
+        padding-top: 0.8rem;
+        margin-top: 2rem;
+      }
+
+      footer a {
+        display: block;
+        margin-top: 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="lang-btns">
+    <button class="lang-btn active" data-lang="cyr">Ћирилица</button>
+    <button class="lang-btn" data-lang="lat">Latinica</button>
+    <button class="lang-btn" data-lang="eng">English</button>
+  </div>
+
+  <!-- Ћирилица -->
+  <section id="cyr" class="lang-section active">
+    <h1>Како додати Душанов Златник у MetaMask</h1>
+
+    <h2>1. Инсталација MetaMask-а</h2>
+    <p>Преузмите и инсталирајте MetaMask према уређају који користите:</p>
+    <ul>
+      <li><a href="https://apps.apple.com/app/metamask/id1438144202" target="_blank">iOS (App Store)</a></li>
+      <li><a href="https://play.google.com/store/apps/details?id=io.metamask" target="_blank">Android (Google Play)</a></li>
+      <li><a href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn" target="_blank">Chrome / Brave екстензија (Windows/Mac)</a></li>
+      <li><a href="https://metamask.io/download/" target="_blank">Званични сајт за све платформе</a></li>
+    </ul>
+
+<h2>2. Додавање BNB Smart Chain мреже</h2>
+<p>Отворите MetaMask → Подешавања → Мреже → <a href="https://chainlist.org/chain/56" target="_blank">Додај мрежу BNB Smart Chain преко Chainlist</a>, или ручно унесите следеће параметре (извор: <a href="https://academy.binance.com/en/articles/connecting-metamask-to-binance-smart-chain" target="_blank">Binance Academy</a>):</p>
+<ul>
+  <li><strong>Network Name:</strong> <a href="https://www.bnbchain.org/en" target="_blank">BNB Smart Chain</a></li>
+  <li><strong>New RPC URL:</strong> <a href="https://bsc-dataseed.binance.org/" target="_blank">https://bsc-dataseed.binance.org/</a></li>
+  <li><strong>Chain ID:</strong> 56</li>
+  <li><strong>Currency Symbol:</strong> BNB</li>
+  <li><strong>Block Explorer URL:</strong> <a href="https://bscscan.com" target="_blank">https://bscscan.com</a></li>
+</ul>
+
+   <p>Након што сте на BNB мрежи, кликните „Увези токен“ и ручно унесите:</p>
+<ul>
+  <li><strong>Token Contract Address:</strong> 0x27a81dce6f4bd0f2a6f3c17e195ecdb773051a00</li>
+  <li><strong>Symbol:</strong> ZLATNIK</li>
+  <li><strong>Decimals:</strong> 18</li>
+</ul>
+<p>Можете проверити податке и на званичном <a href="https://bscscan.com/token/0x27a81dce6f4bd0f2a6f3c17e195ecdb773051a00" target="_blank">BscScan профилу токена</a>.</p>
+
+
+    <p>По завршетку, Душанов Златник ће бити видљив у вашем новчанику.</p>
+
+    <br />
+    <p><em>Последње ажурирање: јул 2025.</em></p>
+    <footer>
+      © 2025 Душанов Златник. Сва права задржана.
+      <a href="https://srpskivitez.github.io/DusanovZlatnik">← Назад на почетну</a>
+    </footer>
+  </section>
+
+  <!-- Latinica -->
+  <section id="lat" class="lang-section">
+    <h1>Kako dodati Dušanov Zlatnik u MetaMask</h1>
+
+<h2>1. Instalacija MetaMask-a</h2>
+<p>Preuzmite i instalirajte MetaMask prema uređaju koji koristite:</p>
+<ul>
+  <li><a href="https://apps.apple.com/app/metamask/id1438144202" target="_blank">iOS (App Store)</a></li>
+  <li><a href="https://play.google.com/store/apps/details?id=io.metamask" target="_blank">Android (Google Play)</a></li>
+  <li><a href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn" target="_blank">Chrome / Brave ekstenzija (Windows/Mac)</a></li>
+  <li><a href="https://metamask.io/download/" target="_blank">Zvanični sajt za sve platforme</a></li>
+</ul>
+
+<h2>2. Dodavanje BNB Smart Chain mreže</h2>
+<p>Otvorite MetaMask → Podešavanja → Mreže → <a href="https://chainlist.org/chain/56" target="_blank">Dodaj mrežu BNB Smart Chain preko Chainlist</a>, ili ručno unesite sledeće parametre (izvor: <a href="https://academy.binance.com/en/articles/connecting-metamask-to-binance-smart-chain" target="_blank">Binance Academy</a>):</p>
+<ul>
+  <li><strong>Network Name:</strong> <a href="https://www.bnbchain.org/en" target="_blank">BNB Smart Chain</a></li>
+  <li><strong>New RPC URL:</strong> <a href="https://bsc-dataseed.binance.org/" target="_blank">https://bsc-dataseed.binance.org/</a></li>
+  <li><strong>Chain ID:</strong> 56</li>
+  <li><strong>Currency Symbol:</strong> BNB</li>
+  <li><strong>Block Explorer URL:</strong> <a href="https://bscscan.com" target="_blank">https://bscscan.com</a></li>
+</ul>
+
+<p>Nakon što ste na BNB mreži, kliknite „Uvezi token“ i ručno unesite:</p>
+<ul>
+  <li><strong>Token Contract Address:</strong> 0x27a81dce6f4bd0f2a6f3c17e195ecdb773051a00</li>
+  <li><strong>Symbol:</strong> ZLATNIK</li>
+  <li><strong>Decimals:</strong> 18</li>
+</ul>
+<p>Možete proveriti podatke i na zvaničnom <a href="https://bscscan.com/token/0x27a81dce6f4bd0f2a6f3c17e195ecdb773051a00" target="_blank">BscScan profilu tokena</a>.</p>
+
+<p>Po završetku, Dušanov Zlatnik će biti vidljiv u vašem novčaniku.</p>
+
+
+    <br />
+    <p><em>Poslednje ažuriranje: jul 2025.</em></p>
+    <footer>
+      © 2025 Dušanov Zlatnik. Sva prava zadržana.
+      <a href="https://srpskivitez.github.io/DusanovZlatnik">← Nazad na početnu</a>
+    </footer>
+  </section>
+
+  <!-- English -->
+  <section id="eng" class="lang-section">
+    <h1>How to Add Dušanov Zlatnik to MetaMask</h1>
+
+<h2>1. Installing MetaMask</h2>
+<p>Download and install MetaMask for your device:</p>
+<ul>
+  <li><a href="https://apps.apple.com/app/metamask/id1438144202" target="_blank">iOS (App Store)</a></li>
+  <li><a href="https://play.google.com/store/apps/details?id=io.metamask" target="_blank">Android (Google Play)</a></li>
+  <li><a href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn" target="_blank">Chrome / Brave Extension (Windows/Mac)</a></li>
+  <li><a href="https://metamask.io/download/" target="_blank">Official Website for All Platforms</a></li>
+</ul>
+
+<h2>2. Adding the BNB Smart Chain Network</h2>
+<p>Open MetaMask → Settings → Networks → <a href="https://chainlist.org/chain/56" target="_blank">Add BNB Smart Chain network via Chainlist</a>, or manually enter the following parameters (source: <a href="https://academy.binance.com/en/articles/connecting-metamask-to-binance-smart-chain" target="_blank">Binance Academy</a>):</p>
+<ul>
+  <li><strong>Network Name:</strong> <a href="https://www.bnbchain.org/en" target="_blank">BNB Smart Chain</a></li>
+  <li><strong>New RPC URL:</strong> <a href="https://bsc-dataseed.binance.org/" target="_blank">https://bsc-dataseed.binance.org/</a></li>
+  <li><strong>Chain ID:</strong> 56</li>
+  <li><strong>Currency Symbol:</strong> BNB</li>
+  <li><strong>Block Explorer URL:</strong> <a href="https://bscscan.com" target="_blank">https://bscscan.com</a></li>
+</ul>
+
+<p>Once connected to the BNB network, click "Import Token" and manually enter:</p>
+<ul>
+  <li><strong>Token Contract Address:</strong> 0x27a81dce6f4bd0f2a6f3c17e195ecdb773051a00</li>
+  <li><strong>Symbol:</strong> ZLATNIK</li>
+  <li><strong>Decimals:</strong> 18</li>
+</ul>
+<p>You can also verify the details on the official <a href="https://bscscan.com/token/0x27a81dce6f4bd0f2a6f3c17e195ecdb773051a00" target="_blank">BscScan token profile</a>.</p>
+
+<p>After completing these steps, Dušanov Zlatnik will be visible in your wallet.</p>
+
+
+    <br />
+    <p><em>Last updated: July 2025.</em></p>
+    <footer>
+      © 2025 Dusanov Zlatnik. All rights reserved.
+      <a href="https://srpskivitez.github.io/DusanovZlatnik">← Back to Home</a>
+    </footer>
+  </section>
+
+  <script>
+    function showLanguage(lang) {
+      document.querySelectorAll(".lang-section").forEach(section => {
+        section.classList.remove("active");
+      });
+      document.getElementById(lang).classList.add("active");
+
+      document.querySelectorAll(".lang-btn").forEach(btn => {
+        btn.classList.remove("active");
+      });
+      document.querySelector(`.lang-btn[data-lang="${lang}"]`).classList.add("active");
+    }
+
+    document.querySelectorAll(".lang-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const lang = btn.getAttribute("data-lang");
+        showLanguage(lang);
+      });
+    });
+
+    showLanguage("cyr");
+  </script>
+</body>
+
+</html>
