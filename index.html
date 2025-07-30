@@ -413,7 +413,16 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5em;
-      font-size: 0.95rem; /* malo manje da stane lepo i na mobilnom */
+      font-size: 0.95rem;
+      /* malo manje da stane lepo i na mobilnom */
+      margin-top: 1em;
+    }
+
+    .modal-content label.terms-inline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5em;
+      font-weight: normal;
       margin-top: 1em;
     }
 
@@ -486,6 +495,11 @@
         border-right: none;
         padding: 0;
         margin: 0;
+      }
+
+      .modal-content label.terms-inline {
+        font-size: 0.9rem;
+        flex-wrap: wrap;
       }
 
       /* Novčić wrapper */
@@ -602,7 +616,7 @@
       <div class="modal-content">
         <span class="close">&times;</span>
         <h2>Желим један Душанов златник на дар</h2>
-        <label>
+        <label class="terms-inline">
           <input type="checkbox" id="termsCheckbox" />
           Прихватам <a href="docs/terms.html" target="_blank">услове коришћења</a>
         </label>
@@ -619,7 +633,7 @@
     const giftModal = document.getElementById('giftModal');
     const closeBtn = giftModal.querySelector('.close');
 
-   
+
     // Otvori modal na klik dugmeta
     giftButton.addEventListener('click', () => {
       giftModal.style.display = 'block';
