@@ -89,8 +89,7 @@
         color: #b9a46c;
         text-decoration: underline solid;
       }
-
-      
+   
       main.container {
         max-width: 850px;
         width: 100%;
@@ -101,20 +100,23 @@
         box-shadow: 0 15px 40px rgba(0,0,0,0.7);
         box-sizing: border-box;
       }     
+      
       .footer-note {
         text-align: center;
         color: #d9d4c9;
         font-size: 0.9rem;       
         font-family: 'Merriweather', serif;
-        opacity: 0.8;
-        /*
-         margin-top: 3rem;
-        margin-bottom: 1rem;
-        */
+        opacity: 0.8;        
+        margin-top: 3rem;
+        margin-bottom: 1rem;        
         padding: 1.5rem 1rem;
-  background-color: rgba(185, 164, 108, 0.1); /* bledo krem boja transparentna */
-  border-top: 1px solid #b9a46c;
-  border-radius: 0 0 15px 15px;
+        background-color: rgba(185, 164, 108, 0.1); /* bledo krem boja transparentna */
+        border-top: 1px solid #b9a46c;
+        border-radius: 0 0 15px 15px;
+      }
+      .footer-note:hover {
+        color: #f7f3e9;
+        transition: color 0.3s ease;
       }
       p, ul {
         font-weight: 400;
@@ -155,16 +157,12 @@
       .legal-links a {
         color: #d9d4c9;
         text-decoration: none;
-        margin: 0 0.3rem;
-        border-right: 1px solid #b9a46c;/*?*/
+        margin: 0 0.3rem;  
         transition: color 0.3s ease;
       }          
-      .legal-links a:last-child {
-        border-right: none;
-      }
-      .legal-links a:hover {
-       
-        color: #f7f3e9;/*?   #b9a46c;  */
+
+      .legal-links a:hover {       
+        color: #f7f3e9;
         text-decoration: underline;
       }
       
@@ -263,7 +261,11 @@
         height: 24px;
         filter: invert(88%) sepia(12%) saturate(223%) hue-rotate(5deg) brightness(90%) contrast(85%);
       }
-      
+      .social-icons a:hover {
+        transform: scale(1.15);
+        color: #d1c488;
+        transition: transform 0.3s ease, color 0.3s ease;
+      }
       .social-icons a:hover img {
         transform: scale(1.2);
         filter: invert(65%) sepia(35%) saturate(741%) hue-rotate(15deg) brightness(100%) contrast(92%);
@@ -504,7 +506,7 @@ main.container {
           <a href="docs/terms.html" class="bold-link" target="_blank" rel="noopener noreferrer">Услови коришћења</a> |
           <a href="docs/disclaimer.html" class="bold-link" target="_blank" rel="noopener noreferrer">Правна напомена</a> |
           <a href="docs/privacy.html" class="bold-link" target="_blank" rel="noopener noreferrer">Политика приватности</a> |         
-          <a href="docs/utility-status.html" class="bold-link" target="_blank" rel="noopener noreferrer">Статус корисности</a>
+          <a href="docs/utility-status.html" class="bold-link" target="_blank" rel="noopener noreferrer">Статус корисности</a> |
           <a href="docs/whitepaper.html" class="bold-link" target="_blank" rel="noopener noreferrer">Бела књига(Tех. док.)</a>
       </div>
     </div>
