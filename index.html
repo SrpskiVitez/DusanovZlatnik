@@ -160,9 +160,18 @@
       .legal-links a {
         color: #d9d4c9;
         text-decoration: none;
+        padding-right: 0.5rem;  /* razmak između teksta i linije */
+        margin-right: 0.5rem;   /* razmak posle linije */
         margin: 0 0.3rem;  
-        transition: color 0.3s ease;
+        border-right: 1px solid #d9d4c9;
+        transition: color 0.3s ease;        
       }          
+
+      .legal-links a:last-child {
+        border-right: none;
+        margin-right: 0;
+        padding-right: 0;
+      }
 
       .legal-links a:hover {       
         color: #f7f3e9;
@@ -436,6 +445,7 @@
         .legal-links a {
           border-right: none;
           padding: 0;
+          margin: 0;
         }
         
         /* Novčić wrapper */
@@ -521,10 +531,10 @@
     <div class="footer-note">
         © 2025 Душанов Златник. Сва права задржана.
         <div class="legal-links">
-          <a href="docs/terms.html" class="bold-link" target="_blank" rel="noopener noreferrer">Услови коришћења</a> |
-          <a href="docs/disclaimer.html" class="bold-link" target="_blank" rel="noopener noreferrer">Правна напомена</a> |
-          <a href="docs/privacy.html" class="bold-link" target="_blank" rel="noopener noreferrer">Политика приватности</a> |         
-          <a href="docs/utility-status.html" class="bold-link" target="_blank" rel="noopener noreferrer">Статус корисности</a> |
+          <a href="docs/terms.html" class="bold-link" target="_blank" rel="noopener noreferrer">Услови коришћења</a> 
+          <a href="docs/disclaimer.html" class="bold-link" target="_blank" rel="noopener noreferrer">Правна напомена</a> 
+          <a href="docs/privacy.html" class="bold-link" target="_blank" rel="noopener noreferrer">Политика приватности</a>         
+          <a href="docs/utility-status.html" class="bold-link" target="_blank" rel="noopener noreferrer">Статус корисности</a>
           <a href="docs/whitepaper.html" class="bold-link" target="_blank" rel="noopener noreferrer">Бела књига(Tех. док.)</a>
       </div>
     </div>
