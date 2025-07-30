@@ -403,7 +403,11 @@
       padding-left: 1.5rem;
       padding-right: 1.5rem;
     }
-
+    
+    #sendRequest:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
     /* Mobile tweaki */
     @media (max-width: 700px) {
       .modal-content {
@@ -589,7 +593,7 @@
       <div class="modal-content">
         <span class="close">&times;</span>
         <h2>Желим један Душанов златник на дар</h2>
-        <label>
+        <label style="display: inline-flex; align-items: center; gap: 0.5em; margin-top: 1em;"></label>>
           <input type="checkbox" id="termsCheckbox" />
           Прихватам <a href="docs/terms.html" target="_blank">услове коришћења</a>
         </label>
