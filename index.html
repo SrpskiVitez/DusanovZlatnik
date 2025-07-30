@@ -421,9 +421,11 @@
     .modal-content label.terms-inline {
       display: inline-flex;
       align-items: center;
-      gap: 0.2em;
+      gap: 0.4em;
       font-weight: normal;
       margin-top: 0.5em;
+      flex-wrap: nowrap;
+      white-space: nowrap;
     }
 
     /* Mobile tweaki */
@@ -616,10 +618,12 @@
       <div class="modal-content">
         <span class="close">&times;</span>
         <h2>Желим један Душанов златник на дар</h2>
+       
         <label class="terms-inline">
           <input type="checkbox" id="termsCheckbox" />
-          Прихватам <a href="docs/terms.html" target="_blank">услове коришћења</a>
+          <span>Прихватам&nbsp;<a href="docs/terms.html" target="_blank">услове коришћења</a></span>
         </label>
+       
         <label for="walletInput">Адреса моје дигиталне ризнице:</label>
         <input type="text" id="walletInput" placeholder="0x..." disabled />
         <button id="sendRequest" disabled>Пошаљи захтев</button>
