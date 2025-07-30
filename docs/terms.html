@@ -23,27 +23,34 @@
       margin-left: 20px;
     }
     footer {
-        margin-top: 2.5rem;
-        font-size: 0.9em;
-        color: #d9d4c9;
-        text-align: center;
-        border-top: 1px solid #d9d4c9;
-        padding-top: 1rem;
-      }
-      
-      footer a {
-        color: #d9d4c9;
-        text-decoration: none;
-        padding-left: 0.5rem;
-        border-left: 1px solid #d9d4c9;
-        margin-left: 0.5rem;
-        transition: color 0.3s ease;
-      }
-      
-      footer a:hover {
-        color: #f7f3e9;
-      }
-
+      margin-top: 3rem;      /* više razmaka iznad */
+      padding: 1.5rem 0 2.5rem;  /* više paddinga, naročito dole */
+      font-size: 0.9em;
+      color: #bbb;
+      text-align: center;
+      background: #081126;  /* diskretna pozadina da se odvoji */
+      border-top: 1px solid #333;
+      border-radius: 8px;
+    }
+    
+    footer a.back-link {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 8px 20px;
+      background-color: #f7f3e9;
+      color: #0d1b2a;
+      font-weight: 700;
+      border-radius: 25px;
+      text-decoration: none;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    
+    footer a.back-link:hover {
+      background-color: #d9d4c9;
+      color: #0d1b2a;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    }
 
     .lang-btns {
       text-align: center;
@@ -139,7 +146,7 @@
     <p><em>Последње ажурирање: јул 2025.</em></p>
       <footer>
     © 2025 Душанов Златник. Сва права задржана.
-        <a href="https://srpskivitez.github.io/DusanovZlatnik">Назад на почетну</a>
+        <a href="https://srpskivitez.github.io/DusanovZlatnik" class="back-link">Назад на почетну</a>
   </footer>
   </section>
 
@@ -163,7 +170,7 @@
     <p><em>Poslednje ažuriranje: jul 2025.</em></p>
     <footer>
       © 2025 Dušanov Zlatnik. Sva prava zadržana.
-      <a href="https://srpskivitez.github.io/DusanovZlatnik">Nazad na početnu</a>
+      <a href="https://srpskivitez.github.io/DusanovZlatnik" class="back-link">Nazad na početnu</a>
 
     </footer>
   </section>
@@ -189,7 +196,7 @@
 
      <footer>
       © 2025 Dusanov Zlatnik. All rights reserved.
-       <a href="https://srpskivitez.github.io/DusanovZlatnik">Back to Home</a>
+       <a href="https://srpskivitez.github.io/DusanovZlatnik" class="back-link">Back to Home</a>
 
      </footer>
   </section>
