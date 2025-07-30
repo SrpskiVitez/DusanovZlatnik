@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html lang="sr">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="manifest" href="../site.webmanifest">
+
   <title>Политика приватности | Душанов Златник</title>
   <style>
     body {
@@ -13,23 +19,51 @@
       background: #0d1b2a;
       color: #d9d4c9;
     }
-    h1 {
+
+    h1,
+    h2 {
       color: #f7f3e9;
     }
-    p {
+
+    p,
+    li {
       line-height: 1.6;
     }
-    footer {
-      margin-top: 40px;
-      font-size: 0.9em;
-      color: #bbb;
-      text-align: center;
+
+    ol {
+      margin-left: 20px;
     }
+
+    footer {
+      margin-top: 2.5rem;
+      font-size: 0.9em;
+      color: #d9d4c9;
+      text-align: center;
+      border-top: 1px solid #d9d4c9;
+      padding: 1.5rem 0 2.5rem;
+    }
+
+    footer a {
+      display: block;
+      margin-top: 1.5rem;
+      margin-bottom: 1rem;
+      color: #f7f3e9;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      font-size: 1.5em;
+    }
+
+    footer a:hover {
+      color: #b9a46c;
+      text-decoration: underline;
+    }
+
 
     .lang-btns {
       text-align: center;
       margin-bottom: 20px;
     }
+
     button.lang-btn {
       margin: 0 10px;
       padding: 10px 20px;
@@ -42,10 +76,12 @@
       border-radius: 30px;
       transition: background-color 0.3s ease, color 0.3s ease;
     }
+
     button.lang-btn:hover {
       background-color: #f7f3e9;
       color: #0d1b2a;
     }
+
     button.lang-btn.active {
       background-color: #f7f3e9;
       color: #0d1b2a;
@@ -54,6 +90,7 @@
     .lang-section {
       display: none;
     }
+
     .lang-section.active {
       display: block;
     }
@@ -61,25 +98,38 @@
     a {
       color: #f7f3e9;
     }
+
     a:hover {
       color: #d9d4c9;
     }
 
     @media (max-width: 600px) {
-    body {
-      max-width: 100%;
-      padding: 15px 10px;
-      box-sizing: border-box;
+      body {
+        max-width: 100%;
+        padding: 15px 10px;
+        box-sizing: border-box;
+      }
+
+      button.lang-btn {
+        margin: 5px 5px;
+        padding: 8px 12px;
+        font-size: 0.9rem;
+      }
+
+      footer {
+        font-size: 0.85em;
+        padding-top: 0.8rem;
+        margin-top: 2rem;
+      }
+
+      footer a {
+        display: block;
+        margin-top: 1.5rem;
+      }
     }
-  
-    button.lang-btn {
-      margin: 5px 5px;
-      padding: 8px 12px;
-      font-size: 0.9rem;
-    }
-  }
   </style>
 </head>
+
 <body>
 
   <div class="lang-btns">
@@ -91,40 +141,52 @@
   <!-- Ћирилица -->
   <section id="cyr" class="lang-section active">
     <h1>Политика приватности</h1>
-    <p>Овај сајт не прикупља личне податке корисника осим ако се то експлицитно не уради (нпр. путем контакт форме или другог облика комуникације).</p>
-    <p>Сви прикупљени подаци користе се искључиво за сврхе пројекта Душанов Златник и неће бити дељени трећим странама без пристанка.</p>
-    <p>Пројекат користи колачиће (cookies) искључиво за побољшање корисничког искуства, а не за праћење или оглашавање.</p>
+    <p>Овај сајт не прикупља личне податке корисника осим ако се то експлицитно не уради (нпр. путем контакт форме или
+      другог облика комуникације).</p>
+    <p>Сви прикупљени подаци користе се искључиво за сврхе пројекта Душанов Златник и неће бити дељени трећим странама
+      без пристанка.</p>
+    <p>Пројекат користи колачиће (cookies) искључиво за побољшање корисничког искуства, а не за праћење или оглашавање.
+    </p>
+    <br />
     <p><em>Последње ажурирање: јул 2025.</em></p>
     <footer>
-        © 2025 Душанов Златник. Сва права задржана.
+      © 2025 Душанов Златник. Сва права задржана.
+      <a href="https://srpskivitez.github.io/DusanovZlatnik">← Назад на почетну</a>
     </footer>
   </section>
 
   <!-- Latinica -->
   <section id="lat" class="lang-section">
     <h1>Politika privatnosti</h1>
-    <p>Ovaj sajt ne prikuplja lične podatke korisnika osim ako se to eksplicitno ne uradi (npr. putem kontakt forme ili drugog oblika komunikacije).</p>
-    <p>Svi prikupljeni podaci koriste se isključivo za svrhe projekta Dušanov Zlatnik i neće biti deljeni trećim stranama bez pristanka.</p>
-    <p>Projekat koristi kolačiće (cookies) isključivo za poboljšanje korisničkog iskustva, a ne za praćenje ili oglašavanje.</p>
+    <p>Ovaj sajt ne prikuplja lične podatke korisnika osim ako se to eksplicitno ne uradi (npr. putem kontakt forme ili
+      drugog oblika komunikacije).</p>
+    <p>Svi prikupljeni podaci koriste se isključivo za svrhe projekta Dušanov Zlatnik i neće biti deljeni trećim
+      stranama bez pristanka.</p>
+    <p>Projekat koristi kolačiće (cookies) isključivo za poboljšanje korisničkog iskustva, a ne za praćenje ili
+      oglašavanje.</p>
+    <br />
     <p><em>Poslednje ažuriranje: jul 2025.</em></p>
     <footer>
       © 2025 Dušanov Zlatnik. Sva prava zadržana.
-     </footer>
+      <a href="https://srpskivitez.github.io/DusanovZlatnik">← Nazad na početnu</a>
+    </footer>
   </section>
 
   <!-- English -->
   <section id="eng" class="lang-section">
     <h1>Privacy Policy</h1>
-    <p>This site does not collect personal user data unless explicitly done so (e.g., via contact forms or other communication methods).</p>
-    <p>All collected data is used solely for the purposes of the Dušanov Zlatnik project and will not be shared with third parties without consent.</p>
+    <p>This site does not collect personal user data unless explicitly done so (e.g., via contact forms or other
+      communication methods).</p>
+    <p>All collected data is used solely for the purposes of the Dušanov Zlatnik project and will not be shared with
+      third parties without consent.</p>
     <p>The project uses cookies only to improve user experience, not for tracking or advertising.</p>
+    <br />
     <p><em>Last updated: July 2025.</em></p>
-     <footer>
+    <footer>
       © 2025 Dusanov Zlatnik. All rights reserved.
-     </footer>
+      <a href="https://srpskivitez.github.io/DusanovZlatnik">← Back to Home</a>
+    </footer>
   </section>
-
-
 
   <script>
     function showLanguage(lang) {
@@ -150,4 +212,5 @@
     showLanguage("cyr");
   </script>
 </body>
+
 </html>

@@ -1,434 +1,491 @@
 <!DOCTYPE html>
 <html lang="sr">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Dusanov Zlatnik - Whitepaper (Više jezika)</title>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<style>
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
-    background: #0d1b2a;
-    color: #d9d4c9;
-  }
-  h1, h2 {
-    color: #f7f3e9;
-  }
-  ul {
-    list-style-type: disc;
-    margin-left: 20px;
-  }
-  p {
-    line-height: 1.6;
-  }
-  canvas {
-    max-width: 500px;
-    margin: 40px auto;
-    display: block;
-  }
-  footer {
-    margin-top: 40px;
-    font-size: 0.9em;
-    color: #bbb;
-    text-align: center;
-  }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="manifest" href="../site.webmanifest">
 
-  /* Dugmici za jezik */
-  .lang-btns {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  button.lang-btn {
-    margin: 0 10px;
-    padding: 10px 20px;
-    cursor: pointer;
-    border: 2px solid #f7f3e9;
-    background: transparent;
-    color: #f7f3e9;
-    font-weight: 700;
-    font-size: 1rem;
-    border-radius: 30px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  button.lang-btn:hover {
-    background-color: #f7f3e9;
-    color: #0d1b2a;
-  }
-  button.lang-btn.active {
-    background-color: #f7f3e9;
-    color: #0d1b2a;
-  }
+  <title>Dusanov Zlatnik - Whitepaper (Više jezika)</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+   <style>
+     canvas {
+      max-width: 500px;
+      margin: 20px auto;
+      display: block;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+      background: #0d1b2a;
+      color: #d9d4c9;
+    }
 
-  /* Sakrivanje i prikaz sekcija jezika */
-  .lang-section {
-    display: none;
-  }
-  .lang-section.active {
-    display: block;
-  }
+    h1,
+    h2 {
+      color: #f7f3e9;
+    }
 
-  a {
-    color: #f7f3e9;
-  }
-  a:hover {
-    color: #d9d4c9;
-  }
-  @media (max-width: 600px) {
-  body {
-    max-width: 100%;
-    padding: 15px 10px;
-    box-sizing: border-box;
-  }
+    p,
+    li {
+      line-height: 1.6;
+    }
 
-  button.lang-btn {
-    margin: 5px 5px;
-    padding: 8px 12px;
-    font-size: 0.9rem;
-  }
-}
+    ol {
+      margin-left: 20px;
+    }
 
-	
-</style>
+    footer {
+      margin-top: 2.5rem;
+      font-size: 0.9em;
+      color: #d9d4c9;
+      text-align: center;
+      border-top: 1px solid #d9d4c9;
+      padding: 1.5rem 0 2.5rem;
+    }
+
+    footer a {
+      display: block;
+      margin-top: 1.5rem;
+      margin-bottom: 1rem;
+      color: #f7f3e9;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      font-size: 1.5em;
+    }
+
+    footer a:hover {
+      color: #b9a46c;
+      text-decoration: underline;
+    }
+
+
+    .lang-btns {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    button.lang-btn {
+      margin: 0 10px;
+      padding: 10px 20px;
+      cursor: pointer;
+      border: 2px solid #f7f3e9;
+      background: transparent;
+      color: #f7f3e9;
+      font-weight: 700;
+      font-size: 1rem;
+      border-radius: 30px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    button.lang-btn:hover {
+      background-color: #f7f3e9;
+      color: #0d1b2a;
+    }
+
+    button.lang-btn.active {
+      background-color: #f7f3e9;
+      color: #0d1b2a;
+    }
+
+    .lang-section {
+      display: none;
+    }
+
+    .lang-section.active {
+      display: block;
+    }
+
+    a {
+      color: #f7f3e9;
+    }
+
+    a:hover {
+      color: #d9d4c9;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        max-width: 100%;
+        padding: 15px 10px;
+        box-sizing: border-box;
+      }
+
+      button.lang-btn {
+        margin: 5px 5px;
+        padding: 8px 12px;
+        font-size: 0.9rem;
+      }
+
+      footer {
+        font-size: 0.85em;
+        padding-top: 0.8rem;
+        margin-top: 2rem;
+      }
+
+      footer a {
+        display: block;
+        margin-top: 1.5rem;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="lang-btns">
-  <button class="lang-btn active" data-lang="cyr">Ћирилица</button>
-  <button class="lang-btn" data-lang="lat">Latinica</button>
-  <button class="lang-btn" data-lang="eng">English</button>
-</div>
+  <div class="lang-btns">
+    <button class="lang-btn active" data-lang="cyr">Ћирилица</button>
+    <button class="lang-btn" data-lang="lat">Latinica</button>
+    <button class="lang-btn" data-lang="eng">English</button>
+  </div>
 
-<!-- Ćirilica -->
-<section id="cyr" class="lang-section active">
-  <h1>Душанов Златник - Whitepaper</h1>
-  <p><em>Симболички токен културног наслеђа</em></p>
+  <!-- Ćirilica -->
+  <section id="cyr" class="lang-section active">
+    <h1>Душанов Златник - Whitepaper</h1>
+    <p><em>Симболички токен културног наслеђа</em></p>
 
-  <h2>Увод</h2>
-  <p>Душанов Златник је симболички дигитални токен инспирисан златном валутом српског цара Душана Силног. Представља дигитални завет наше културне баштине, јединства и историјске части. Са фиксним укупним бројем од 11.000.000 токена, сваки токен је посвећен сваком Србину широм света.</p>
+    <h2>Увод</h2>
+    <p>Душанов Златник је симболички дигитални токен инспирисан златном валутом српског цара Душана Силног. Представља
+      дигитални завет наше културне баштине, јединства и историјске части. Са фиксним укупним бројем од 11.000.000
+      токена, сваки токен је посвећен сваком Србину широм света.</p>
 
-  <h2>Мисија и Визија</h2>
-  <p>Наша мисија је очување и промоција српског културног идентитета у дигиталном добу. Визија је креирање токена који има духовну и симболичку вредност, а не спекулативну или комерцијалну.</p>
+    <h2>Мисија и Визија</h2>
+    <p>Наша мисија је очување и промоција српског културног идентитета у дигиталном добу. Визија је креирање токена који
+      има духовну и симболичку вредност, а не спекулативну или комерцијалну.</p>
 
-  <h2>Детаљи о Токену</h2>
-  <ul>
-    <li><strong>Назив Токена:</strong> Душанов Златник</li>
-    <li><strong>Симбол:</strong> ZLATNIK</li>
-    <li><strong>Мрежа:</strong> BNB Smart Chain</li>
-    <li><strong>Укупна количина:</strong> 11.000.000 (фиксно)</li>
-    <li><strong>Адреса уговора:</strong> 0x926f0D256C064FEA68158C80568Acc4A6b2fE496 (верификовано)</li>
-    <li><strong>Децимале:</strong> 18</li>
-  </ul>
+    <h2>Детаљи о Токену</h2>
+    <ul>
+      <li><strong>Назив Токена:</strong> Душанов Златник</li>
+      <li><strong>Симбол:</strong> ZLATNIK</li>
+      <li><strong>Мрежа:</strong> BNB Smart Chain</li>
+      <li><strong>Укупна количина:</strong> 11.000.000 (фиксно)</li>
+      <li><strong>Адреса уговора:</strong> 0x926f0D256C064FEA68158C80568Acc4A6b2fE496 (верификовано)</li>
+      <li><strong>Децимале:</strong> 18</li>
+    </ul>
 
+    <h2>Токеномика</h2>
+    <canvas id="chart-cyr" width="400" height="400"></canvas>
+    <ul>
+      <li>Јавна продаја: 10%</li>
+      <li>Фонд за развој: 20%</li>
+      <li>Маркетинг и промоција: 15%</li>
+      <li>Награде за заједницу: 20%</li>
+      <li>Културни грантови: 10%</li>
+      <li>Ликвидносни фонд: 10%</li>
+      <li>Тим и саветници: 10% (са вестингом)</li>
+      <li>Резерве / Ризница: 5%</li>
+    </ul>
 
-  <h2>Токеномика</h2>
- <canvas id="chart-cyr" width="400" height="400"></canvas>
-  <ul>
-    <li>Јавна продаја: 10%</li>
-    <li>Фонд за развој: 20%</li>
-    <li>Маркетинг и промоција: 15%</li>
-    <li>Награде за заједницу: 20%</li>
-    <li>Културни грантови: 10%</li>
-    <li>Ликвидносни фонд: 10%</li>
-    <li>Тим и саветници: 10% (са вестингом)</li>
-    <li>Резерве / Ризница: 5%</li>
-  </ul>
+    <h2>Употреба Токена</h2>
+    <ul>
+      <li>Није за трговину или профит.</li>
+      <li>Очување културе.</li>
+      <li>Оснаживање заједнице.</li>
+      <li>Транспарентне донације за обнову културног наслеђа.</li>
+      <li>Визуелна дистрибуција на глобалној мапи.</li>
+    </ul>
 
- 
+    <h2>Распоред Вестига</h2>
+    <p>Токени додељени тиму и саветницима биће распоређени током 12 месеци са тромесечном клифом ради осигурања
+      дугорочне посвећености.</p>
 
-  <h2>Употреба Токена</h2>
-  <ul>
-    <li>Није за трговину или профит.</li>
-    <li>Очување културе.</li>
-    <li>Оснаживање заједнице.</li>
-    <li>Транспарентне донације за обнову културног наслеђа.</li>
-    <li>Визуелна дистрибуција на глобалној мапи.</li>
-  </ul>
+    <h2>План рада</h2>
+    <ul>
+      <li>Трећи квартал 2025 - Покретање пројекта, сајт, имплементација паметног уговора</li>
+      <li>Четврти квартал 2025 - Јавна претпродаја, whitelist фаза, ангажман заједнице</li>
+      <li>Први квартал 2026 - Почетак програма културних грантова, мапа дистрибуције уживо</li>
+      <li>Други квартал 2026 - Прве донације за обнову, разматрање за котације на берзи</li>
+      <li>Трећи квартал 2026 - Глобално ширење и развој екосистема</li>
+    </ul>
 
+    <h2>Правна одрицања и ограничења</h2>
+    <p>Куповина токена није доступна особама из држава са строгом регулативом дигиталних средстава, укључујући, али
+        не ограничавајући се на, Сједињене Америчке Државе, Канаду и Кину.</p>
+    <p>Све куповине су на сопствену одговорност. Трансакције су неповратне и не гарантују финансијски добитак.</p>
+    <p>Пројекат не преузима одговорност за коришћење токена у супротности са законом у одговарајућим јурисдикцијама.</p>
+     <br />
+    <p><em>Последње ажурирање: јул 2025.</em></p>
+    <footer>
+      © 2025 Душанов Златник. Сва права задржана.
+      <a href="https://srpskivitez.github.io/DusanovZlatnik">← Назад на почетну</a>
+    </footer>
+  </section>
 
-  <h2>Распоред Вестига</h2>
-  <p>Токени додељени тиму и саветницима биће распоређени током 12 месеци са тромесечном клифом ради осигурања дугорочне посвећености.</p>
+  <!-- Latinica -->
+  <section id="lat" class="lang-section">
+    <h1>Dušanov Zlatnik - Whitepaper</h1>
+    <p><em>Simbolički token kulturnog nasleđa</em></p>
 
-  <h2>План рада</h2>
-  <ul>
-    <li>Трећи квартал 2025 - Покретање пројекта, сајт, имплементација паметног уговора</li>
-    <li>Четврти квартал 2025 - Јавна претпродаја, whitelist фаза, ангажман заједнице</li>
-    <li>Први квартал 2026 - Почетак програма културних грантова, мапа дистрибуције уживо</li>
-    <li>Други квартал 2026 - Прве донације за обнову, разматрање за котације на берзи</li>
-    <li>Трећи квартал 2026 - Глобално ширење и развој екосистема</li>
-  </ul>
+    <h2>Uvod</h2>
+    <p>Dušanov Zlatnik je simbolički digitalni token inspirisan zlatnom valutom srpskog cara Dušana Silnog. Predstavlja
+      digitalni zavet naše kulturne baštine, jedinstva i istorijske časti. Sa fiksnim ukupnim brojem od 11.000.000
+      tokena, svaki token je posvećen svakom Srbinu širom sveta.</p>
 
-  <h2>Правна одрицања и ограничења</h2>
-  <p>Токен Душанов Златник није доступан за куповину лицима из држава са строгом регулативом дигиталних средстава, укључујући САД, Канаду и Кину.</p>
-  <p>Све куповине су на сопствену одговорност. Трансакције су неповратне и не гарантују финансијски добитак.</p>
-  <p>Пројекат не преузима одговорност за коришћење токена у супротности са законом у одговарајућим јурисдикцијама.</p>
-  <footer>
-       © 2025 Душанов Златник. Сва права задржана.
-  </footer>
-</section>
+    <h2>Misija i Vizija</h2>
+    <p>Naša misija je očuvanje i promocija srpskog kulturnog identiteta u digitalnom dobu. Vizija je kreiranje tokena
+      koji ima duhovnu i simboličku vrednost, a ne spekulativnu ili komercijalnu.</p>
 
-<!-- Latinica -->
-<section id="lat" class="lang-section">
-  <h1>Dušanov Zlatnik - Whitepaper</h1>
-  <p><em>Simbolički token kulturnog nasleđa</em></p>
+    <h2>Detalji o Tokenu</h2>
+    <ul>
+      <li><strong>Naziv Tokena:</strong> Dušanov Zlatnik</li>
+      <li><strong>Simbol:</strong> ZLATNIK</li>
+      <li><strong>Mreža:</strong> BNB Smart Chain</li>
+      <li><strong>Ukupna količina:</strong> 11.000.000 (fiksno)</li>
+      <li><strong>Adresa ugovora:</strong> 0x926f0D256C064FEA68158C80568Acc4A6b2fE496 (verifikovano)</li>
+      <li><strong>Decimale:</strong> 18</li>
+    </ul>
 
-  <h2>Uvod</h2>
-  <p>Dušanov Zlatnik je simbolički digitalni token inspirisan zlatnom valutom srpskog cara Dušana Silnog. Predstavlja digitalni zavet naše kulturne baštine, jedinstva i istorijske časti. Sa fiksnim ukupnim brojem od 11.000.000 tokena, svaki token je posvećen svakom Srbinu širom sveta.</p>
+    <h2>Tokenomika</h2>
+    <canvas id="chart-lat" width="400" height="400"></canvas>
+    <ul>
+      <li>Javna prodaja: 10%</li>
+      <li>Fond za razvoj: 20%</li>
+      <li>Marketing i promocija: 15%</li>
+      <li>Nagrade za zajednicu: 20%</li>
+      <li>Kulturni grantovi: 10%</li>
+      <li>Likvidnosni fond: 10%</li>
+      <li>Tim i savetnici: 10% (sa vestingom)</li>
+      <li>Rezerve / Riznica: 5%</li>
+    </ul>
 
-  <h2>Misija i Vizija</h2>
-  <p>Naša misija je očuvanje i promocija srpskog kulturnog identiteta u digitalnom dobu. Vizija je kreiranje tokena koji ima duhovnu i simboličku vrednost, a ne spekulativnu ili komercijalnu.</p>
+    <h2>Upotreba Tokena</h2>
+    <ul>
+      <li>Nije za trgovinu ili profit.</li>
+      <li>Očuvanje kulture.</li>
+      <li>Osnaživanje zajednice.</li>
+      <li>Transparentne donacije za obnovu kulturnog nasleđa.</li>
+      <li>Vizuelna distribucija na globalnoj mapi.</li>
+    </ul>
 
-  <h2>Detalji o Tokenu</h2>
-  <ul>
-    <li><strong>Naziv Tokena:</strong> Dušanov Zlatnik</li>
-    <li><strong>Simbol:</strong> ZLATNIK</li>
-    <li><strong>Mreža:</strong> BNB Smart Chain</li>
-    <li><strong>Ukupna količina:</strong> 11.000.000 (fiksno)</li>
-    <li><strong>Adresa ugovora:</strong> 0x926f0D256C064FEA68158C80568Acc4A6b2fE496 (verifikovano)</li>
-    <li><strong>Decimale:</strong> 18</li>
-  </ul>
+    <h2>Raspored Vestinga</h2>
+    <p>Tokeni dodeljeni timu i savetnicima biće raspoređeni tokom 12 meseci sa tromesečnom klifom radi osiguranja
+      dugoročne posvećenosti.</p>
 
- <h2>Tokenomika</h2>
-	  <canvas id="chart-lat" width="400" height="400"></canvas>
-  <ul>
-    <li>Javna prodaja: 10%</li>
-    <li>Fond za razvoj: 20%</li>
-    <li>Marketing i promocija: 15%</li>
-    <li>Nagrade za zajednicu: 20%</li>
-    <li>Kulturni grantovi: 10%</li>
-    <li>Likvidnosni fond: 10%</li>
-    <li>Tim i savetnici: 10% (sa vestingom)</li>
-    <li>Rezerve / Riznica: 5%</li>
-  </ul>
+    <h2>Plan rada</h2>
+    <ul>
+      <li>Treći kvartal 2025 - Pokretanje projekta, sajt, implementacija pametnog ugovora</li>
+      <li>Četvrti kvartal 2025 - Javna pretprodaja, whitelist faza, angažman zajednice</li>
+      <li>Prvi kvartal 2026 - Početak programa kulturnih grantova, mapa distribucije uživo</li>
+      <li>Drugi kvartal 2026 - Prve donacije za obnovu, razmatranje za kotacije na berzi</li>
+      <li>Treći kvartal 2026 - Globalno širenje i razvoj ekosistema</li>
+    </ul>
 
-  <h2>Upotreba Tokena</h2>
-  <ul>
-    <li>Nije za trgovinu ili profit.</li>
-    <li>Očuvanje kulture.</li>
-    <li>Osnaživanje zajednice.</li>
-    <li>Transparentne donacije za obnovu kulturnog nasleđa.</li>
-    <li>Vizuelna distribucija na globalnoj mapi.</li>
-  </ul>
-
- 
-
-  <h2>Raspored Vestinga</h2>
-  <p>Tokeni dodeljeni timu i savetnicima biće raspoređeni tokom 12 meseci sa tromesečnom klifom radi osiguranja dugoročne posvećenosti.</p>
-
-  <h2>Plan rada</h2>
-  <ul>
-    <li>Treći kvartal 2025 - Pokretanje projekta, sajt, implementacija pametnog ugovora</li>
-    <li>Četvrti kvartal 2025 - Javna pretprodaja, whitelist faza, angažman zajednice</li>
-    <li>Prvi kvartal 2026 - Početak programa kulturnih grantova, mapa distribucije uživo</li>
-    <li>Drugi kvartal 2026 - Prve donacije za obnovu, razmatranje za kotacije na berzi</li>
-    <li>Treći kvartal 2026 - Globalno širenje i razvoj ekosistema</li>
-  </ul>
-
-  <h2>Pravna odricanja i ograničenja</h2>
-  <p>Token Dušanov Zlatnik nije dostupan za kupovinu licima iz država sa strogom regulativom digitalnih sredstava, uključujući SAD, Kanadu i Kinu.</p>
-  <p>Sve kupovine su na sopstvenu odgovornost. Transakcije su nepovratne i ne garantuju finansijski dobitak.</p>
-  <p>Projekat ne preuzima odgovornost za korišćenje tokena u suprotnosti sa zakonom u odgovarajućim jurisdikcijama.</p>
-  <footer>
+    <h2>Pravna odricanja i ograničenja</h2>
+    <p>Kupovina tokena nije dostupna osobama iz država sa strogom regulativom digitalnih sredstava, uključujući, ali
+        ne ograničavajući se na, Sjedinjene Američke Države, Kanadu i Kinu.</p>
+    <p>Sve kupovine su na sopstvenu odgovornost. Transakcije su nepovratne i ne garantuju finansijski dobitak.</p>
+    <p>Projekat ne preuzima odgovornost za korišćenje tokena u suprotnosti sa zakonom u odgovarajućim jurisdikcijama.
+    </p>
+    <br />
+    <p><em>Poslednje ažuriranje: jul 2025.</em></p>
+    <footer>
       © 2025 Dušanov Zlatnik. Sva prava zadržana.
-   </footer>	
-</section>
+      <a href="https://srpskivitez.github.io/DusanovZlatnik">← Nazad na početnu</a>
+    </footer>
+  </section>
 
-<!-- English -->
-<section id="eng" class="lang-section">
-  <h1>Dušanov Zlatnik - Whitepaper</h1>
-  <p><em>A symbolic token of cultural heritage</em></p>
+  <!-- English -->
+  <section id="eng" class="lang-section">
+    <h1>Dušanov Zlatnik - Whitepaper</h1>
+    <p><em>A symbolic token of cultural heritage</em></p>
 
-  <h2>Introduction</h2>
-  <p>Dušanov Zlatnik is a symbolic digital token inspired by the golden currency of Serbian Emperor Dušan the Mighty. It represents a digital covenant of our cultural heritage, unity, and historical honor. With a fixed total supply of 11,000,000 tokens, each token is dedicated to every Serb worldwide.</p>
+    <h2>Introduction</h2>
+    <p>Dušanov Zlatnik is a symbolic digital token inspired by the golden currency of Serbian Emperor Dušan the Mighty.
+      It represents a digital covenant of our cultural heritage, unity, and historical honor. With a fixed total supply
+      of 11,000,000 tokens, each token is dedicated to every Serb worldwide.</p>
 
-  <h2>Mission and Vision</h2>
-  <p>Our mission is to preserve and promote Serbian cultural identity in the digital age. The vision is to create a token with spiritual and symbolic value rather than speculative or commercial.</p>
+    <h2>Mission and Vision</h2>
+    <p>Our mission is to preserve and promote Serbian cultural identity in the digital age. The vision is to create a
+      token with spiritual and symbolic value rather than speculative or commercial.</p>
 
-  <h2>Token Details</h2>
-  <ul>
-    <li><strong>Token Name:</strong> Dušanov Zlatnik</li>
-    <li><strong>Symbol:</strong> ZLATNIK</li>
-    <li><strong>Network:</strong> BNB Smart Chain</li>
-    <li><strong>Total Supply:</strong> 11,000,000 (fixed)</li>
-    <li><strong>Contract Address:</strong> 0x926f0D256C064FEA68158C80568Acc4A6b2fE496 (verified)</li>
-    <li><strong>Decimals:</strong> 18</li>
-  </ul>
+    <h2>Token Details</h2>
+    <ul>
+      <li><strong>Token Name:</strong> Dušanov Zlatnik</li>
+      <li><strong>Symbol:</strong> ZLATNIK</li>
+      <li><strong>Network:</strong> BNB Smart Chain</li>
+      <li><strong>Total Supply:</strong> 11,000,000 (fixed)</li>
+      <li><strong>Contract Address:</strong> 0x926f0D256C064FEA68158C80568Acc4A6b2fE496 (verified)</li>
+      <li><strong>Decimals:</strong> 18</li>
+    </ul>
 
- <h2>Tokenomics</h2>
-  <canvas id="chart-eng" width="400" height="400"></canvas>
-  <ul>
-    <li>Public sale: 10%</li>
-    <li>Development fund: 20%</li>
-    <li>Marketing and promotion: 15%</li>
-    <li>Community rewards: 20%</li>
-    <li>Cultural grants: 10%</li>
-    <li>Liquidity fund: 10%</li>
-    <li>Team and advisors: 10% (with vesting)</li>
-    <li>Reserves / Treasury: 5%</li>
-  </ul>
+    <h2>Tokenomics</h2>
+    <canvas id="chart-eng" width="400" height="400"></canvas>
+    <ul>
+      <li>Public sale: 10%</li>
+      <li>Development fund: 20%</li>
+      <li>Marketing and promotion: 15%</li>
+      <li>Community rewards: 20%</li>
+      <li>Cultural grants: 10%</li>
+      <li>Liquidity fund: 10%</li>
+      <li>Team and advisors: 10% (with vesting)</li>
+      <li>Reserves / Treasury: 5%</li>
+    </ul>
 
+    <h2>Token Usage</h2>
+    <ul>
+      <li>Not for trading or profit.</li>
+      <li>Preserving culture.</li>
+      <li>Empowering community.</li>
+      <li>Transparent donations for cultural heritage restoration.</li>
+      <li>Visual distribution on a global map.</li>
+    </ul>
 
-  <h2>Token Usage</h2>
-  <ul>
-    <li>Not for trading or profit.</li>
-    <li>Preserving culture.</li>
-    <li>Empowering community.</li>
-    <li>Transparent donations for cultural heritage restoration.</li>
-    <li>Visual distribution on a global map.</li>
-  </ul>
+    <h2>Vesting Schedule</h2>
+    <p>Tokens allocated to team and advisors will be vested over 12 months with a quarterly cliff to ensure long-term
+      commitment.</p>
 
- 
+    <h2>Roadmap</h2>
+    <ul>
+      <li>Q3 2025 - Project launch, website, smart contract deployment</li>
+      <li>Q4 2025 - Public presale, whitelist phase, community engagement</li>
+      <li>Q1 2026 - Launch of cultural grants program, live distribution map</li>
+      <li>Q2 2026 - First donations for restoration, consideration for exchange listings</li>
+      <li>Q3 2026 - Global expansion and ecosystem development</li>
+    </ul>
 
-  <h2>Vesting Schedule</h2>
-  <p>Tokens allocated to team and advisors will be vested over 12 months with a quarterly cliff to ensure long-term commitment.</p>
-
-  <h2>Roadmap</h2>
-  <ul>
-    <li>Q3 2025 - Project launch, website, smart contract deployment</li>
-    <li>Q4 2025 - Public presale, whitelist phase, community engagement</li>
-    <li>Q1 2026 - Launch of cultural grants program, live distribution map</li>
-    <li>Q2 2026 - First donations for restoration, consideration for exchange listings</li>
-    <li>Q3 2026 - Global expansion and ecosystem development</li>
-  </ul>
-
-  <h2>Legal Disclaimers and Restrictions</h2>
-  <p>The Dušanov Zlatnik token is not available for purchase by individuals from countries with strict digital asset regulations including the USA, Canada, and China.</p>
-  <p>All purchases are at your own risk. Transactions are irreversible and do not guarantee financial gain.</p>
-  <p>The project does not take responsibility for the use of the token contrary to laws in relevant jurisdictions.</p>
-  <footer>
+    <h2>Legal Disclaimers and Restrictions</h2>
+    <p>Purchase of the token is not available to persons from countries with strict digital asset regulations,
+        including but not limited to the United States, Canada, and China.</p>
+    <p>All purchases are at your own risk. Transactions are irreversible and do not guarantee financial gain.</p>
+    <p>The project does not take responsibility for the use of the token contrary to laws in relevant jurisdictions.</p>
+    <br />
+    <p><em>Last updated: July 2025.</em></p>
+    <footer>
       © 2025 Dusanov Zlatnik. All rights reserved.
-  </footer>
-</section>
+      <a href="https://srpskivitez.github.io/DusanovZlatnik">← Back to Home</a>
+    </footer>
+  </section>
 
+  <script>
+    const charts = {};
 
+    // Labeli po jezicima
+    const chartLabels = {
+      cyr: [
+        "Јавна продаја",
+        "Фонд за развој",
+        "Маркетинг и промоција",
+        "Награде за заједницу",
+        "Културни грантови",
+        "Ликвидносни фонд",
+        "Тим и саветници",
+        "Резерве"
+      ],
+      lat: [
+        "Javna prodaja",
+        "Fond za razvoj",
+        "Marketing i promocija",
+        "Nagrade za zajednicu",
+        "Kulturni grantovi",
+        "Likvidnosni fond",
+        "Tim i savetnici",
+        "Rezerve"
+      ],
+      eng: [
+        "Public sale",
+        "Development fund",
+        "Marketing and promotion",
+        "Community rewards",
+        "Cultural grants",
+        "Liquidity fund",
+        "Team and advisors",
+        "Reserves"
+      ]
+    };
 
+    const chartColors = [
+      "#f1c40f",
+      "#e67e22",
+      "#e74c3c",
+      "#8e44ad",
+      "#3498db",
+      "#2ecc71",
+      "#1abc9c",
+      "#34495e"
+    ];
 
-<script>
-  const charts = {};
+    const chartValues = [10, 20, 15, 20, 10, 10, 10, 5];
 
-  // Labeli po jezicima
-  const chartLabels = {
-    cyr: [
-      "Јавна продаја",
-      "Фонд за развој",
-      "Маркетинг и промоција",
-      "Награде за заједницу",
-      "Културни грантови",
-      "Ликвидносни фонд",
-      "Тим и саветници",
-      "Резерве"
-    ],
-    lat: [
-      "Javna prodaja",
-      "Fond za razvoj",
-      "Marketing i promocija",
-      "Nagrade za zajednicu",
-      "Kulturni grantovi",
-      "Likvidnosni fond",
-      "Tim i savetnici",
-      "Rezerve"
-    ],
-    eng: [
-      "Public sale",
-      "Development fund",
-      "Marketing and promotion",
-      "Community rewards",
-      "Cultural grants",
-      "Liquidity fund",
-      "Team and advisors",
-      "Reserves"
-    ]
-  };
-
-  const chartColors = [
-    "#f1c40f",
-    "#e67e22",
-    "#e74c3c",
-    "#8e44ad",
-    "#3498db",
-    "#2ecc71",
-    "#1abc9c",
-    "#34495e"
-  ];
-
-  const chartValues = [10, 20, 15, 20, 10, 10, 10, 5];
-
-  const chartOptions = {
-    responsive: true,
-    plugins: {
-      legend: {
-        position: "right",
-        labels: {
-          color: '#d9d4c9',
-          font: { size: 14 }
-        }
-      },
-      tooltip: {
-        callbacks: {
-          label: function (context) {
-            return context.label + ": " + context.parsed + "%";
+    const chartOptions = {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: "right",
+          labels: {
+            color: '#d9d4c9',
+            font: { size: 14 }
+          }
+        },
+        tooltip: {
+          callbacks: {
+            label: function (context) {
+              return context.label + ": " + context.parsed + "%";
+            }
           }
         }
       }
-    }
-  };
-
-  function createChart(canvasId, lang) {
-    const ctx = document.getElementById(canvasId).getContext("2d");
-
-    // Uništi stari grafikon ako postoji
-    if (charts[canvasId]) {
-      charts[canvasId].destroy();
-    }
-
-    const data = {
-      labels: chartLabels[lang],
-      datasets: [{
-        label: "Procenat",
-        data: chartValues,
-        backgroundColor: chartColors,
-        borderColor: "#fff",
-        borderWidth: 1
-      }]
     };
 
-    charts[canvasId] = new Chart(ctx, {
-      type: "pie",
-      data: data,
-      options: chartOptions
+    function createChart(canvasId, lang) {
+      const ctx = document.getElementById(canvasId).getContext("2d");
+
+      // Uništi stari grafikon ako postoji
+      if (charts[canvasId]) {
+        charts[canvasId].destroy();
+      }
+
+      const data = {
+        labels: chartLabels[lang],
+        datasets: [{
+          label: "Procenat",
+          data: chartValues,
+          backgroundColor: chartColors,
+          borderColor: "#fff",
+          borderWidth: 1
+        }]
+      };
+
+      charts[canvasId] = new Chart(ctx, {
+        type: "pie",
+        data: data,
+        options: chartOptions
+      });
+    }
+
+    // Funkcija za prikaz sekcije i grafika
+    function showLanguage(lang) {
+      document.querySelectorAll(".lang-section").forEach(section => {
+        section.classList.remove("active");
+      });
+
+      const activeSection = document.getElementById(lang);
+      activeSection.classList.add("active");
+
+      // Kreiraj odgovarajući grafikon sa prevodom legende
+      if (lang === "cyr") createChart("chart-cyr", "cyr");
+      else if (lang === "lat") createChart("chart-lat", "lat");
+      else if (lang === "eng") createChart("chart-eng", "eng");
+    }
+
+    // Aktiviranje jezičkih dugmića
+    document.querySelectorAll(".lang-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".lang-btn").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        showLanguage(btn.getAttribute("data-lang"));
+      });
     });
-  }
 
-  // Funkcija za prikaz sekcije i grafika
-  function showLanguage(lang) {
-    document.querySelectorAll(".lang-section").forEach(section => {
-      section.classList.remove("active");
-    });
-
-    const activeSection = document.getElementById(lang);
-    activeSection.classList.add("active");
-
-    // Kreiraj odgovarajući grafikon sa prevodom legende
-    if (lang === "cyr") createChart("chart-cyr", "cyr");
-    else if (lang === "lat") createChart("chart-lat", "lat");
-    else if (lang === "eng") createChart("chart-eng", "eng");
-  }
-
-  // Aktiviranje jezičkih dugmića
-  document.querySelectorAll(".lang-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-      document.querySelectorAll(".lang-btn").forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-      showLanguage(btn.getAttribute("data-lang"));
-    });
-  });
-
-  // Inicijalno pokretanje
-  showLanguage("cyr");
-</script>
+    // Inicijalno pokretanje
+    showLanguage("cyr");
+  </script>
 
 
 </body>
+
 </html>
