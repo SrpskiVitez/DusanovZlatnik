@@ -476,12 +476,13 @@ main.container {
 
   /* Header */
   header {
-    padding-top: 2rem;
+    padding-top: 1rem;
     padding-bottom: 1rem;
     height: auto;
   }
 
   header h1 {
+    padding-top: 1rem;
     font-size: 2rem;
     margin-bottom: 0.5rem;
   }
