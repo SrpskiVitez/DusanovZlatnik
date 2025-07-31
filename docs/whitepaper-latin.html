@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="sr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="stylesheet" href="../style-docs.css">
+    <title>Dusanov Zlatnik - Whitepaper</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+    <div id="language-switcher">
+        <a href="#" data-lang="sr">ћир</a> |
+        <a href="#" data-lang="sr-latin">lat</a> |
+        <a href="#" data-lang="en">eng</a>
+    </div>
+
+    <!-- Latinica -->
+    <section id="lat" class="lang-section">
+        <h1>Dušanov Zlatnik - Whitepaper</h1>
+        <p><em>Simbolički token kulturnog nasleđa</em></p>
+
+        <h2>Uvod</h2>
+        <p>Dušanov Zlatnik je simbolički digitalni token inspirisan zlatnom valutom srpskog cara Dušana Silnog.
+            Predstavlja
+            digitalni zavet naše kulturne baštine, jedinstva i istorijske časti. Sa fiksnim ukupnim brojem od 11.000.000
+            tokena, svaki token je posvećen svakom Srbinu širom sveta.</p>
+
+        <h2>Misija i Vizija</h2>
+        <p>Naša misija je očuvanje i promocija srpskog kulturnog identiteta u digitalnom dobu. Vizija je kreiranje
+            tokena
+            koji ima duhovnu i simboličku vrednost, a ne spekulativnu ili komercijalnu.</p>
+
+        <h2>Detalji o Tokenu</h2>
+        <ul>
+            <li><strong>Naziv Tokena:</strong> Dušanov Zlatnik</li>
+            <li><strong>Simbol:</strong> ZLATNIK</li>
+            <li><strong>Mreža:</strong> BNB Smart Chain</li>
+            <li><strong>Ukupna količina:</strong> 11.000.000 (fiksno)</li>
+            <li><strong>Adresa ugovora:</strong> 0x926f0D256C064FEA68158C80568Acc4A6b2fE496 <a
+                    href="https://bscscan.com/token/0x27a81dce6f4bd0f2a6f3c17e195ecdb773051a00"
+                    target="_blank">(verifikovano)</a></li>
+            <li><strong>Decimale:</strong> 18</li>
+        </ul>
+
+        <h2>Tokenomika</h2>
+        <canvas id="chart-lat"></canvas>
+        <ul>
+            <li>Javna prodaja: 10%</li>
+            <li>Fond za razvoj: 20%</li>
+            <li>Marketing i promocija: 15%</li>
+            <li>Nagrade za zajednicu: 20%</li>
+            <li>Kulturni grantovi: 10%</li>
+            <li>Likvidnosni fond: 10%</li>
+            <li>Tim i savetnici: 10% (sa vestingom)</li>
+            <li>Rezerve / Riznica: 5%</li>
+        </ul>
+
+        <h2>Upotreba Tokena</h2>
+        <ul>
+            <li>Nije za trgovinu ili profit.</li>
+            <li>Očuvanje kulture.</li>
+            <li>Osnaživanje zajednice.</li>
+            <li>Transparentne donacije za obnovu kulturnog nasleđa.</li>
+            <li>Vizuelna distribucija na globalnoj mapi.</li>
+        </ul>
+
+        <h2>Raspored Vestinga</h2>
+        <p>Tokeni dodeljeni timu i savetnicima biće raspoređeni tokom 12 meseci sa tromesečnom klifom radi osiguranja
+            dugoročne posvećenosti.</p>
+
+        <h2>Plan rada</h2>
+        <ul>
+            <li>Treći kvartal 2025 - Pokretanje projekta, sajt, implementacija pametnog ugovora</li>
+            <li>Četvrti kvartal 2025 - Javna pretprodaja, whitelist faza, angažman zajednice</li>
+            <li>Prvi kvartal 2026 - Početak programa kulturnih grantova, mapa distribucije uživo</li>
+            <li>Drugi kvartal 2026 - Prve donacije za obnovu, razmatranje za kotacije na berzi</li>
+            <li>Treći kvartal 2026 - Globalno širenje i razvoj ekosistema</li>
+        </ul>
+
+        <h2>Pravna odricanja i ograničenja</h2>
+        <p>Kupovina tokena nije dostupna osobama iz država sa strogom regulativom digitalnih sredstava, uključujući, ali
+            ne ograničavajući se na, Sjedinjene Američke Države, Kanadu i Kinu.</p>
+        <p>Sve kupovine su na sopstvenu odgovornost. Transakcije su nepovratne i ne garantuju finansijski dobitak.</p>
+        <p>Projekat ne preuzima odgovornost za korišćenje tokena u suprotnosti sa zakonom u odgovarajućim
+            jurisdikcijama.
+        </p>
+        <br />
+        <p><em>Poslednje ažuriranje: jul 2025.</em></p>
+        <footer>
+            © 2025 Dušanov Zlatnik. Sva prava zadržana.
+            <a href="../index-latin.html">← Nazad na početnu</a>
+        </footer>
+    </section>
+
+    <script>
+        const charts = {};
+
+        // Labeli po jezicima
+        const chartLabels = {
+            lat: [
+                "Javna prodaja",
+                "Fond za razvoj",
+                "Marketing i promocija",
+                "Nagrade za zajednicu",
+                "Kulturni grantovi",
+                "Likvidnosni fond",
+                "Tim i savetnici",
+                "Rezerve"
+            ]
+        };
+
+        const chartColors = [
+            "#f1c40f",
+            "#e67e22",
+            "#e74c3c",
+            "#8e44ad",
+            "#3498db",
+            "#2ecc71",
+            "#1abc9c",
+            "#34495e"
+        ];
+
+        const chartValues = [10, 20, 15, 20, 10, 10, 10, 5];
+
+        const chartOptions = {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: "right",
+                    labels: {
+                        color: '#d9d4c9',
+                        font: { size: 14 }
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function (context) {
+                            return context.label + ": " + context.parsed + "%";
+                        }
+                    }
+                }
+            }
+        };
+
+        function createChart(canvasId, lang) {
+            const ctx = document.getElementById(canvasId).getContext("2d");
+
+            const data = {
+                labels: chartLabels[lang],
+                datasets: [{
+                    label: "Procenat",
+                    data: chartValues,
+                    backgroundColor: chartColors,
+                    borderColor: "#fff",
+                    borderWidth: 1
+                }]
+            };
+
+            charts[canvasId] = new Chart(ctx, {
+                type: "pie",
+                data: data,
+                options: chartOptions
+            });
+        }
+
+        createChart("chart-lat", "lat");
+
+        //jezik
+        document.querySelectorAll('#language-switcher a').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const lang = this.getAttribute('data-lang');
+                if (lang === 'sr') {
+                    window.location.href = 'whitepaper.html';
+                } else if (lang === 'sr-latin') {
+                    window.location.href = 'whitepaper-latin.html';
+                } else if (lang === 'en') {
+                    window.location.href = 'whitepaper-en.html';
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

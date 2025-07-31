@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="sr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="stylesheet" href="../style-docs.css">
+  <title>Dusanov Zlatnik - Whitepaper</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+ 
+</head>
+
+<body>
+
+  <div id="language-switcher">
+    <a href="#" data-lang="sr">ћир</a> |
+    <a href="#" data-lang="sr-latin">lat</a> |
+    <a href="#" data-lang="en">eng</a>
+  </div>
+
+  <!-- English -->
+  <section id="eng" class="lang-section">
+    <h1>Dušanov Zlatnik - Whitepaper</h1>
+    <p><em>A symbolic token of cultural heritage</em></p>
+
+    <h2>Introduction</h2>
+    <p>Dušanov Zlatnik is a symbolic digital token inspired by the golden currency of Serbian Emperor Dušan the Mighty.
+      It represents a digital covenant of our cultural heritage, unity, and historical honor. With a fixed total supply
+      of 11,000,000 tokens, each token is dedicated to every Serb worldwide.</p>
+
+    <h2>Mission and Vision</h2>
+    <p>Our mission is to preserve and promote Serbian cultural identity in the digital age. The vision is to create a
+      token with spiritual and symbolic value rather than speculative or commercial.</p>
+
+    <h2>Token Details</h2>
+    <ul>
+      <li><strong>Token Name:</strong> Dušanov Zlatnik</li>
+      <li><strong>Symbol:</strong> ZLATNIK</li>
+      <li><strong>Network:</strong> BNB Smart Chain</li>
+      <li><strong>Total Supply:</strong> 11,000,000 (fixed)</li>
+      <li><strong>Contract Address:</strong> 0x926f0D256C064FEA68158C80568Acc4A6b2fE496 <a href="https://bscscan.com/token/0x27a81dce6f4bd0f2a6f3c17e195ecdb773051a00" target="_blank">(verified)</a></li>
+      <li><strong>Decimals:</strong> 18</li>
+    </ul>
+
+    <h2>Tokenomics</h2>
+    <canvas id="chart-eng"></canvas>
+    <ul>
+      <li>Public sale: 10%</li>
+      <li>Development fund: 20%</li>
+      <li>Marketing and promotion: 15%</li>
+      <li>Community rewards: 20%</li>
+      <li>Cultural grants: 10%</li>
+      <li>Liquidity fund: 10%</li>
+      <li>Team and advisors: 10% (with vesting)</li>
+      <li>Reserves / Treasury: 5%</li>
+    </ul>
+
+    <h2>Token Usage</h2>
+    <ul>
+      <li>Not for trading or profit.</li>
+      <li>Preserving culture.</li>
+      <li>Empowering community.</li>
+      <li>Transparent donations for cultural heritage restoration.</li>
+      <li>Visual distribution on a global map.</li>
+    </ul>
+
+    <h2>Vesting Schedule</h2>
+    <p>Tokens allocated to team and advisors will be vested over 12 months with a quarterly cliff to ensure long-term
+      commitment.</p>
+
+    <h2>Roadmap</h2>
+    <ul>
+      <li>Q3 2025 - Project launch, website, smart contract deployment</li>
+      <li>Q4 2025 - Public presale, whitelist phase, community engagement</li>
+      <li>Q1 2026 - Launch of cultural grants program, live distribution map</li>
+      <li>Q2 2026 - First donations for restoration, consideration for exchange listings</li>
+      <li>Q3 2026 - Global expansion and ecosystem development</li>
+    </ul>
+
+    <h2>Legal Disclaimers and Restrictions</h2>
+    <p>Purchase of the token is not available to persons from countries with strict digital asset regulations,
+      including but not limited to the United States, Canada, and China.</p>
+    <p>All purchases are at your own risk. Transactions are irreversible and do not guarantee financial gain.</p>
+    <p>The project does not take responsibility for the use of the token contrary to laws in relevant jurisdictions.</p>
+    <br />
+    <p><em>Last updated: July 2025.</em></p>
+    <footer>
+      © 2025 Dusanov Zlatnik. All rights reserved.
+      <a href="../index-en.html">← Back to Home</a>
+    </footer>
+  </section>
+
+  <script>
+    const charts = {};
+
+    // Labeli po jezicima
+    const chartLabels = {
+      eng: [
+        "Public sale",
+        "Development fund",
+        "Marketing and promotion",
+        "Community rewards",
+        "Cultural grants",
+        "Liquidity fund",
+        "Team and advisors",
+        "Reserves"
+      ]
+    };
+
+    const chartColors = [
+      "#f1c40f",
+      "#e67e22",
+      "#e74c3c",
+      "#8e44ad",
+      "#3498db",
+      "#2ecc71",
+      "#1abc9c",
+      "#34495e"
+    ];
+
+    const chartValues = [10, 20, 15, 20, 10, 10, 10, 5];
+
+    const chartOptions = {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: "right",
+          labels: {
+            color: '#d9d4c9',
+            font: { size: 14 }
+          }
+        },
+        tooltip: {
+          callbacks: {
+            label: function (context) {
+              return context.label + ": " + context.parsed + "%";
+            }
+          }
+        }
+      }
+    };
+
+    function createChart(canvasId, lang) {
+      const ctx = document.getElementById(canvasId).getContext("2d");
+
+      const data = {
+        labels: chartLabels[lang],
+        datasets: [{
+          label: "Procenat",
+          data: chartValues,
+          backgroundColor: chartColors,
+          borderColor: "#fff",
+          borderWidth: 1
+        }]
+      };
+
+      charts[canvasId] = new Chart(ctx, {
+        type: "pie",
+        data: data,
+        options: chartOptions
+      });
+    }
+
+     createChart("chart-eng", "eng");
+    
+   //jezik
+    document.querySelectorAll('#language-switcher a').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const lang = this.getAttribute('data-lang');
+        if (lang === 'sr') {
+          window.location.href = 'whitepaper.html';
+        } else if (lang === 'sr-latin') {
+          window.location.href = 'whitepaper-latin.html';
+        } else if (lang === 'en') {
+          window.location.href = 'whitepaper-en.html';
+        }
+      });
+    });
+  </script>
+
+
+</body>
+
+</html>
