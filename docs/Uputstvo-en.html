@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="stylesheet" href="../style-docs.css">
+  <title>MetaMask Guide | Dušanov Zlatnik</title>
+</head>
+
+<body>
+  <div id="language-switcher">
+    <a href="#" data-lang="sr">ћир</a> |
+    <a href="#" data-lang="sr-latin">lat</a> |
+    <a href="#" data-lang="en">eng</a>
+  </div>
+
+   <!-- English -->
+  <section id="eng" class="lang-section">
+    <h1>Guide to MetaMask and BNB Smart Chain</h1>
+
+    <h2>1. Installing the MetaMask Crypto Wallet<img src="../pic/metamask-icon.png" alt="MetaMask Logo"></h2>
+    <p>Download and install MetaMask for your device:</p>
+    <ul>
+      <li><a href="https://apps.apple.com/app/metamask/id1438144202" target="_blank">iOS (App Store)</a></li>
+      <li><a href="https://play.google.com/store/apps/details?id=io.metamask" target="_blank">Android (Google Play)</a>
+      </li>
+      <li><a href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn"
+          target="_blank">Chrome / Brave Extension (Windows/Mac)</a></li>
+      <li><a href="https://metamask.io/download/" target="_blank">Official Website for All Platforms</a></li>
+    </ul>
+
+    <h2>2. Adding the BNB Smart Chain Network<img src="../pic/BNB_icon.png" alt="BNB Logo"></h2>
+    <p>Open MetaMask, go to <strong>Settings → Networks → Add Network</strong>. You can add the BNB Smart Chain
+      automatically via <a href="https://chainlist.org/chain/56" target="_blank">Chainlist</a> by clicking “Add to
+      MetaMask,” or enter the following parameters manually (source: <a
+        href="https://academy.binance.com/en/articles/connecting-metamask-to-binance-smart-chain"
+        target="_blank">Binance Academy</a>):</p>
+    <ul>
+      <li><strong>Network Name:</strong> <a href="https://www.bnbchain.org/en" target="_blank">BNB Smart Chain</a></li>
+      <li><strong>New RPC URL:</strong> <a href="https://bsc-dataseed.binance.org/"
+          target="_blank">https://bsc-dataseed.binance.org/</a></li>
+      <li><strong>Chain ID:</strong> 56</li>
+      <li><strong>Currency Symbol:</strong> BNB</li>
+      <li><strong>Block Explorer URL:</strong> <a href="https://bscscan.com" target="_blank">https://bscscan.com</a>
+      </li>
+    </ul>
+
+    <h2>3. Adding the Dušanov Zlatnik Token<img src="../pic/favicon.png" alt="Dusanov Zlatnik"></h2>
+    <p>After switching MetaMask to the BNB Smart Chain network, click on the "Import Tokens" button and manually enter
+      the following details:</p>
+    <ul>
+      <li><strong>Token Contract Address:</strong> 0x27a81dce6f4bd0f2a6f3c17e195ecdb773051a00</li>
+      <li><strong>Symbol:</strong> ZLATNIK</li>
+      <li><strong>Decimals:</strong> 18</li>
+    </ul>
+    <p>You can verify the information on the official <a
+        href="https://bscscan.com/token/0x27a81dce6f4bd0f2a6f3c17e195ecdb773051a00" target="_blank">BscScan token
+        profile</a>.</p>
+    <p>Once successfully added, the Dušanov Zlatnik token will appear in your MetaMask wallet.</p>
+
+
+
+    <br />
+    <p><em>Last updated: July 2025.</em></p>
+    <footer>
+      © 2025 Dusanov Zlatnik. All rights reserved.
+      <a href="../index-en.html">← Back to Home</a>
+    </footer>
+  </section>
+
+  <script>
+           //jezik
+            document.querySelectorAll('#language-switcher a').forEach(link => {
+                  link.addEventListener('click', function (e) {
+                  e.preventDefault();
+                  const lang = this.getAttribute('data-lang');
+                  if (lang === 'sr') {
+                  window.location.href = 'Uputstvo.html';
+                  } else if (lang === 'sr-latin') {
+                  window.location.href = 'Uputstvo-latin.html';
+                  } else if (lang === 'en') {
+                  window.location.href = 'Uputstvo-en.html';
+                  }
+                  });
+            });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="latin">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="stylesheet" href="../style-docs.css">
+    <title>Uputstvo za MetaMask | Dušanov Zlatnik</title>
+
+</head>
+
+<body>
+    <div id="language-switcher">
+        <a href="#" data-lang="sr">ћир</a> |
+        <a href="#" data-lang="sr-latin">lat</a> |
+        <a href="#" data-lang="en">eng</a>
+    </div>
+
+    <!-- Latinica -->
+    <section id="lat" class="lang-section">
+        <h1>Vodič za MetaMask i BNB Smart Chain</h1>
+
+        <h2>1. Instalacija kripto novčanika MetaMask-a<img src="../pic/metamask-icon.png" alt="MetaMask Logo"></h2>
+        <p>Preuzmite i instalirajte MetaMask prema uređaju koji koristite:</p>
+        <ul>
+            <li><a href="https://apps.apple.com/app/metamask/id1438144202" target="_blank">iOS (App Store)</a></li>
+            <li><a href="https://play.google.com/store/apps/details?id=io.metamask" target="_blank">Android (Google
+                    Play)</a>
+            </li>
+            <li><a href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn"
+                    target="_blank">Chrome / Brave ekstenzija (Windows/Mac)</a></li>
+            <li><a href="https://metamask.io/download/" target="_blank">Zvanični sajt za sve platforme</a></li>
+        </ul>
+        <p>Nakon instalacije, pokrenite aplikaciju i kreirajte novi novčanik prateći uputstva unutar aplikacije.
+            Obavezno
+            sačuvajte svoju „seed“ frazu (tajni kod za oporavak) na sigurnom mestu – ona je ključ za pristup vašem
+            novčaniku.
+        </p>
+
+        <h2>2. Dodavanje BNB Smart Chain mreže<img src="../pic/BNB_icon.png" alt="BNB Logo"></h2>
+        <p>Otvorite MetaMask, idite na <strong>Podešavanja → Mreže → Dodaj mrežu</strong>. Možete automatski dodati BNB
+            Smart Chain preko <a href="https://chainlist.org/chain/56" target="_blank">Chainlist</a> klikom na „Add to
+            MetaMask“, ili ručno unesite sledeće parametre (izvor: <a
+                href="https://academy.binance.com/en/articles/connecting-metamask-to-binance-smart-chain"
+                target="_blank">Binance Academy</a>):</p>
+        <ul>
+            <li><strong>Network Name:</strong> <a href="https://www.bnbchain.org/en" target="_blank">BNB Smart Chain</a>
+            </li>
+            <li><strong>New RPC URL:</strong> <a href="https://bsc-dataseed.binance.org/"
+                    target="_blank">https://bsc-dataseed.binance.org/</a></li>
+            <li><strong>Chain ID:</strong> 56</li>
+            <li><strong>Currency Symbol:</strong> BNB</li>
+            <li><strong>Block Explorer URL:</strong> <a href="https://bscscan.com"
+                    target="_blank">https://bscscan.com</a>
+            </li>
+        </ul>
+
+        <h2>3. Dodavanje tokena Dušanov Zlatnik<img src="../pic/favicon.png" alt="Dušanov Zlatnik"></h2>
+        <p>Nakon što ste prebacili MetaMask na BNB Smart Chain mrežu, kliknite na dugme „Uvezi token“ (Import Token) i
+            ručno
+            unesite sledeće podatke:</p>
+        <ul>
+            <li><strong>Token Contract Address:</strong> 0x27a81dce6f4bd0f2a6f3c17e195ecdb773051a00</li>
+            <li><strong>Symbol:</strong> ZLATNIK</li>
+            <li><strong>Decimals:</strong> 18</li>
+        </ul>
+        <p>Za proveru tačnosti podataka, posetite zvanični <a
+                href="https://bscscan.com/token/0x27a81dce6f4bd0f2a6f3c17e195ecdb773051a00" target="_blank">BscScan
+                profil
+                tokena</a>.</p>
+        <p>Nakon uspešnog dodavanja, token „Dušanov Zlatnik“ biće prikazan u vašem MetaMask novčaniku.</p>
+
+        <br />
+        <p><em>Poslednje ažuriranje: jul 2025.</em></p>
+        <footer>
+            © 2025 Dušanov Zlatnik. Sva prava zadržana.
+            <a href="../index-latin.html">← Nazad na početnu</a>
+        </footer>
+    </section>
+
+    <script>
+        //jezik
+        document.querySelectorAll('#language-switcher a').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const lang = this.getAttribute('data-lang');
+                if (lang === 'sr') {
+                    window.location.href = 'Uputstvo.html';
+                } else if (lang === 'sr-latin') {
+                    window.location.href = 'Uputstvo-latin.html';
+                } else if (lang === 'en') {
+                    window.location.href = 'Uputstvo-en.html';
+                }
+            });
+        });
+    </script>
+    
+</body>
+
+</html>
