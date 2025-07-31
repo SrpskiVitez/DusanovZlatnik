@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="stylesheet" href="../style-docs.css">
+    <title>Privacy Policy | Dušanov Zlatnik</title>
+</head>
+
+<body>
+    <div id="language-switcher">
+        <a href="#" data-lang="sr">ћир</a> |
+        <a href="#" data-lang="sr-latin">lat</a> |
+        <a href="#" data-lang="en">eng</a>
+    </div>
+
+    <!-- English -->
+    <section id="eng" class="lang-section">
+        <h1>Privacy Policy</h1>
+        <p>This site does not collect personal user data unless explicitly done so (e.g., via contact forms or other
+            communication methods).</p>
+        <p>All collected data is used solely for the purposes of the Dušanov Zlatnik project and will not be shared with
+            third parties without consent.</p>
+        <p>The project uses cookies only to improve user experience, not for tracking or advertising.</p>
+        <br />
+        <p><em>Last updated: July 2025.</em></p>
+        <footer>
+            © 2025 Dusanov Zlatnik. All rights reserved.
+            <a href="../index-en.html">← Back to Home</a>
+        </footer>
+    </section>
+
+    <script>
+        //jezik
+        document.querySelectorAll('#language-switcher a').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const lang = this.getAttribute('data-lang');
+                if (lang === 'sr') {
+                    window.location.href = 'privacy.html';
+                } else if (lang === 'sr-latin') {
+                    window.location.href = 'privacy-latin.html';
+                } else if (lang === 'en') {
+                    window.location.href = 'privacy-en.html';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
