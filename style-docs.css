@@ -7,9 +7,9 @@
     canvas {
         display: block;
         width: 100%;
-        max-width: 100%;
+        max-width: 30rem;
         height: auto;
-        margin: 1rem auto;
+        margin: 0.5rem auto;
         box-sizing: border-box;
     }
 
@@ -68,6 +68,9 @@
         background: #0d1b2a;
         color: #d9d4c9;
         min-height: 100vh;
+        word-break: normal;
+        overflow-wrap: break-word;
+        hyphens: auto;
     }
 
     #language-switcher {
