@@ -8,14 +8,9 @@ body {
   margin: 0;
   font-family: 'Merriweather', serif;
   background: #0d1b2a;
-  /* tamno plava */
   color: #d9d4c9;
-  /* krem */
   line-height: 1.7;
   min-height: 100vh;
-  /*display: flex;
-        flex-direction: column;
-        align-items: center;*/
 }
 
 #language-switcher {
