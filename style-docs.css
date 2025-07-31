@@ -105,12 +105,14 @@
 
     p,
     p,
+    p,
     li {
-        line-height: 1.6;
-        word-break: normal;
+        word-break: keep-all;
         overflow-wrap: break-word;
         hyphens: auto;
+        word-wrap: break-word;
     }
+
 
     ol {
         margin-left: 20px;
@@ -179,12 +181,6 @@
 
     a:hover {
         color: #d9d4c9;
-    }
-
-    * {
-        word-break: normal;
-        overflow-wrap: break-word;
-        hyphens: auto;
     }
 
     @media (max-width: 600px) {
