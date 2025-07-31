@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="stylesheet" href="../style-docs.css">
+  <title>Terms of Use | Dušanov Zlatnik</title>
+
+</head>
+
+<body>
+  <div id="language-switcher">
+    <a href="#" data-lang="sr">ћир</a> |
+    <a href="#" data-lang="sr-latin">lat</a> |
+    <a href="#" data-lang="en">eng</a>
+  </div>
+
+  <!-- English -->
+  <section id="eng" class="lang-section">
+    <h1>Terms of Use</h1>
+    <p>Welcome to the official website of the Dušanov Zlatnik project.</p>
+    <p>By using this website and/or purchasing or receiving the Dušanov Zlatnik token (hereinafter: "Token"), you
+      confirm that you have read, understood, and accepted the following terms:</p>
+    <ol>
+      <li>The “Dušanov Zlatnik” token is a symbol of community and cultural heritage, and does not constitute an
+        investment instrument or financial product.</li>
+      <li>The token is not registered as a security in any jurisdiction, nor is it represented as such.</li>
+      <li>Purchasing the token does not grant rights to dividends, governance, ownership, profits, or any financial
+        return.</li>
+      <li>The token’s price is symbolic and determined for cultural-historical reasons, not market mechanisms.</li>
+      <li>Users acknowledge and accept that they receive or purchase the Token at their own risk.</li>
+      <li>All transactions take place via the BNB Smart Chain and are irreversible.</li>
+      <li>This website does not store private keys nor guarantees wallet security.</li>
+      <li>The project reserves the right to update rules, goals, and directions in the future, with prior notice.</li>
+      <li>Purchase of the token is not available to persons from countries with strict digital asset regulations,
+        including but not limited to the United States, Canada, and China.</li>
+      <li>The user is solely responsible for fulfilling all tax obligations arising as a result of receiving,
+        using, selling, or gifting the token. The issuer or distributor of the token bears no responsibility
+        for any tax liabilities, filings, or payments that the user must perform in accordance with the applicable laws
+        of their jurisdiction.</li>
+      <li>The user has read and understood the legal disclaimer.</li>
+      <li>The user has read and understood the privacy policy.</li>
+      <li>The user has read and understood the utility status provisions of the token and acknowledges that the token is
+        not a financial instrument, security, or investment vehicle.</li>
+
+    </ol>
+    <p>If you do not accept these terms, please refrain from using this website, as well as from any form of access,
+      usage, or transactions related to the Token.</p>
+    <br />
+    <p><em>Last updated: July 2025.</em></p>
+    <footer>
+      © 2025 Dusanov Zlatnik. All rights reserved.
+      <a href="../index-en.html">← Back to Home</a>
+    </footer>
+  </section>
+
+  <script>
+    //jezik
+    document.querySelectorAll('#language-switcher a').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const lang = this.getAttribute('data-lang');
+        if (lang === 'sr') {
+          window.location.href = 'utility-status.html';
+        } else if (lang === 'sr-latin') {
+          window.location.href = 'utility-status-latin.html';
+        } else if (lang === 'en') {
+          window.location.href = 'utility-status-en.html';
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="latin">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="stylesheet" href="../style-docs.css">
+  <title>Uslovi korišćenja | Dušanov Zlatnik</title>
+
+</head>
+
+<body>
+  <div id="language-switcher">
+    <a href="#" data-lang="sr">ћир</a> |
+    <a href="#" data-lang="sr-latin">lat</a> |
+    <a href="#" data-lang="en">eng</a>
+  </div>
+
+  <!-- Latinica -->
+  <section id="lat" class="lang-section">
+    <h1>Uslovi korišćenja</h1>
+    <p>Dobrodošli na zvanični sajt projekta Dušanov Zlatnik.</p>
+    <p>Korišćenjem ovog sajta i/ili kupovinom ili prijemom tokena Dušanov Zlatnik (u daljem tekstu: "Token"),
+      potvrđujete da ste pročitali, razumeli i prihvatili sledeće uslove:</p>
+    <ol>
+      <li>Token „Dušanov Zlatnik” je simbol zajedništva i kulturne baštine, i ne predstavlja investicioni instrument
+        niti finansijski proizvod.</li>
+      <li>Token nije registrovan ni u jednoj jurisdikciji kao hartija od vrednosti („security“), niti se takav
+        prikazuje.</li>
+      <li>Kupovina tokena ne daje pravo na dividendu, upravljanje, vlasništvo, dobit ili bilo kakav finansijski
+        povraćaj.</li>
+      <li>Cena tokena je simbolična i utvrđena iz kulturno-istorijskih razloga, a ne tržišnim mehanizmima.</li>
+      <li>Korisnici priznaju i prihvataju da token primaju ili kupuju na sopstveni rizik.</li>
+      <li>Sve transakcije se odvijaju putem BNB Smart Chain mreže i ne mogu biti opozvane.</li>
+      <li>Ovaj sajt ne čuva privatne ključeve korisnika niti garantuje bezbednost wallet-a.</li>
+      <li>Projekat zadržava pravo da u budućnosti ažurira pravila, ciljeve i smernice, uz prethodnu najavu.</li>
+      <li>Kupovina tokena nije dostupna osobama iz država sa strogom regulativom digitalnih sredstava, uključujući, ali
+        ne ograničavajući se na, Sjedinjene Američke Države, Kanadu i Kinu.</li>
+      <li>Korisnik je jedini odgovoran za ispunjavanje svih poreskih obaveza koje nastanu kao posledica primanja,
+        korišćenja, prodaje ili poklanjanja tokena. Emitent ili izdavalac tokena ne snosi nikakvu odgovornost
+        za bilo kakve poreske obaveze, prijave ili plaćanja koja korisnik mora izvršiti u skladu sa važećim zakonima
+        svoje nadležnosti.</li>
+      <li>Korisnik je pročitao i razumeo pravnu napomenu.</li>
+      <li>Korisnik je pročitao i razumeo politiku privatnosti.</li>
+      <li>Korisnik je pročitao i razumeo odredbe o statusu korisnosti (utility status) tokena i prihvata da token nije
+        finansijski instrument, hartija od vrednosti ili sredstvo za investiranje.</li>
+
+    </ol>
+    <p>Ukoliko ne prihvatate ove uslove, molimo vas da se uzdržite od korišćenja ovog sajta, kao i od bilo kakvog oblika
+      pristupanja, upotrebe ili transakcija u vezi sa Tokenom.</p>
+    <br />
+    <p><em>Poslednje ažuriranje: jul 2025.</em></p>
+    <footer>
+      © 2025 Dušanov Zlatnik. Sva prava zadržana.
+      <a href="../index-latin.html">← Nazad na početnu</a>
+    </footer>
+  </section>
+
+  <script>
+    //jezik
+    document.querySelectorAll('#language-switcher a').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const lang = this.getAttribute('data-lang');
+        if (lang === 'sr') {
+          window.location.href = 'utility-status.html';
+        } else if (lang === 'sr-latin') {
+          window.location.href = 'utility-status-latin.html';
+        } else if (lang === 'en') {
+          window.location.href = 'utility-status-en.html';
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
