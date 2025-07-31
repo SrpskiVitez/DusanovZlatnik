@@ -36,10 +36,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  
-  /*background: url('back.png') no-repeat center center/cover;*/
   background: #0d1b2a;
-  /* tamno plava */
   overflow: hidden;
   display: flex;
   flex-direction: column;

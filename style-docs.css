@@ -11,7 +11,7 @@
     }
 
     header {
-        padding-top: 1rem;
+        padding-top: 0.5rem;
         text-align: center;
         top: 0;
         left: 0;
@@ -61,17 +61,19 @@
     }
 
     body {
+        margin: 0;
+        line-height: 1.7;
         font-family: 'Merriweather', serif;
         max-width: 900px;
         margin: auto;
-        
         background: #0d1b2a;
         color: #d9d4c9;
+        min-height: 100vh;
     }
 
     #language-switcher {
         align-self: flex-end;
-        margin: 0.5rem 0.5rem 0 0;
+        margin: 0.5rem 1.2rem 0 0;
         font-size: 1rem;
         z-index: 3;
     }
@@ -93,12 +95,8 @@
 
     h2 img {
         height: 1.7em;
-        /* visina slike 1.5 puta veća od visine fonta */
         vertical-align: middle;
-        /* poravnanje sa tekstom */
-
         margin-left: 0.5em;
-        /* razmak između slike i teksta */
     }
 
     p,
