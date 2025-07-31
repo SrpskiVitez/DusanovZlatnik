@@ -104,11 +104,12 @@
     }
 
     p,
+    p,
     li {
         line-height: 1.6;
-        word-wrap: break-word;
-        word-break: break-all;
+        word-break: normal;
         overflow-wrap: break-word;
+        hyphens: auto;
     }
 
     ol {
