@@ -312,11 +312,6 @@
     function createChart(canvasId, lang) {
       const ctx = document.getElementById(canvasId).getContext("2d");
 
-      // Uništi stari grafikon ako postoji
-      if (charts[canvasId]) {
-        charts[canvasId].destroy();
-      }
-
       const data = {
         labels: chartLabels[lang],
         datasets: [{
@@ -335,20 +330,10 @@
       });
     }
 
-    // Funkcija za prikaz sekcije i grafika
-    function showLanguage(lang) {
-      document.querySelectorAll(".lang-section").forEach(section => {
-        section.classList.remove("active");
-      });
-
-      const activeSection = document.getElementById(lang);
-      activeSection.classList.add("active");
-
-      // Kreiraj odgovarajući grafikon sa prevodom legende
-      if (lang === "cyr") createChart("chart-cyr", "cyr");
-      else if (lang === "lat") createChart("chart-lat", "lat");
-      else if (lang === "eng") createChart("chart-eng", "eng");
-    }
+    createChart("chart-cyr", "cyr");
+    //createChart("chart-lat", "lat");
+     //createChart("chart-eng", "eng");
+    
 
    //jezik
     document.querySelectorAll('#language-switcher a').forEach(link => {
@@ -356,11 +341,11 @@
         e.preventDefault();
         const lang = this.getAttribute('data-lang');
         if (lang === 'sr') {
-          window.location.href = 'index.html';
+          window.location.href = 'whitepaper.html';
         } else if (lang === 'sr-latin') {
-          window.location.href = 'index-latin.html';
+          window.location.href = 'whitepaper-latin.html';
         } else if (lang === 'en') {
-          window.location.href = 'index-en.html';
+          window.location.href = 'whitepaper-en.html';
         }
       });
     });
