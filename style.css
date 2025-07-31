@@ -20,13 +20,10 @@
     }
 
     #language-switcher {
-      position: fixed;
-      top: 0.5rem;
-      right: 0.5rem;      
-      padding: 0.25rem 0.5rem;      
-      font-size: 0.875rem;
-      /* ~14px ako je root font-size 16px */
-      z-index: 9999;      
+        text-align: right;
+        margin: 1rem 1.5rem;
+        font-size: 1rem;
+        z-index: 10;
     }
 
     #language-switcher a {
