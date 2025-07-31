@@ -173,33 +173,7 @@
             padding: 1rem;
             box-sizing: border-box;
         }
-
-        /* Header */
-        header {
-            padding-top: 1rem;
-            padding-bottom: 1rem;
-            height: auto;
-        }
-
-        header h1 {
-            padding-top: 1rem;
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        header h2 {
-            font-size: 1.1rem;
-            margin-top: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        #language-switcher {
-            top: 0.8rem;
-            right: 0.8rem;
-            font-size: 0.9rem;
-        }
-
-
+             
         button.lang-btn {
             margin: 5px 5px;
             padding: 8px 12px;
