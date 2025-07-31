@@ -12,7 +12,7 @@
 
     header {
         position: relative;
-        padding-top: 0.5rem;
+        padding: 0.5rem 1rem;
         text-align: center;
         top: 0;
         left: 0;
@@ -218,9 +218,10 @@
 
         #language-switcher {
             top: 0.8rem;
-            right: 1rem;
+            right: 0.8rem;
             font-size: 0.9rem;
         }
+
 
         button.lang-btn {
             margin: 5px 5px;
