@@ -13,13 +13,19 @@
     h1 {
         margin-top: 2rem;
         /* dodatni prostor ispod switchera */
-        font-size: 1.5rem;
+        font-size: 1.7rem;
         font-weight: 700;
         max-width: 900px;
         text-align: center;
         color: #f7f3e9;
         letter-spacing: 2px;
         line-height: 1.2;
+    }
+
+    h2 {       
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: #b9a46c;      
     }
 
     img.inline-img {
