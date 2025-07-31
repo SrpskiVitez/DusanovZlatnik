@@ -471,13 +471,11 @@ main.container {
 
   /* Header */
   header {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
     height: auto;
   }
 
   header h1 {
-    padding-top: 1rem;
+    padding-top: 0.5rem;
     font-size: 2rem;
     margin-bottom: 0.5rem;
   }
@@ -495,7 +493,7 @@ main.container {
   /* Main kontejner */
   main.container {
     margin: 1rem auto;
-    padding: 1.5rem 1rem 2rem;
+    padding: 1rem 1rem 2rem;
   }
 
   .social-icons {
