@@ -52,6 +52,17 @@
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
 
+    main.container {
+        max-width: 850px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 2.5rem 2rem 4rem;
+        background: rgba(13, 27, 42, 0.9);
+        border-radius: 15px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+        box-sizing: border-box;
+    }
+
     .caption {
         font-size: 0.9em;
         text-align: center;
