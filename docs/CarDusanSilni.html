@@ -8,145 +8,15 @@
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
     <link rel="manifest" href="../site.webmanifest">
-
+    <link rel="stylesheet" href="../style-docs.css">
     <title>Цар Душан Силни | Душанов Златник</title>
-    <style>
-        img.inline-img {
-            display: block;
-            max-width: 100%;
-            height: auto;
-            margin: 1.5rem auto;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        }
-
-        .caption {
-            font-size: 0.9em;
-            text-align: center;
-            color: #bbb;
-            margin-top: -1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            max-width: 900px;
-            margin: auto;
-            padding: 20px;
-            background: #0d1b2a;
-            color: #d9d4c9;
-        }
-
-        h1,
-        h2 {
-            color: #f7f3e9;
-        }
-
-        p,
-        li {
-            line-height: 1.6;
-        }
-
-        footer {
-            margin-top: 2.5rem;
-            font-size: 0.9em;
-            color: #d9d4c9;
-            text-align: center;
-            border-top: 1px solid #d9d4c9;
-            padding: 1.5rem 0 2.5rem;
-        }
-
-        footer a {
-            display: block;
-            margin-top: 1.5rem;
-            margin-bottom: 1rem;
-            color: #f7f3e9;
-            text-decoration: none;
-            transition: color 0.3s ease;
-            font-size: 1.5em;
-        }
-
-        footer a:hover {
-            color: #b9a46c;
-            text-decoration: underline;
-        }
-
-        .lang-btns {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        button.lang-btn {
-            margin: 0 10px;
-            padding: 10px 20px;
-            cursor: pointer;
-            border: 2px solid #f7f3e9;
-            background: transparent;
-            color: #f7f3e9;
-            font-weight: 700;
-            font-size: 1rem;
-            border-radius: 30px;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        button.lang-btn:hover {
-            background-color: #f7f3e9;
-            color: #0d1b2a;
-        }
-
-        button.lang-btn.active {
-            background-color: #f7f3e9;
-            color: #0d1b2a;
-        }
-
-        .lang-section {
-            display: none;
-        }
-
-        .lang-section.active {
-            display: block;
-        }
-
-        a {
-            color: #f7f3e9;
-        }
-
-        a:hover {
-            color: #d9d4c9;
-        }
-
-        @media (max-width: 600px) {
-            body {
-                max-width: 100%;
-                padding: 15px 10px;
-                box-sizing: border-box;
-            }
-
-            button.lang-btn {
-                margin: 5px 5px;
-                padding: 8px 12px;
-                font-size: 0.9rem;
-            }
-
-            footer {
-                font-size: 0.85em;
-                padding-top: 0.8rem;
-                margin-top: 2rem;
-            }
-
-            footer a {
-                display: block;
-                margin-top: 1.5rem;
-            }
-        }
-    </style>
 </head>
 
 <body>
-    <div class="lang-btns">
-        <button class="lang-btn active" data-lang="cyr">Ћирилица</button>
-        <button class="lang-btn" data-lang="lat">Latinica</button>
-        <button class="lang-btn" data-lang="eng">English</button>
+    <div id="language-switcher">
+        <a href="#" data-lang="sr">ћир</a> |
+        <a href="#" data-lang="sr-latin">lat</a> |
+        <a href="#" data-lang="en">eng</a>
     </div>
 
     <!-- Ћирилица -->
@@ -241,223 +111,25 @@
         <p><em>Последње ажурирање: јул 2025.</em></p>
         <footer>
             © 2025 Душанов Златник. Сва права задржана.
-            <a href="https://srpskivitez.github.io/DusanovZlatnik">← Назад на почетну</a>
-        </footer>
-    </section>
-
-
-    <!-- Latinica -->
-    <section id="lat" class="lang-section">
-        <h1>Car Dušan Silni</h1>
-        <img src="../pic/CarDusanFreska.jpg" alt="Freska cara Dušana" class="inline-img">
-        <p class="caption">Freska cara Dušana, manastir Lesnovo</p>
-
-        <h2>Uvod</h2>
-        <p>Car Stefan Dušan Nemanjić, poznat kao Dušan Silni, bio je najmoćniji srpski vladar i jedna od najznačajnijih
-            ličnosti srednjovekovne Evrope. Rođen je oko 1308. godine kao sin kralja Stefana Dečanskog i kraljice
-            Teodore. Još kao mlad pokazivao je izuzetne vojne i diplomatske sposobnosti. Već 1331. godine, posle sukoba
-            sa ocem, preuzeo je presto i krunisan je za kralja u Skoplju.</p>
-
-        <h2>Vladavina</h2>
-        <p>Tokom svoje vladavine, Dušan je vodio brojne uspešne vojne pohode. Osvojio je značajne delove Vizantijskog
-            carstva, uključujući Epir, Tesaliju, veliki deo Makedonije i Trakije. Njegova država postala je najveća u
-            istoriji srednjovekovne Srbije. Krunisan je za <strong>cara Srba i Grka</strong> na Vaskrs, 16. aprila 1346.
-            godine u Skoplju, uz prisustvo srpskog patrijarha, bugarskog patrijarha i predstavnika Svete Gore.</p>
-        <img src="../pic/DusanovoCarstvo.jpg" alt="Mapa Dušanovog Carstva" class="inline-img">
-        <p class="caption">Mapa Dušanovog Carstva</p>
-        <h2>Dušanov zakonik</h2>
-        <p>Godine 1349. u Skoplju je donet prvi deo Dušanovog zakonika, a 1354. u Seru drugi deo. Zakonik je sadržao
-            preko 200 članova i regulisao sve aspekte društvenog, crkvenog i pravnog života. Bio je jedan od
-            najrazvijenijih pravnih sistema u Evropi tog doba. Dušan je insistirao na pravdi i redu, strogo kažnjavajući
-            korupciju, krađu i izdaju.</p>
-        <img src="../pic/DusanovZakonik.jpg" alt="Stranica iz Dusanovog Zakonika 14.vek " class="inline-img">
-        <p class="caption">Stranica iz Dusanovog Zakonika 14.vek</p>
-        <h2>Zadužbine</h2>
-        <p>Car Dušan bio je veliki ktitor. Njegova najpoznatija zadužbina je manastir <strong>Svetih Arhangela</strong>
-            kod Prizrena, podignut u blizini stare carske prestonice. Manastir je bio impozantan spoj arhitekture i
-            umetnosti, a Dušan je u njemu i sahranjen. Podržavao je obnovu i širenje mnogih manastira, kako u Srbiji
-            tako i u Grčkoj, uključujući i svetogorske svetinje.</p>
-
-        <img src="../pic/ManastirSvetiArhangeli.jpg"
-            alt="Manastir Sveti Arhangeli, kanjon reke Prizrenske Bistrice u Metohiji" class="inline-img">
-        <p class="caption">Manastir Sveti Arhangeli, kanjon reke Prizrenske Bistrice u Metohiji</p>
-
-        <h2>Hilandar i pravoslavlje</h2>
-        <p>Dušan je bio veliki zaštitnik pravoslavlja. Podržavao je monaški život i učvrstio samostalnost Srpske crkve.
-            Osnivanjem <strong>Srpskog patrijarhata u Peći</strong> 1346. godine, Srpska arhiepiskopija je uzdignuta na
-            rang patrijaršije. Dušan je darivao manastir Hilandar i druge svetogorske manastire zlatom, zemljom i
-            vinogradima.</p>
-
-        <h2>Dušanov zlatnik</h2>
-        <p>Tokom njegove vladavine kovan je zlatni i srebrni novac visokog kvaliteta, po uzoru na vizantijski novac.
-            Dušanov zlatnik nosio je njegov lik sa carskom krunom i krstom u ruci. Ovi novčići predstavljali su simbol
-            suverenosti i ekonomske moći, i korišćeni su širom Balkana u trgovini i diplomatiji.</p>
-
-        <h2>Nasleđe</h2>
-        <p>Car Dušan je iznenada preminuo 20. decembra 1355. godine, tokom priprema za pohod na Carigrad. Sahranjen je u
-            manastiru Svetih Arhangela. Nasledio ga je sin Uroš, poznat kao Uroš Nejaki, koji nije uspeo da održi
-            jedinstvo carstva. Dušanovo ime i delo ostali su duboko ukorenjeni u srpskoj svesti kao simbol moći, zakona
-            i duhovne veličine.</p>
-        <img src="../pic/RaspadCarstva.png"
-            alt="Srpsko carstvo 1360. godine, u vreme cara Uroša, sa teritorijama oblasnih gospodara."
-            class="inline-img">
-        <p class="caption">Srpsko carstvo 1360. godine, u vreme cara Uroša, sa teritorijama oblasnih gospodara.</p>
-
-        <h2>Zanimljivosti o Caru Dušanu</h2>
-        <ul style="list-style-type: disc; padding-left: 20px;">
-            <li>Car Dušan je imao vojsku od preko <strong>80.000 ljudi</strong>, jednu od najvećih u tadašnjoj Evropi.
-            </li>
-            <li>Planirao je da osvoji <strong>Carigrad</strong> i kruniše se kao car Vizantije, ali je iznenada
-                preminuo.</li>
-            <li>Njegovo telo je 1927. godine preneto iz Prizrena i danas počiva u <strong>manastiru Svetog Marka u
-                    Beogradu</strong>.</li>
-            <li>Prema narodnom predanju, bio je visok preko <strong>2 metra</strong>, pa je nazivan "Silni" zbog fizičke
-                i političke moći.</li>
-            <li><strong>Dušanov zakonik</strong> bio je toliko napredan da se koristio kao model pravde i u kasnijim
-                vekovima.</li>
-            <li>Car Dušan je nosio titulu <strong>„Veliki Kralj Srba i Grka“</strong> i proglasio se carem 1346. godine.
-            </li>
-            <li>Njegov dvorac u Skoplju bio je jedan od najimpresivnijih srednjovekovnih zamkova na Balkanu.</li>
-            <li>Osnovao je brojne manastire i zadužbine, od kojih su neki i danas značajni spomenici kulture.</li>
-            <li>Za vreme njegove vladavine, srpska država je bila najveća u svojoj istoriji, obuhvatajući delove
-                današnje Srbije, Makedonije, Grčke i Albanije.</li>
-            <li>Dušanova smrt je izazvala pad srpske moći jer njegov naslednik nije imao dovoljno snage da održi
-                carstvo.</li>
-            <li>Legenda kaže da je Dušan bio toliko moćan da je čak i nebo „držao u svojim rukama“.</li>
-            <li>Njegov zakonik je bio napisan na starosrpskom jeziku i sadržao je preko 200 članova, regulišući sve
-                aspekte života i prava.</li>
-
-        </ul>
-        <br />
-        <p><em>Poslednje ažuriranje: jul 2025.</em></p>
-        <footer>
-            © 2025 Dušanov Zlatnik. Sva prava zadržana.
-            <a href="https://srpskivitez.github.io/DusanovZlatnik">← Nazad na početnu</a>
-        </footer>
-    </section>
-
-
-    <!-- English -->
-    <section id="eng" class="lang-section">
-        <h1>Tsar Dušan the Mighty</h1>
-        <img src="../pic/CarDusanFreska.jpg" alt="Fresco of Tsar Dušan" class="inline-img">
-        <p class="caption">Fresco of Tsar Dušan, Lesnovo Monastery</p>
-
-        <h2>Introduction</h2>
-        <p>Tsar Stefan Dušan Nemanjić, known as Dušan the Mighty, was the most powerful Serbian ruler and one of the
-            most significant figures in medieval Southeastern Europe. He was born around 1308, the son of King Stefan
-            Dečanski and Queen Teodora. From an early age, he showed exceptional leadership, military talent, and
-            strategic thinking. In 1331, after a political conflict with his father, he seized the throne and was
-            crowned king in Skopje.</p>
-
-        <h2>Reign</h2>
-        <p>During his reign, Dušan launched numerous successful military campaigns, expanding the Serbian state deep
-            into Byzantine territory. He conquered Epirus, Thessaly, large parts of Macedonia and Thrace. His empire
-            became the largest in medieval Serbian history. He was crowned <strong>Emperor of the Serbs and
-                Greeks</strong> on Easter Sunday, April 16, 1346, in Skopje, with the blessing of the Serbian Patriarch,
-            the Bulgarian Patriarch, and representatives of Mount Athos.</p>
-        <img src="../pic/DusanovoCarstvo.jpg" alt="Map of Dušan's Empire" class="inline-img">
-        <p class="caption">Map of Dušan's Empire</p>
-
-        <h2>Dušan's Code</h2>
-        <p>In 1349, in Skopje, Dušan enacted the first part of his legal code, with a second part added in Serres in
-            1354. The <strong>Dušan’s Code</strong> consisted of over 200 articles and regulated civil, ecclesiastical,
-            and legal matters. It was one of the most advanced legal systems of its time in Europe. Dušan emphasized
-            justice and order, imposing strict punishments for corruption, theft, and treason.</p>
-        <img src="../pic/DusanovZakonik.jpg" alt="Page from Dušan's Code, 14th century" class="inline-img">
-        <p class="caption">Page from Dušan's Code, 14th century</p>
-
-        <h2>Endowments</h2>
-        <p>Tsar Dušan was a generous benefactor. His most famous foundation is the <strong>Monastery of the Holy
-                Archangels</strong> near Prizren, built near the imperial residence. It combined architectural splendor
-            with spiritual significance and served as his burial site. He also supported the restoration and expansion
-            of monasteries in Serbia and Greek lands, including on Mount Athos.</p>
-
-        <img src="../pic/ManastirSvetiArhangeli.jpg"
-            alt="Monastery of the Holy Archangels, canyon of the Prizren Bistrica River in Metohija" class="inline-img">
-        <p class="caption">Monastery of the Holy Archangels, canyon of the Prizren Bistrica River in Metohija</p>
-
-
-        <h2>Hilandar and Orthodoxy</h2>
-        <p>Dušan was a staunch protector of Eastern Orthodoxy. He supported monastic life and strengthened the
-            independence of the Serbian Church. In 1346, he elevated the Serbian Archbishopric to the
-            <strong>Patriarchate of Peć</strong>. He generously donated gold, land, and vineyards to the Hilandar
-            Monastery and other religious institutions on Mount Athos.
-        </p>
-
-        <h2>Dušan's Gold Coin</h2>
-        <p>During his reign, the Serbian state minted high-quality gold and silver coins modeled after Byzantine
-            currency. The <strong>Dušan's gold coin</strong> bore his likeness with an imperial crown and a cross in
-            hand. It symbolized sovereignty, economic strength, and legitimacy and was widely used in Balkan trade and
-            diplomacy.</p>
-
-        <h2>Legacy</h2>
-        <p>Tsar Dušan died unexpectedly on December 20, 1355, while preparing for a military campaign toward
-            Constantinople. He was buried in the Monastery of the Holy Archangels. He was succeeded by his son Uroš,
-            known as Uroš the Weak, who was unable to preserve the unity of the empire. Dušan’s legacy remains a symbol
-            of Serbian imperial glory, justice, and spiritual depth.</p>
-        <img src="../pic/RaspadCarstva.png"
-            alt="The Serbian Empire in 1360, during the reign of Emperor Uroš, with the territories of regional lords."
-            class="inline-img">
-        <p class="caption">The Serbian Empire in 1360, during the reign of Emperor Uroš, with the territories of
-            regional lords.</p>
-
-
-        <h2>Interesting Facts about Tsar Dušan</h2>
-        <ul style="list-style-type: disc; padding-left: 20px;">
-            <li>Tsar Dušan commanded an army of over <strong>80,000 soldiers</strong>, one of the largest in Europe at
-                the time.</li>
-            <li>He planned to conquer <strong>Constantinople</strong> and crown himself Emperor of Byzantium but died
-                suddenly before he could.</li>
-            <li>His body was transferred from Prizren in 1927 and now rests in the <strong>Church of St. Mark in
-                    Belgrade</strong>.</li>
-            <li>According to folk tradition, he was over <strong>2 meters tall</strong>, earning the nickname "the
-                Mighty" for his physical and political power.</li>
-            <li>The <strong>Dušan’s Code</strong> was so advanced that it served as a model of justice for centuries
-                after.</li>
-            <li>Tsar Dušan held the title <strong>“The Great King of Serbs and Greeks”</strong> and proclaimed himself
-                emperor in 1346.</li>
-            <li>His palace in Skopje was one of the most impressive medieval castles in the Balkans.</li>
-            <li>He founded numerous monasteries and endowments, some of which remain significant cultural monuments
-                today.</li>
-            <li>During his reign, the Serbian state was the largest in its history, encompassing parts of modern Serbia,
-                North Macedonia, Greece, and Albania.</li>
-            <li>Dušan’s death caused the decline of Serbian power, as his successor lacked the strength to maintain the
-                empire.</li>
-            <li>Legend says Dušan was so mighty he even “held the sky in his hands.”</li>
-            <li>His legal code was written in Old Serbian and contained over 200 articles, regulating all aspects of
-                life and law.</li>
-
-        </ul>
-        <br />
-        <p><em>Last updated: July 2025.</em></p>
-        <footer>
-            © 2025 Dusanov Zlatnik. All rights reserved.
-            <a href="https://srpskivitez.github.io/DusanovZlatnik">← Back to Home</a>
+            <a href="../index.html">← Назад на почетну</a>
         </footer>
     </section>
 
     <script>
-        function showLanguage(lang) {
-            document.querySelectorAll(".lang-section").forEach(section => {
-                section.classList.remove("active");
-            });
-            document.getElementById(lang).classList.add("active");
-
-            document.querySelectorAll(".lang-btn").forEach(btn => {
-                btn.classList.remove("active");
-            });
-            document.querySelector(`.lang-btn[data-lang="${lang}"]`).classList.add("active");
-        }
-
-        document.querySelectorAll(".lang-btn").forEach(btn => {
-            btn.addEventListener("click", () => {
-                const lang = btn.getAttribute("data-lang");
-                showLanguage(lang);
+        //jezik
+        document.querySelectorAll('#language-switcher a').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const lang = this.getAttribute('data-lang');
+                if (lang === 'sr') {
+                    window.location.href = 'CarDusanSilni.html';
+                } else if (lang === 'sr-latin') {
+                    window.location.href = 'CarDusanSilni-latin.html';
+                } else if (lang === 'en') {
+                    window.location.href = 'CarDusanSilni-en.html';
+                }
             });
         });
-
-        showLanguage("cyr");
     </script>
 </body>
 
