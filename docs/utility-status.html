@@ -8,7 +8,7 @@
       <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
       <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
       <link rel="manifest" href="../site.webmanifest">
-
+      <link rel="stylesheet" href="../style-docs.css">
       <title>Статус токена | Душанов Златник</title>
       <style>
             body {
@@ -131,12 +131,11 @@
 </head>
 
 <body>
-
-      <div class="lang-btns">
-            <button class="lang-btn active" data-lang="cyr">Ћирилица</button>
-            <button class="lang-btn" data-lang="lat">Latinica</button>
-            <button class="lang-btn" data-lang="eng">English</button>
-      </div>
+ <div id="language-switcher">
+    <a href="#" data-lang="sr">ћир</a> |
+    <a href="#" data-lang="sr-latin">lat</a> |
+    <a href="#" data-lang="en">eng</a>
+  </div>
 
       <!-- Ћирилица -->
       <section id="cyr" class="lang-section active">
@@ -196,27 +195,20 @@
       </section>
 
       <script>
-            function showLanguage(lang) {
-                  document.querySelectorAll(".lang-section").forEach(section => {
-                        section.classList.remove("active");
-                  });
-                  document.getElementById(lang).classList.add("active");
-
-                  document.querySelectorAll(".lang-btn").forEach(btn => {
-                        btn.classList.remove("active");
-                  });
-                  document.querySelector(`.lang-btn[data-lang="${lang}"]`).classList.add("active");
-            }
-
-            document.querySelectorAll(".lang-btn").forEach(btn => {
-                  btn.addEventListener("click", () => {
-                        const lang = btn.getAttribute("data-lang");
-                        showLanguage(lang);
+           //jezik
+            document.querySelectorAll('#language-switcher a').forEach(link => {
+                  link.addEventListener('click', function (e) {
+                  e.preventDefault();
+                  const lang = this.getAttribute('data-lang');
+                  if (lang === 'sr') {
+                  window.location.href = 'whitepaper.html';
+                  } else if (lang === 'sr-latin') {
+                  window.location.href = 'whitepaper-latin.html';
+                  } else if (lang === 'en') {
+                  window.location.href = 'whitepaper-en.html';
+                  }
                   });
             });
-
-            // Početno stanje
-            showLanguage("cyr");
       </script>
 </body>
 
