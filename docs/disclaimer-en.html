@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="stylesheet" href="../style-docs.css">
+    <title>Disclaimer | Dušanov Zlatnik</title>
+</head>
+
+<body>
+    <div id="language-switcher">
+        <a href="#" data-lang="sr">ћир</a> |
+        <a href="#" data-lang="sr-latin">lat</a> |
+        <a href="#" data-lang="en">eng</a>
+    </div>
+
+    <!-- English -->
+    <section id="eng" class="lang-section">
+        <h1>Disclaimer</h1>
+        <p>This project does not constitute financial advice, investment offer, or profit incentive.</p>
+        <p>All information and tokens are provided “as is” without any warranties.</p>
+        <p>Users participate in the project at their own risk.</p>
+        <p>Purchase of the token is not available to persons from countries with strict digital asset regulations,
+            including but not limited to the United States, Canada, and China.</p>
+        <p>The issuer/distributor of the token shall not be liable for any direct or indirect damages, losses, costs, or
+            other adverse consequences arising from the use or inability to use these tokens.</p>
+        <p>The user is solely responsible for verifying the legality and regulatory requirements in their jurisdiction,
+            including any tax obligations.</p>
+        <p>This project and tokens are not guaranteed by any institution, and participation is entirely at the user's
+            own
+            risk.</p>
+        <br />
+        <p><em>Last updated: July 2025.</em></p>
+        <footer>
+            © 2025 Dusanov Zlatnik. All rights reserved.
+            <a href="../index-en.html">← Back to Home</a>
+        </footer>
+    </section>
+
+    <script>
+        //jezik
+        document.querySelectorAll('#language-switcher a').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const lang = this.getAttribute('data-lang');
+                if (lang === 'sr') {
+                    window.location.href = 'disclaimer.html';
+                } else if (lang === 'sr-latin') {
+                    window.location.href = 'disclaimer-latin.html';
+                } else if (lang === 'en') {
+                    window.location.href = 'disclaimer-en.html';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

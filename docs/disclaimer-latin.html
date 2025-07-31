@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="latin">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="stylesheet" href="../style-docs.css">
+    <title>Odricanje odgovornosti | Dušanov Zlatnik</title>
+</head>
+
+<body>
+    <div id="language-switcher">
+        <a href="#" data-lang="sr">ћир</a> |
+        <a href="#" data-lang="sr-latin">lat</a> |
+        <a href="#" data-lang="en">eng</a>
+    </div>
+
+    <!-- Latinica -->
+    <section id="lat" class="lang-section">
+        <h1>Odricanje odgovornosti</h1>
+        <p>Ovaj projekat nije finansijski savet, investiciona ponuda, niti podsticaj za profit.</p>
+        <p>Sve informacije i tokeni se pružaju „kao što jesu“, bez bilo kakvih garancija.</p>
+        <p>Korisnici sami preuzimaju rizik učešća u projektu.</p>
+        <p>Kupovina tokena nije dostupna osobama iz država sa strogom regulativom digitalnih sredstava, uključujući, ali
+            ne ograničavajući se na, Sjedinjene Američke Države, Kanadu i Kinu.</p>
+        <p>Emiter/izdavalac tokena ne snosi odgovornost za bilo kakve direktne ili indirektne štete, gubitke, troškove
+            ili
+            druge negativne posledice nastale korišćenjem ili nemogućnošću korišćenja ovih tokena.</p>
+        <p>Korisnik je jedini odgovoran za proveru zakonitosti i regulatornih uslova u svojoj zemlji, uključujući i
+            poreske
+            obaveze.</p>
+        <p>Ovaj projekat i tokeni nisu garantovani od strane bilo koje institucije, a učešće je isključivo na sopstveni
+            rizik.</p>
+        <br />
+        <p><em>Poslednje ažuriranje: jul 2025.</em></p>
+        <footer>
+            © 2025 Dušanov Zlatnik. Sva prava zadržana.
+            <a href="../index-latin.html">← Nazad na početnu</a>
+        </footer>
+    </section>
+
+    <script>
+        //jezik
+        document.querySelectorAll('#language-switcher a').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const lang = this.getAttribute('data-lang');
+                if (lang === 'sr') {
+                    window.location.href = 'disclaimer.html';
+                } else if (lang === 'sr-latin') {
+                    window.location.href = 'disclaimer-latin.html';
+                } else if (lang === 'en') {
+                    window.location.href = 'disclaimer-en.html';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

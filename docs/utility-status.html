@@ -10,15 +10,15 @@
       <link rel="manifest" href="../site.webmanifest">
       <link rel="stylesheet" href="../style-docs.css">
       <title>Статус токена | Душанов Златник</title>
-    
+
 </head>
 
 <body>
- <div id="language-switcher">
-    <a href="#" data-lang="sr">ћир</a> |
-    <a href="#" data-lang="sr-latin">lat</a> |
-    <a href="#" data-lang="en">eng</a>
-  </div>
+      <div id="language-switcher">
+            <a href="#" data-lang="sr">ћир</a> |
+            <a href="#" data-lang="sr-latin">lat</a> |
+            <a href="#" data-lang="en">eng</a>
+      </div>
 
       <!-- Ћирилица -->
       <section id="cyr" class="lang-section active">
@@ -40,18 +40,18 @@
       </section>
 
       <script>
-           //jezik
+            //jezik
             document.querySelectorAll('#language-switcher a').forEach(link => {
                   link.addEventListener('click', function (e) {
-                  e.preventDefault();
-                  const lang = this.getAttribute('data-lang');
-                  if (lang === 'sr') {
-                  window.location.href = 'utility-status.html';
-                  } else if (lang === 'sr-latin') {
-                  window.location.href = 'utility-status-latin.html';
-                  } else if (lang === 'en') {
-                  window.location.href = 'utility-status-en.html';
-                  }
+                        e.preventDefault();
+                        const lang = this.getAttribute('data-lang');
+                        if (lang === 'sr') {
+                              window.location.href = 'utility-status.html';
+                        } else if (lang === 'sr-latin') {
+                              window.location.href = 'utility-status-latin.html';
+                        } else if (lang === 'en') {
+                              window.location.href = 'utility-status-en.html';
+                        }
                   });
             });
       </script>

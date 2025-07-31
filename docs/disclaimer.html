@@ -8,134 +8,15 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
   <link rel="manifest" href="../site.webmanifest">
-
+  <link rel="stylesheet" href="../style-docs.css">
   <title>Одрицање одговорности | Душанов Златник</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-      background: #0d1b2a;
-      color: #d9d4c9;
-    }
-
-    h1,
-    h2 {
-      color: #f7f3e9;
-    }
-
-    p,
-    li {
-      line-height: 1.6;
-    }
-
-    ol {
-      margin-left: 20px;
-    }
-
-    footer {
-      margin-top: 2.5rem;
-      font-size: 0.9em;
-      color: #d9d4c9;
-      text-align: center;
-      border-top: 1px solid #d9d4c9;
-      padding: 1.5rem 0 2.5rem;
-    }
-
-    footer a {
-      display: block;
-      margin-top: 1.5rem;
-      margin-bottom: 1rem;
-      color: #f7f3e9;
-      text-decoration: none;
-      transition: color 0.3s ease;
-      font-size: 1.5em;
-    }
-
-    footer a:hover {
-      color: #b9a46c;
-      text-decoration: underline;
-    }
-
-
-    .lang-btns {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    button.lang-btn {
-      margin: 0 10px;
-      padding: 10px 20px;
-      cursor: pointer;
-      border: 2px solid #f7f3e9;
-      background: transparent;
-      color: #f7f3e9;
-      font-weight: 700;
-      font-size: 1rem;
-      border-radius: 30px;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-
-    button.lang-btn:hover {
-      background-color: #f7f3e9;
-      color: #0d1b2a;
-    }
-
-    button.lang-btn.active {
-      background-color: #f7f3e9;
-      color: #0d1b2a;
-    }
-
-    .lang-section {
-      display: none;
-    }
-
-    .lang-section.active {
-      display: block;
-    }
-
-    a {
-      color: #f7f3e9;
-    }
-
-    a:hover {
-      color: #d9d4c9;
-    }
-
-    @media (max-width: 600px) {
-      body {
-        max-width: 100%;
-        padding: 15px 10px;
-        box-sizing: border-box;
-      }
-
-      button.lang-btn {
-        margin: 5px 5px;
-        padding: 8px 12px;
-        font-size: 0.9rem;
-      }
-
-      footer {
-        font-size: 0.85em;
-        padding-top: 0.8rem;
-        margin-top: 2rem;
-      }
-
-      footer a {
-        display: block;
-        margin-top: 1.5rem;
-      }
-    }
-  </style>
 </head>
 
 <body>
-
-  <div class="lang-btns">
-    <button class="lang-btn active" data-lang="cyr">Ћирилица</button>
-    <button class="lang-btn" data-lang="lat">Latinica</button>
-    <button class="lang-btn" data-lang="eng">English</button>
+  <div id="language-switcher">
+    <a href="#" data-lang="sr">ћир</a> |
+    <a href="#" data-lang="sr-latin">lat</a> |
+    <a href="#" data-lang="en">eng</a>
   </div>
 
   <!-- Ћирилица -->
@@ -156,76 +37,25 @@
     <p><em>Последње ажурирање: јул 2025.</em></p>
     <footer>
       © 2025 Душанов Златник. Сва права задржана.
-      <a href="https://srpskivitez.github.io/DusanovZlatnik">← Назад на почетну</a>
-    </footer>
-  </section>
-
-  <!-- Latinica -->
-  <section id="lat" class="lang-section">
-    <h1>Odricanje odgovornosti</h1>
-    <p>Ovaj projekat nije finansijski savet, investiciona ponuda, niti podsticaj za profit.</p>
-    <p>Sve informacije i tokeni se pružaju „kao što jesu“, bez bilo kakvih garancija.</p>
-    <p>Korisnici sami preuzimaju rizik učešća u projektu.</p>
-    <p>Kupovina tokena nije dostupna osobama iz država sa strogom regulativom digitalnih sredstava, uključujući, ali
-      ne ograničavajući se na, Sjedinjene Američke Države, Kanadu i Kinu.</p>
-    <p>Emiter/izdavalac tokena ne snosi odgovornost za bilo kakve direktne ili indirektne štete, gubitke, troškove ili
-      druge negativne posledice nastale korišćenjem ili nemogućnošću korišćenja ovih tokena.</p>
-    <p>Korisnik je jedini odgovoran za proveru zakonitosti i regulatornih uslova u svojoj zemlji, uključujući i poreske
-      obaveze.</p>
-    <p>Ovaj projekat i tokeni nisu garantovani od strane bilo koje institucije, a učešće je isključivo na sopstveni
-      rizik.</p>
-    <br />
-    <p><em>Poslednje ažuriranje: jul 2025.</em></p>
-    <footer>
-      © 2025 Dušanov Zlatnik. Sva prava zadržana.
-      <a href="https://srpskivitez.github.io/DusanovZlatnik">← Nazad na početnu</a>
-    </footer>
-  </section>
-
-  <!-- English -->
-  <section id="eng" class="lang-section">
-    <h1>Disclaimer</h1>
-    <p>This project does not constitute financial advice, investment offer, or profit incentive.</p>
-    <p>All information and tokens are provided “as is” without any warranties.</p>
-    <p>Users participate in the project at their own risk.</p>
-    <p>Purchase of the token is not available to persons from countries with strict digital asset regulations,
-      including but not limited to the United States, Canada, and China.</p>
-    <p>The issuer/distributor of the token shall not be liable for any direct or indirect damages, losses, costs, or
-      other adverse consequences arising from the use or inability to use these tokens.</p>
-    <p>The user is solely responsible for verifying the legality and regulatory requirements in their jurisdiction,
-      including any tax obligations.</p>
-    <p>This project and tokens are not guaranteed by any institution, and participation is entirely at the user's own
-      risk.</p>
-    <br />
-    <p><em>Last updated: July 2025.</em></p>
-    <footer>
-      © 2025 Dusanov Zlatnik. All rights reserved.
-      <a href="https://srpskivitez.github.io/DusanovZlatnik">← Back to Home</a>
+      <a href="../index.html">← Назад на почетну</a>
     </footer>
   </section>
 
   <script>
-    function showLanguage(lang) {
-      document.querySelectorAll(".lang-section").forEach(section => {
-        section.classList.remove("active");
-      });
-      document.getElementById(lang).classList.add("active");
-
-      document.querySelectorAll(".lang-btn").forEach(btn => {
-        btn.classList.remove("active");
-      });
-      document.querySelector(`.lang-btn[data-lang="${lang}"]`).classList.add("active");
-    }
-
-    document.querySelectorAll(".lang-btn").forEach(btn => {
-      btn.addEventListener("click", () => {
-        const lang = btn.getAttribute("data-lang");
-        showLanguage(lang);
+    //jezik
+    document.querySelectorAll('#language-switcher a').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const lang = this.getAttribute('data-lang');
+        if (lang === 'sr') {
+          window.location.href = 'disclaimer.html';
+        } else if (lang === 'sr-latin') {
+          window.location.href = 'disclaimer-latin.html';
+        } else if (lang === 'en') {
+          window.location.href = 'disclaimer-en.html';
+        }
       });
     });
-
-    // Default state
-    showLanguage("cyr");
   </script>
 </body>
 
