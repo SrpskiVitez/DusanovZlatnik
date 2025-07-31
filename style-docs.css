@@ -5,9 +5,12 @@
     }
 
     canvas {
-        max-width: 100%;
-        margin: 5px auto;
         display: block;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin: 1rem auto;
+        box-sizing: border-box;
     }
 
     h1 {
@@ -22,10 +25,10 @@
         line-height: 1.2;
     }
 
-    h2 {       
+    h2 {
         font-size: 1.2rem;
         font-weight: 500;
-        color: #b9a46c;      
+        color: #b9a46c;
     }
 
     img.inline-img {
@@ -197,6 +200,12 @@
         footer a {
             display: block;
             margin-top: 1.5rem;
+        }
+
+        canvas {
+            width: 100% !important;
+            max-width: 100%;
+            height: auto;
         }
 
         .inline-img {
