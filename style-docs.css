@@ -166,4 +166,9 @@
             display: block;
             margin-top: 1.5rem;
         }
+
+        .inline-img {
+            width: 100%;
+            height: auto;
+        }
     }
