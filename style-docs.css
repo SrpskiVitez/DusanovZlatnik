@@ -181,6 +181,12 @@
         color: #d9d4c9;
     }
 
+    * {
+        word-break: normal;
+        overflow-wrap: break-word;
+        hyphens: auto;
+    }
+
     @media (max-width: 600px) {
         body {
             max-width: 100%;
