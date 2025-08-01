@@ -3,17 +3,65 @@
 
 <head>
       <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-      <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
-      <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
-      <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
-      <link rel="manifest" href="../site.webmanifest">
-      <link rel="stylesheet" href="../style-docs.css">
-      <title>Статус токена | Душанов Златник</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
+      <title>Статус токена | Душанов Златник</title>
+      <meta name="description"
+            content="Званичан статус токена 'Душанов Златник' — симбол културне свести и заједништва, без комерцијалне или инвестиционе намене." />
+
+      <!-- favicon -->
+      <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+      <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png" />
+      <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png" />
+      <link rel="manifest" href="../site.webmanifest" />
+
+      <!-- SEO jezičke verzije -->
+      <link rel="alternate" hreflang="sr"
+            href="https://srpskivitez.github.io/DusanovZlatnik/docs/utility-status.html" />
+      <link rel="alternate" hreflang="sr-Latn"
+            href="https://srpskivitez.github.io/DusanovZlatnik/docs/utility-status-sr-latin.html" />
+      <link rel="alternate" hreflang="en"
+            href="https://srpskivitez.github.io/DusanovZlatnik/docs/utility-status-en.html" />
+      <link rel="canonical" href="https://srpskivitez.github.io/DusanovZlatnik/docs/utility-status.html" />
+
+      <!-- Open Graph -->
+      <meta property="og:locale" content="sr_RS" />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="Статус токена | Душанов Златник" />
+      <meta property="og:description"
+            content="Званичан статус симболичког токена инспирисаног царем Душаном – део културне иницијативе без профитне сврхе." />
+      <meta property="og:url" content="https://srpskivitez.github.io/DusanovZlatnik/docs/utility-status.html" />
+      <meta property="og:image" content="https://srpskivitez.github.io/DusanovZlatnik/pic/logo_500_tra.png" />
+      <meta property="og:site_name" content="Душанов Златник" />
+
+      <!-- Twitter Card -->
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Статус токена | Душанов Златник" />
+      <meta name="twitter:description"
+            content="Званичан опис сврхе и природе симболичког токена инспирисаног српском историјом." />
+      <meta name="twitter:image" content="https://srpskivitez.github.io/DusanovZlatnik/pic/logo_500_tra.png" />
+
+      <!-- Stilovi -->
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+      <link rel="stylesheet" href="../style-docs.css" />
+
+      <!-- Robots -->
+      <meta name="robots" content="index, follow" />
+
+      <!-- Content Security Policy -->
+      <meta http-equiv="Content-Security-Policy"
+            content="default-src 'self'; connect-src 'self'; img-src 'self' https:; style-src 'self' 'unsafe-inline' https:; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;" />
 </head>
 
 <body>
+
+      <noscript>
+            <div style="text-align:center; background:#ffe0e0; padding:1em;">
+                  Овај сајт захтева укључен JavaScript ради пуне функционалности.
+            </div>
+      </noscript>
+
       <div id="language-switcher">
             <a href="#" data-lang="sr">ћир</a> |
             <a href="#" data-lang="sr-latin">lat</a> |
@@ -39,22 +87,7 @@
             </footer>
       </section>
 
-      <script>
-            //jezik
-            document.querySelectorAll('#language-switcher a').forEach(link => {
-                  link.addEventListener('click', function (e) {
-                        e.preventDefault();
-                        const lang = this.getAttribute('data-lang');
-                        if (lang === 'sr') {
-                              window.location.href = 'utility-status.html';
-                        } else if (lang === 'sr-latin') {
-                              window.location.href = 'utility-status-latin.html';
-                        } else if (lang === 'en') {
-                              window.location.href = 'utility-status-en.html';
-                        }
-                  });
-            });
-      </script>
+      <script src="../scr/script-docs.js"></script>
 </body>
 
 </html>
