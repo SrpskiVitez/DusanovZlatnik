@@ -105,13 +105,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!selectedLang) return;
 
         // Trenutni URL
-        const currentUrl = window.location.pathname; // npr /docs/whitepaper-latin.html
+        const currentUrl = window.location.pathname; // npr /docs/whitepaper-sr-latin.html
         // Izvuci naziv fajla
-        const fileName = currentUrl.substring(currentUrl.lastIndexOf('/') + 1); // whitepaper-latin.html
+        const fileName = currentUrl.substring(currentUrl.lastIndexOf('/') + 1); // whitepaper-sr-latin.html
 
         // Parsiraj bazu imena fajla i jezik
         // Pretpostavimo da imena imaju format: [basename]-[lang].html ili [basename].html za sr ćirilicu
-        // Na primer: whitepaper.html (sr ćirilica), whitepaper-latin.html (sr latinica), whitepaper-en.html (eng)
+        // Na primer: whitepaper.html (sr ćirilica), whitepaper-sr-latin.html (sr latinica), whitepaper-en.html (eng)
 
         let baseName = fileName;
         let currentLangInFile = 'sr';
@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (selectedLang === 'sr') {
           newFileName = baseName + '.html'; // npr whitepaper.html
         } else {
-          newFileName = baseName + '-' + selectedLang + '.html'; // npr whitepaper-en.html ili whitepaper-latin.html
+          newFileName = baseName + '-' + selectedLang + '.html'; // npr whitepaper-en.html ili whitepaper-sr-latin.html
         }
 
         // Preusmeri

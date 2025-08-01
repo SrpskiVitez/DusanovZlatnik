@@ -6,7 +6,7 @@
         if (lang === 'sr') {
           window.location.href = 'index.html';
         } else if (lang === 'sr-latin') {
-          window.location.href = 'index-latin.html';
+          window.location.href = 'index-sr-latin.html';
         } else if (lang === 'en') {
           window.location.href = 'index-en.html';
         }
