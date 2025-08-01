@@ -1,87 +1,83 @@
-# 🪙 DusanovZlatnik
+# Душанов Златник — Пројекат и Веб сајт
 
-**DusanovZlatnik (ZLATNIK)** is a symbolic digital token inspired by the golden coins of Serbian Emperor Dusan the Mighty. It represents a digital testament to our cultural heritage, unity, and historical pride. With a fixed total supply of 11,000,000 tokens, each token is a tribute to every Serb around the world.
-
-🔗 Official website: [https://srpskivitez.github.io/DusanovZlatnik/](https://srpskivitez.github.io/DusanovZlatnik/)
+Добродошли у званични репозиторијум пројекта **Душанов Златник**!
 
 ---
 
-## 🔹 Basic Information
+## Опис пројекта
 
-- **Name:** DusanovZlatnik
-- **Symbol (ticker):** ZLATNIK
-- **Blockchain:** BNB Smart Chain
-- **Standard:** BEP-20
-- **Total Supply:** 11,000,000 (fixed)
-- **Decimals:** 18
-- **Smart Contract (verified):** `0x926f0D256C064FEA68158C80568Acc4A6b2fE496`
+**Душанов Златник** је крипто-токен и едукативни пројекат са српско-националном темом, инспирисан историјским ликом цара Стефана Душана Јаког. Пројекат комбинује историјске садржаје, правне документе и крипто технологију како би промовисао српску традицију и културу у дигиталном свету.
 
----
+На званичном сајту доступни су детаљни текстови о:
 
-## 🎯 Mission and Vision
-
-Our mission is to preserve and promote Serbian cultural identity in the digital age. The vision is to create a token with **spiritual and symbolic value**, not speculative or commercial.
+- Историји цара Душана и његовом наслеђу  
+- Правилима коришћења токена (Terms of Use)  
+- Одрицању од одговорности (Disclaimer)  
+- Политикама приватности (Privacy Policy)  
+- Статусу utility токена (Utility Status)  
+- Белом папиру / техничким информацијама (Whitepaper)  
 
 ---
 
-## 🛠️ Token Utility
+## Структура сајта
 
-ZLATNIK tokens are **not intended for trade or profit**. Their primary purposes include:
-
-- Cultural preservation
-- Community empowerment
-- Transparent donations for heritage restoration
-- Visual distribution on a global map
-
----
-
-## 📊 Tokenomics
-
-The total supply of **11,000,000 ZLATNIK** tokens will be distributed as follows:
-
-- 📢 Public Presale: 10%  
-- 🛠️ Development Fund: 20%  
-- 📣 Marketing & Promotion: 15%  
-- 🎁 Community Rewards: 20%  
-- 🏛️ Cultural Grants: 10%  
-- 💧 Liquidity Pool: 10%  
-- 👥 Team & Advisors: 10% (with vesting)  
-- 🏦 Reserve / Treasury: 5%
+- `/index.html` — Почетна страница пројекта  
+- `/docs/terms.html` — Правни услови коришћења  
+- `/docs/disclaimer.html` — Одрицање од одговорности  
+- `/docs/privacy.html` — Политика приватности  
+- `/docs/utility-status.html` — Статус utility токена  
+- `/docs/whitepaper.html` — Бели папир са техничким детаљима  
+- `/pic/` — Слике и илустрације  
+- `/style-docs.css` — CSS стилови за документа  
+- `/scr/script-docs.js` — JavaScript за интерактивност (нпр. промена језика)  
 
 ---
 
-## ⏳ Vesting Schedule
+## Језици подршке
 
-Tokens allocated to the **Team & Advisors** will be vested over a period of **12 months**, with a **3-month cliff** to ensure long-term commitment.
+Сајт је доступан на три језика:
 
----
+- Српска ћирилица (`sr`)  
+- Српска латиница (`sr-latin`)  
+- Енглески (`en`)  
 
-## 🗺️ Roadmap
-
-- **Q3 2025** – Project launch, website live, smart contract deployed  
-- **Q4 2025** – Public presale, whitelist phase, community engagement  
-- **Q1 2026** – Cultural grant program begins, global distribution map goes live  
-- **Q2 2026** – First heritage restoration donations, listing consideration  
-- **Q3 2026** – Global outreach, ecosystem expansion
+Језик се може мењати преко језичког switchera на свакој страници.
 
 ---
 
-## 📝 Whitepaper
+## Техничке карактеристике
 
-📄 [View the whitepaper (PDF)](./whitepaper.pdf)
+- Изграђен као статички сајт хостован на GitHub Pages  
+- backend api ,php, хостован на https://dusanov-api.vercel.app/api/send  
+- Коришћење модерног HTML5 и CSS3 стандарда  
+- Content Security Policy (CSP) за већу безбедност сајта  
+- Минимална употреба JavaScript-а, углавном за језичке функционалности и основну интеракцију  
+- Ресурси (иконе, слике, фонтови) се учитавају са сопственог сервера или сигурних CDN-ова  
 
 ---
 
-## ⚖️ Legal Disclaimer
+## Инсталација и развој
 
-DusanovZlatnik is a **cultural and symbolic initiative**. It is **not intended as an investment vehicle**. All decisions and distributions will be **publicly documented and community-driven**.
+Сајт је статички и може се покренути локално директним отварањем HTML фајлова у било ком савременом прегледачу.
 
 ---
 
-## 🤝 Community
+## Права и лиценце
 
-📢 Coming soon:
-- Discord
-- Telegram
-- Twitter
-- GitHub Issues for proposals and support
+Сва права су задржана © 2025 Душанов Златник.
+
+Материјали на сајту се могу користити у складу са условима доступним у документима на сајту.
+
+---
+
+## Контакт
+
+За додатне информације или сарадњу, можете нас контактирати путем следећих канала:
+
+- Емаил: dusanovzlatnik@gmail.com  
+- Званични сајт: https://srpskivitez.github.io/DusanovZlatnik  
+- GitHub: https://github.com/srpskivitez/DusanovZlatnik  
+
+---
+
+Хвала што подржавате **Душанов Златник** — спој традиције и савремених технологија!
