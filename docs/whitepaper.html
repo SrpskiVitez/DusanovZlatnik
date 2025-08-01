@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="sr">
+<html lang="sr" data-lang="sr">
 
 <head>
   <meta charset="UTF-8" />
@@ -15,6 +15,12 @@
 </head>
 
 <body>
+
+  <noscript>
+    <div style="text-align:center; background:#ffe0e0; padding:1em;">
+      Овај сајт захтева укључен JavaScript ради пуне функционалности.
+    </div>
+  </noscript>
 
   <div id="language-switcher">
     <a href="#" data-lang="sr">ћир</a> |
@@ -49,7 +55,7 @@
     </ul>
 
     <h2>Токеномика</h2>
-    <canvas id="chart-cyr"></canvas>
+    <canvas id="chart"></canvas>
     <ul>
       <li>Јавна продаја: 15%</li>
       <li>Фонд за развој: 15%</li>
@@ -96,95 +102,7 @@
     </footer>
   </section>
 
-  <script>
-    const charts = {};
-
-    // Labeli po jezicima
-    const chartLabels = {
-      cyr: [
-        "Јавна продаја",
-        "Фонд за развој",
-        "Маркетинг и промоција",
-        "Награде за заједницу",
-        "Културни грантови",
-        "Ликвидносни фонд",
-        "Тим и саветници",
-        "Резерве"
-      ]
-    };
-
-    const chartColors = [
-      "#f1c40f",
-      "#e67e22",
-      "#e74c3c",
-      "#8e44ad",
-      "#3498db",
-      "#2ecc71",
-      "#1abc9c",
-      "#34495e"
-    ];
-
-    const chartValues = [15, 15, 10, 10, 10, 15, 10, 15];
-
-    const chartOptions = {
-      responsive: true,
-      plugins: {
-        legend: {
-          position: "right",
-          labels: {
-            color: '#d9d4c9',
-            font: { size: 14 }
-          }
-        },
-        tooltip: {
-          callbacks: {
-            label: function (context) {
-              return context.label + ": " + context.parsed + "%";
-            }
-          }
-        }
-      }
-    };
-
-    function createChart(canvasId, lang) {
-      const ctx = document.getElementById(canvasId).getContext("2d");
-
-      const data = {
-        labels: chartLabels[lang],
-        datasets: [{
-          label: "Procenat",
-          data: chartValues,
-          backgroundColor: chartColors,
-          borderColor: "#fff",
-          borderWidth: 1
-        }]
-      };
-
-      charts[canvasId] = new Chart(ctx, {
-        type: "pie",
-        data: data,
-        options: chartOptions
-      });
-    }
-
-    createChart("chart-cyr", "cyr");
-
-    //jezik
-    document.querySelectorAll('#language-switcher a').forEach(link => {
-      link.addEventListener('click', function (e) {
-        e.preventDefault();
-        const lang = this.getAttribute('data-lang');
-        if (lang === 'sr') {
-          window.location.href = 'whitepaper.html';
-        } else if (lang === 'sr-latin') {
-          window.location.href = 'whitepaper-latin.html';
-        } else if (lang === 'en') {
-          window.location.href = 'whitepaper-en.html';
-        }
-      });
-    });
-  </script>
-
+  <script src="scr/script-docs.js"></script>
 
 </body>
 
