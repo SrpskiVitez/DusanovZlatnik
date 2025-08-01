@@ -94,7 +94,6 @@ document.addEventListener('DOMContentLoaded', () => {
   createChart("chart", lang);
 
   // LANGUAGE SWITCHER
-
   const languageSwitcher = document.getElementById('language-switcher');
   if (languageSwitcher) {
     languageSwitcher.querySelectorAll('a').forEach(link => {
@@ -104,35 +103,38 @@ document.addEventListener('DOMContentLoaded', () => {
         const selectedLang = link.getAttribute('data-lang');
         if (!selectedLang) return;
 
-        // Trenutni URL
+        // Trenutni URL (putanja)
         const currentUrl = window.location.pathname; // npr /docs/whitepaper-sr-latin.html
         // Izvuci naziv fajla
         const fileName = currentUrl.substring(currentUrl.lastIndexOf('/') + 1); // whitepaper-sr-latin.html
 
         // Parsiraj bazu imena fajla i jezik
-        // Pretpostavimo da imena imaju format: [basename]-[lang].html ili [basename].html za sr ćirilicu
-        // Na primer: whitepaper.html (sr ćirilica), whitepaper-sr-latin.html (sr latinica), whitepaper-en.html (eng)
+        // Pretpostavka: imena su u formatu:
+        // [basename].html          => sr ćirilica
+        // [basename]-sr-latin.html => sr latinica
+        // [basename]-en.html       => engleski
 
         let baseName = fileName.replace('.html', '');
         let currentLangInFile = 'sr';
 
-        // Prepoznaj jezičke sufikse i ukloni ih iz imena fajla
-        if (baseName.match(/-(sr|sr-latin|en)$/)) {
-          currentLangInFile = baseName.match(/-(sr|sr-latin|en)$/)[1];
+        // Prepoznaj i ukloni jezički sufiks ako postoji
+        const langSuffixMatch = baseName.match(/-(sr|sr-latin|en)$/);
+        if (langSuffixMatch) {
+          currentLangInFile = langSuffixMatch[1];
           baseName = baseName.replace(/-(sr|sr-latin|en)$/, '');
         }
 
-
         // Izračunaj novi naziv fajla
         let newFileName = '';
-
         if (selectedLang === 'sr') {
-          newFileName = baseName + '.html'; // npr whitepaper.html
+          // Za ćirilicu nema dodatnog sufiksa
+          newFileName = baseName + '.html';
         } else {
-          newFileName = baseName + '-' + selectedLang + '.html'; // npr whitepaper-en.html ili whitepaper-sr-latin.html
+          // Za latinicu i engleski dodaj sufiks
+          newFileName = baseName + '-' + selectedLang + '.html';
         }
 
-        // Preusmeri
+        // Formiraj novi URL i preusmeri
         const newPath = currentUrl.substring(0, currentUrl.lastIndexOf('/') + 1) + newFileName;
         window.location.href = newPath;
       });
