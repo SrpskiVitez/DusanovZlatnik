@@ -116,10 +116,10 @@ document.addEventListener('DOMContentLoaded', () => {
         let baseName = fileName.replace('.html', '');
         let currentLangInFile = 'sr';
 
-        if (baseName.endsWith('-sr') || baseName.endsWith('-sr-latin') || baseName.endsWith('-en')) {
-          const parts = baseName.split('-');
-          currentLangInFile = parts.pop();
-          baseName = parts.join('-');
+        // Prepoznaj jezičke sufikse i ukloni ih iz imena fajla
+        if (baseName.match(/-(sr|sr-latin|en)$/)) {
+          currentLangInFile = baseName.match(/-(sr|sr-latin|en)$/)[1];
+          baseName = baseName.replace(/-(sr|sr-latin|en)$/, '');
         }
 
 
