@@ -1,18 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
-    <link rel="manifest" href="../site.webmanifest">
-    <link rel="stylesheet" href="../style-docs.css">
-    <title>Tsar Dušan the Mighty | Dušanov Zlatnik</title>
+
+    <title>Emperor Dušan the Mighty | Dušan's Zlatnik</title>
+    <meta name="description"
+        content="Emperor Stefan Dušan Nemanjic, known as Dušan the Mighty, was the most powerful Serbian ruler and a significant figure of medieval Europe." />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png" />
+    <link rel="manifest" href="../site.webmanifest" />
+
+    <!-- SEO language alternates -->
+    <link rel="alternate" hreflang="sr" href="https://srpskivitez.github.io/DusanovZlatnik/docs/cardan.html" />
+    <link rel="alternate" hreflang="sr-Latn"
+        href="https://srpskivitez.github.io/DusanovZlatnik/docs/cardan-latin.html" />
+    <link rel="alternate" hreflang="en" href="https://srpskivitez.github.io/DusanovZlatnik/docs/cardan-en.html" />
+    <link rel="canonical" href="https://srpskivitez.github.io/DusanovZlatnik/docs/cardan-en.html" />
+
+    <!-- Open Graph -->
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Emperor Dušan the Mighty | Dušan's Zlatnik" />
+    <meta property="og:description"
+        content="Emperor Stefan Dušan Nemanjic, known as Dušan the Mighty, was the most powerful Serbian ruler and a significant figure of medieval Europe." />
+    <meta property="og:url" content="https://srpskivitez.github.io/DusanovZlatnik/docs/cardan-en.html" />
+    <meta property="og:image" content="https://srpskivitez.github.io/DusanovZlatnik/pic/CarDusanFreska.jpg" />
+    <meta property="og:site_name" content="Dušan's Zlatnik" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Emperor Dušan the Mighty | Dušan's Zlatnik" />
+    <meta name="twitter:description"
+        content="Emperor Stefan Dušan Nemanjic, known as Dušan the Mighty, was the most powerful Serbian ruler and a significant figure of medieval Europe." />
+    <meta name="twitter:image" content="https://srpskivitez.github.io/DusanovZlatnik/pic/CarDusanFreska.jpg" />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../style-docs.css" />
+
+    <!-- Robots -->
+    <meta name="robots" content="index, follow" />
+
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; 
+       connect-src 'self'; 
+       img-src 'self' https:; 
+       style-src 'self' 'unsafe-inline' https:; 
+       font-src 'self' https://fonts.gstatic.com;" />
 </head>
 
 <body>
+
+    <noscript>
+        <div style="text-align:center; background:#ffe0e0; padding:1em;">
+            This website requires JavaScript to be enabled for full functionality.
+        </div>
+    </noscript>
+
     <div id="language-switcher">
         <a href="#" data-lang="sr">ћир</a> |
         <a href="#" data-lang="sr-latin">lat</a> |
@@ -119,22 +167,7 @@
         </footer>
     </section>
 
-    <script>
-        //jezik
-        document.querySelectorAll('#language-switcher a').forEach(link => {
-            link.addEventListener('click', function (e) {
-                e.preventDefault();
-                const lang = this.getAttribute('data-lang');
-                if (lang === 'sr') {
-                    window.location.href = 'CarDusanSilni.html';
-                } else if (lang === 'sr-latin') {
-                    window.location.href = 'CarDusanSilni-latin.html';
-                } else if (lang === 'en') {
-                    window.location.href = 'CarDusanSilni-en.html';
-                }
-            });
-        });
-    </script>
+    <script src="../scr/script-docs.js"></script>
 </body>
 
 </html>
