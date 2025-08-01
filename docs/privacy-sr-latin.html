@@ -1,23 +1,68 @@
 <!DOCTYPE html>
-<html lang="sr-latin">
+<html lang="sr-latin" data-lang="sr-latin">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
-    <link rel="manifest" href="../site.webmanifest">
-    <link rel="stylesheet" href="../style-docs.css">
-    <title>Politika privatnosti | Dušanov Zlatnik</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <title>Politika privatnosti | Dušanov Zlatnik</title>
+  <meta name="description" content="Pročitajte politiku privatnosti projekta Dušanov Zlatnik i saznajte kako su vaši lični podaci zaštićeni." />
+
+  <!-- favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png" />
+  <link rel="manifest" href="../site.webmanifest" />
+
+  <!-- SEO language alternates -->
+  <link rel="alternate" hreflang="sr" href="https://srpskivitez.github.io/DusanovZlatnik/docs/privacy.html" />
+  <link rel="alternate" hreflang="sr-Latn" href="https://srpskivitez.github.io/DusanovZlatnik/docs/privacy-latin.html" />
+  <link rel="alternate" hreflang="en" href="https://srpskivitez.github.io/DusanovZlatnik/docs/privacy-en.html" />
+  <link rel="canonical" href="https://srpskivitez.github.io/DusanovZlatnik/docs/privacy-latin.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:locale" content="sr_RS" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Politika privatnosti | Dušanov Zlatnik" />
+  <meta property="og:description" content="Pročitajte politiku privatnosti projekta Dušanov Zlatnik i saznajte kako su vaši lični podaci zaštićeni." />
+  <meta property="og:url" content="https://srpskivitez.github.io/DusanovZlatnik/docs/privacy-latin.html" />
+  <meta property="og:image" content="https://srpskivitez.github.io/DusanovZlatnik/pic/favicon.png" />
+  <meta property="og:site_name" content="Dušanov Zlatnik" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Politika privatnosti | Dušanov Zlatnik" />
+  <meta name="twitter:description" content="Pročitajte politiku privatnosti projekta Dušanov Zlatnik i saznajte kako su vaši lični podaci zaštićeni." />
+  <meta name="twitter:image" content="https://srpskivitez.github.io/DusanovZlatnik/pic/favicon.png" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../style-docs.css" />
+
+  <!-- Robots -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- Content Security Policy -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; 
+       connect-src 'self'; 
+       img-src 'self' https:; 
+       style-src 'self' 'unsafe-inline' https:; 
+       font-src 'self' https://fonts.gstatic.com;" />
 </head>
 
+
 <body>
-    <div id="language-switcher">
-        <a href="#" data-lang="sr">ћир</a> |
-        <a href="#" data-lang="sr-latin">lat</a> |
-        <a href="#" data-lang="en">eng</a>
+
+    <noscript>
+    <div style="text-align:center; background:#ffe0e0; padding:1em;">
+      Ovaj sajt zahteva uključen JavaScript radi pune funkcionalnosti.
     </div>
+  </noscript>
+
+ <div id="language-switcher">
+            <a href="#" data-lang="sr">ћир</a> |
+            <a href="#" data-lang="sr-latin">lat</a> |
+            <a href="#" data-lang="en">eng</a>
+      </div>
 
     <!-- Latinica -->
     <section id="lat" class="lang-section">
@@ -33,26 +78,11 @@
         <p><em>Poslednje ažuriranje: jul 2025.</em></p>
         <footer>
             © 2025 Dušanov Zlatnik. Sva prava zadržana.
-            <a href="../index-latin.html">← Nazad na početnu</a>
+            <a href="../index-sr-latin.html">← Nazad na početnu</a>
         </footer>
     </section>
 
-    <script>
-        //jezik
-        document.querySelectorAll('#language-switcher a').forEach(link => {
-            link.addEventListener('click', function (e) {
-                e.preventDefault();
-                const lang = this.getAttribute('data-lang');
-                if (lang === 'sr') {
-                    window.location.href = 'privacy.html';
-                } else if (lang === 'sr-latin') {
-                    window.location.href = 'privacy-latin.html';
-                } else if (lang === 'en') {
-                    window.location.href = 'privacy-en.html';
-                }
-            });
-        });
-    </script>
+       <script src="../scr/script-docs.js"></script>
 </body>
 
 </html>
