@@ -3,18 +3,69 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
-    <link rel="manifest" href="../site.webmanifest">
-    <link rel="stylesheet" href="../style-docs.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
     <title>Dusanov Zlatnik - Whitepaper</title>
+    <meta name="description"
+        content="Whitepaper Dusanov Zlatnik - simbolički token kulturnog nasleđa inspirisan carem Dušanom." />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png" />
+    <link rel="manifest" href="../site.webmanifest" />
+
+    <!-- SEO jezičke verzije -->
+    <link rel="alternate" hreflang="sr" href="https://srpskivitez.github.io/DusanovZlatnik/docs/index.html" />
+    <link rel="alternate" hreflang="sr-Latn"
+        href="https://srpskivitez.github.io/DusanovZlatnik/docs/index-sr-latin.html" />
+    <link rel="alternate" hreflang="en" href="https://srpskivitez.github.io/DusanovZlatnik/docs/index-en.html" />
+    <link rel="canonical" href="https://srpskivitez.github.io/DusanovZlatnik/docs/index-sr-latin.html" />
+
+    <!-- Open Graph (za društvene mreže) -->
+    <meta property="og:locale" content="sr_RS" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Dusanov Zlatnik - Whitepaper" />
+    <meta property="og:description"
+        content="Whitepaper Dusanov Zlatnik - simbolički token kulturnog nasleđa inspirisan carem Dušanom." />
+    <meta property="og:url" content="https://srpskivitez.github.io/DusanovZlatnik/docs/index-sr-latin.html" />
+    <meta property="og:image" content="https://srpskivitez.github.io/DusanovZlatnik/pic/logo_500_tra.png" />
+    <meta property="og:site_name" content="Dusanov Zlatnik" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Dusanov Zlatnik - Whitepaper" />
+    <meta name="twitter:description"
+        content="Whitepaper Dusanov Zlatnik - simbolički token kulturnog nasleđa inspirisan carem Dušanom." />
+    <meta name="twitter:image" content="https://srpskivitez.github.io/DusanovZlatnik/pic/logo_500_tra.png" />
+
+    <!-- Preload ključnih resursa -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap"
+        as="style" />
+    <link rel="preload" href="https://srpskivitez.github.io/DusanovZlatnik/pic/logo_500_tra.png" as="image"
+        type="image/png" />
+
+    <!-- Stilovi -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="../style-docs.css" />
+
+    <!-- Biblioteka za grafikone -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+    <meta name="robots" content="index, follow" />
+
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; connect-src 'self' https://dusanov-api.vercel.app; img-src 'self' https:; style-src 'self' 'unsafe-inline' https:; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;" />
 </head>
 
 <body>
+    <noscript>
+        <div style="text-align:center; background:#ffe0e0; padding:1em;">
+            Ovaj sajt zahteva uključen JavaScript radi pune funkcionalnosti.
+        </div>
+    </noscript>
 
     <div id="language-switcher">
         <a href="#" data-lang="sr">ћир</a> |
@@ -100,94 +151,7 @@
         </footer>
     </section>
 
-    <script>
-        const charts = {};
-
-        // Labeli po jezicima
-        const chartLabels = {
-            lat: [
-                "Javna prodaja",
-                "Fond za razvoj",
-                "Marketing i promocija",
-                "Nagrade za zajednicu",
-                "Kulturni grantovi",
-                "Likvidnosni fond",
-                "Tim i savetnici",
-                "Rezerve"
-            ]
-        };
-
-        const chartColors = [
-            "#f1c40f",
-            "#e67e22",
-            "#e74c3c",
-            "#8e44ad",
-            "#3498db",
-            "#2ecc71",
-            "#1abc9c",
-            "#34495e"
-        ];
-
-        const chartValues = [15, 15, 10, 10, 10, 15, 10, 15];
-
-        const chartOptions = {
-            responsive: true,
-            plugins: {
-                legend: {
-                    position: "right",
-                    labels: {
-                        color: '#d9d4c9',
-                        font: { size: 14 }
-                    }
-                },
-                tooltip: {
-                    callbacks: {
-                        label: function (context) {
-                            return context.label + ": " + context.parsed + "%";
-                        }
-                    }
-                }
-            }
-        };
-
-        function createChart(canvasId, lang) {
-            const ctx = document.getElementById(canvasId).getContext("2d");
-
-            const data = {
-                labels: chartLabels[lang],
-                datasets: [{
-                    label: "Procenat",
-                    data: chartValues,
-                    backgroundColor: chartColors,
-                    borderColor: "#fff",
-                    borderWidth: 1
-                }]
-            };
-
-            charts[canvasId] = new Chart(ctx, {
-                type: "pie",
-                data: data,
-                options: chartOptions
-            });
-        }
-
-        createChart("chart-lat", "lat");
-
-        //jezik
-        document.querySelectorAll('#language-switcher a').forEach(link => {
-            link.addEventListener('click', function (e) {
-                e.preventDefault();
-                const lang = this.getAttribute('data-lang');
-                if (lang === 'sr') {
-                    window.location.href = 'whitepaper.html';
-                } else if (lang === 'sr-latin') {
-                    window.location.href = 'whitepaper-latin.html';
-                } else if (lang === 'en') {
-                    window.location.href = 'whitepaper-en.html';
-                }
-            });
-        });
-    </script>
+    <script src="../scr/script-docs.js"></script>
 
 </body>
 
