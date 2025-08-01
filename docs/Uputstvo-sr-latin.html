@@ -1,16 +1,65 @@
 <!DOCTYPE html>
-<html lang="sr-latin">
+<html lang="sr-latin" data-lang="sr-latin">
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
-    <link rel="manifest" href="../site.webmanifest">
-    <link rel="stylesheet" href="../style-docs.css">
-    <title>Uputstvo za MetaMask | Dušanov Zlatnik</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
+    <title>Uputstvo za MetaMask | Dusanov Zlatnik</title>
+    <meta name="description"
+        content="Detaljno uputstvo za instalaciju i korišćenje MetaMask kripto novčanika sa BNB Smart Chain mrežom i dodavanje tokena Dusanov Zlatnik." />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png" />
+    <link rel="manifest" href="../site.webmanifest" />
+
+    <!-- SEO language versions -->
+    <link rel="alternate" hreflang="sr"
+        href="https://srpskivitez.github.io/DusanovZlatnik/docs/metamask-instruction.html" />
+    <link rel="alternate" hreflang="sr-Latn"
+        href="https://srpskivitez.github.io/DusanovZlatnik/docs/metamask-instruction-sr-latin.html" />
+    <link rel="alternate" hreflang="en"
+        href="https://srpskivitez.github.io/DusanovZlatnik/docs/metamask-instruction-en.html" />
+    <link rel="canonical" href="https://srpskivitez.github.io/DusanovZlatnik/docs/metamask-instruction-sr-latin.html" />
+
+    <!-- Open Graph -->
+    <meta property="og:locale" content="sr_RS" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Uputstvo za MetaMask | Dusanov Zlatnik" />
+    <meta property="og:description"
+        content="Detaljno uputstvo za instalaciju i korišćenje MetaMask kripto novčanika sa BNB Smart Chain mrežom i dodavanje tokena Dusanov Zlatnik." />
+    <meta property="og:url"
+        content="https://srpskivitez.github.io/DusanovZlatnik/docs/metamask-instruction-sr-latin.html" />
+    <meta property="og:image" content="https://srpskivitez.github.io/DusanovZlatnik/pic/metamask-icon.png" />
+    <meta property="og:site_name" content="Dusanov Zlatnik" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Uputstvo za MetaMask | Dusanov Zlatnik" />
+    <meta name="twitter:description"
+        content="Detaljno uputstvo za instalaciju i korišćenje MetaMask kripto novčanika sa BNB Smart Chain mrežom i dodavanje tokena Dusanov Zlatnik." />
+    <meta name="twitter:image" content="https://srpskivitez.github.io/DusanovZlatnik/pic/metamask-icon.png" />
+
+    <!-- Preload key resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap"
+        as="style" />
+    <link rel="preload" href="../pic/metamask-icon.png" as="image" type="image/png" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" />
+    <link rel="stylesheet" href="../style-docs.css" />
+
+    <!-- Robots -->
+    <meta name="robots" content="index, follow" />
+
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; 
+       connect-src 'self' https://dusanov-api.vercel.app; 
+       img-src 'self' https:; 
+       style-src 'self' 'unsafe-inline' https:; 
+       font-src 'self' https://fonts.gstatic.com;" />
 </head>
 
 <body>
@@ -82,23 +131,7 @@
         </footer>
     </section>
 
-    <script>
-        //jezik
-        document.querySelectorAll('#language-switcher a').forEach(link => {
-            link.addEventListener('click', function (e) {
-                e.preventDefault();
-                const lang = this.getAttribute('data-lang');
-                if (lang === 'sr') {
-                    window.location.href = 'Uputstvo.html';
-                } else if (lang === 'sr-latin') {
-                    window.location.href = 'Uputstvo-latin.html';
-                } else if (lang === 'en') {
-                    window.location.href = 'Uputstvo-en.html';
-                }
-            });
-        });
-    </script>
-    
+    <script src="../scr/script-docs.js"></script>
 </body>
 
 </html>
