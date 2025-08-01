@@ -113,17 +113,15 @@ document.addEventListener('DOMContentLoaded', () => {
         // Pretpostavimo da imena imaju format: [basename]-[lang].html ili [basename].html za sr ćirilicu
         // Na primer: whitepaper.html (sr ćirilica), whitepaper-sr-latin.html (sr latinica), whitepaper-en.html (eng)
 
-        let baseName = fileName;
+        let baseName = fileName.replace('.html', '');
         let currentLangInFile = 'sr';
 
-        if (fileName.includes('-')) {
-          const parts = fileName.split('-');
-          const langPart = parts.pop().split('.')[0]; // uzmi deo pre .html
+        if (baseName.endsWith('-sr') || baseName.endsWith('-sr-latin') || baseName.endsWith('-en')) {
+          const parts = baseName.split('-');
+          currentLangInFile = parts.pop();
           baseName = parts.join('-');
-          currentLangInFile = langPart;
-        } else {
-          baseName = fileName.replace('.html', '');
         }
+
 
         // Izračunaj novi naziv fajla
         let newFileName = '';
