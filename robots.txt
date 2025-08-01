@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://srpskivitez.github.io/DusanovZlatnik/sitemap.xml
