@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="sr" data-lang="sr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Фрушкогорски манастири | Душанов Златник</title>
+    <meta name="description"
+        content="Интерактивна мапа и списак фрушкогорских манастира по приоритету обнове — у оквиру иницијативе Душанов Златник." />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png" />
+    <link rel="manifest" href="../site.webmanifest" />
+
+    <!-- SEO hreflang -->
+    <link rel="alternate" hreflang="sr"
+        href="https://srpskivitez.github.io/DusanovZlatnik/docs/fruskogorski-manastiri.html" />
+    <link rel="alternate" hreflang="sr-Latn"
+        href="https://srpskivitez.github.io/DusanovZlatnik/docs/fruskogorski-manastiri-sr-latin.html" />
+    <link rel="alternate" hreflang="en"
+        href="https://srpskivitez.github.io/DusanovZlatnik/docs/fruskogorski-manastiri-en.html" />
+    <link rel="canonical" href="https://srpskivitez.github.io/DusanovZlatnik/docs/fruskogorski-manastiri.html" />
+
+    <!-- Open Graph -->
+    <meta property="og:locale" content="sr_RS" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Фрушкогорски манастири | Душанов Златник" />
+    <meta property="og:description"
+        content="Интерактивни путоказ обнове манастира Фрушке горе – део културне иницијативе Душанов Златник." />
+    <meta property="og:url" content="https://srpskivitez.github.io/DusanovZlatnik/docs/fruskogorski-manastiri.html" />
+    <meta property="og:image" content="https://srpskivitez.github.io/DusanovZlatnik/pic/logo_500_tra.png" />
+    <meta property="og:site_name" content="Душанов Златник" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Фрушкогорски манастири | Душанов Златник" />
+    <meta name="twitter:description" content="Дигитални преглед манастира и подршке обнови – Dušanov Zlatnik." />
+    <meta name="twitter:image" content="https://srpskivitez.github.io/DusanovZlatnik/pic/logo_500_tra.png" />
+
+    <!-- Preload i stilovi -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap"
+        as="style" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="../style-docs.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <!-- Dodatni stilovi za tabelu i mapu -->
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 2rem;
+            font-size: 0.95rem;
+        }
+
+        th,
+        td {
+            border: 1px solid #999;
+            padding: 0.75rem;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #1b2c3e;
+            color: #f7f3e9;
+        }
+
+        td .desc {
+            display: block;
+            font-size: 0.85em;
+            color: #bbb;
+            margin-top: 0.3rem;
+        }
+
+        #map {
+            height: 500px;
+            margin: 2.5rem 0;
+            border-radius: 12px;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+        }
+
+        section {
+            margin-top: 2.5rem;
+        }
+    </style>
+
+    <!-- Robots i sigurnost -->
+    <meta name="robots" content="index, follow" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; 
+    connect-src 'self' https://dusanov-api.vercel.app; 
+    img-src 'self' https:; 
+    style-src 'self' 'unsafe-inline' https:; 
+    font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;" />
+</head>
+
+<body>
+
+    <noscript>
+        <div style="text-align:center; background:#ffe0e0; padding:1em;">
+            Овај сајт захтева укључен JavaScript ради пуне функционалности.
+        </div>
+    </noscript>
+
+    <div id="language-switcher">
+        <a href="#" data-lang="sr">ћир</a> |
+        <a href="#" data-lang="sr-latin">lat</a> |
+        <a href="#" data-lang="en">eng</a>
+    </div>
+
+    <main class="container lang-section active">
+        <h1>Фрушкогорски манастири – путоказ доброчинства</h1>
+        <p>Овај списак представља фрушкогорске манастире по приоритету потребе за улагањем и обновом — од најпотребнијих
+            ка мање критичним. Дуšanов Златник представља симболичку подршку у донацијама.</p>
+
+        <h2>🕍 Приоритетни манастири</h2>
+        <!-- tabela -->
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Манастир</th>
+                    <th>Приоритет</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Манастир Бешеново <span class="desc">У потпуности у обнови после потпуног рушења у Другом
+                            светском рату</span></td>
+                    <td>Врло висок</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Манастир Раковац <span class="desc">Фреске и зграде захтевају санацију</span></td>
+                    <td>Висок</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Манастир Беочин <span class="desc">Историјски објекат, иконопис и кров се обнављају</span></td>
+                    <td>Средњи</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Манастир Кувеждин <span class="desc">Реконструисан 2009, али потребне финансијске подршке за
+                            одржавање</span></td>
+                    <td>Средњи</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Манастир Гргетег <span class="desc">Добро очуван, реновирано крајем XIX века</span></td>
+                    <td>Нижи</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Манастир Јазак <span class="desc">Редовно посећен, али иконописи захтевају рестаурацију</span>
+                    </td>
+                    <td>Нижи</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Манастир Велика Ремета <span class="desc">Један од најстаријих, потребна санација зидова</span>
+                    </td>
+                    <td>Висок</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Манастир Мала Ремета <span class="desc">Мала капела у добром стању</span></td>
+                    <td>Нижи</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>Манастир Шишатовац <span class="desc">Рестаурација у току после ратних оштећења</span></td>
+                    <td>Висок</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Манастир Дивша <span class="desc">Изолован положај, неопходна помоћ</span></td>
+                    <td>Средњи</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>Манастир Ђипша <span class="desc">Делимично обновљен</span></td>
+                    <td>Средњи</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>Манастир Крушедол <span class="desc">Најпосећенији, али и даље захтева рестаурацију
+                            унутрашњости</span></td>
+                    <td>Средњи</td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>Манастир Хопово <span class="desc">Одржавање потребно на фасади</span></td>
+                    <td>Нижи</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>Манастир Јазак Стари <span class="desc">Археолошки локалитет, потребна заштита</span></td>
+                    <td>Висок</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>Манастир Врдник (Раваница) <span class="desc">У рестаурацији, историјски значајан</span></td>
+                    <td>Средњи</td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td>Манастир Привина Глава <span class="desc">Захтева подршку за обнову иконе и фресака</span></td>
+                    <td>Средњи</td>
+                </tr>
+            </tbody>
+            </tbody>
+        </table>
+
+        <div id="map"></div>
+
+        <footer>
+            © 2025 Душанов Златник. Сва права задржана.
+            <a href="../index.html">← Назад на почетну</a>
+        </footer>
+    </main>
+
+    <script src="../scr/script-docs.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        var map = L.map('map').setView([45.08, 19.75], 10);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        var monasteries = [
+            { name: 'Бешеново', coords: [45.0742, 19.6685], priority: 1, desc: 'Реконструкција после уништења' },
+            { name: 'Раковац', coords: [45.1505, 19.7392], priority: 2, desc: 'Фреске и зграде захтевају санацију' },
+            { name: 'Беочин', coords: [45.1761, 19.6561], priority: 3, desc: 'Рестаураторски радови' },
+            { name: 'Кувеждин', coords: [45.1027, 19.5623], priority: 4, desc: 'Одржавање и рестаурација' },
+            { name: 'Гргетег', coords: [45.1300, 19.7969], priority: 5, desc: 'Добро очуван' },
+            { name: 'Јазак', coords: [45.1164, 19.8228], priority: 6, desc: 'Надоградња иконописа' },
+            { name: 'Велика Ремета', coords: [45.1478, 19.7925], priority: 2, desc: 'Санација зидова' },
+            { name: 'Мала Ремета', coords: [45.0583, 19.7353], priority: 6, desc: 'Добро стање' },
+            { name: 'Шишатовац', coords: [45.1061, 19.5931], priority: 2, desc: 'Ратна оштећења' },
+            { name: 'Дивша', coords: [45.1516, 19.4750], priority: 3, desc: 'Изолован положај' },
+            { name: 'Ђипша', coords: [45.1589, 19.5361], priority: 3, desc: 'Делимично обновљен' },
+            { name: 'Крушедол', coords: [45.1328, 19.8514], priority: 3, desc: 'Рестаурација унутрашњости' },
+            { name: 'Хопово', coords: [45.1425, 19.7897], priority: 6, desc: 'Фасада' },
+            { name: 'Јазак Стари', coords: [45.1232, 19.8221], priority: 2, desc: 'Археолошки локалитет' },
+            { name: 'Врдник (Раваница)', coords: [45.1394, 19.7842], priority: 3, desc: 'Историјски значајан' },
+            { name: 'Привина Глава', coords: [45.1842, 19.5208], priority: 3, desc: 'Иконе и фреске' }
+        ];
+
+        monasteries.forEach(function (m) {
+            L.circleMarker(m.coords, {
+                radius: 8,
+                fillColor: m.priority <= 2 ? 'red' : (m.priority <= 4 ? 'orange' : 'green'),
+                color: '#000', weight: 1, fillOpacity: 0.8
+            }).addTo(map)
+                .bindPopup('<b>' + m.name + '</b><br>Приоритет: ' + m.priority + '<br>' + m.desc);
+        });
+    </script>
+</body>
+
+</html>
