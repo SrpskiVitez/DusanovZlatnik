@@ -141,6 +141,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  document.getElementById('addTokenBtn').addEventListener('click', addTokenToMetaMask);
+
 });
 
 // Dodavanje MetaMask tokena (van DOMContentLoaded-a)
