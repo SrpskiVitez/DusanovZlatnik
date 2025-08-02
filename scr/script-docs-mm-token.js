@@ -1,4 +1,6 @@
 // Dodavanje MetaMask tokena (van DOMContentLoaded-a)
+document.getElementById('addTokenBtn').addEventListener('click', addTokenToMetaMask);
+
 async function addTokenToMetaMask() {
   const lang = document.documentElement.getAttribute('data-lang') || 'sr';
 

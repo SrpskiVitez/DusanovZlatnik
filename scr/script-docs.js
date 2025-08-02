@@ -141,8 +141,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  document.getElementById('addTokenBtn').addEventListener('click', addTokenToMetaMask);
-
-});
+  });
 
 
