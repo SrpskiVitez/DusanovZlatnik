@@ -1,0 +1,12 @@
+
+/* Leaflet 1.9.4 CSS - https://leafletjs.com/ */
+.leaflet-container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    outline: 0;
+}
+.leaflet-tile {
+    width: 256px;
+    height: 256px;
+}
