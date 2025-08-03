@@ -1,6 +1,6 @@
 .leaflet-container {
-    height: 16rem;
-    width: 48rem;
+    height: 100%;
+    width: 100%;
     position: relative;
     outline: 0;
     overflow: hidden;
@@ -14,16 +14,15 @@
 
 
 #map {
-    height: 100%; /* oko 480px */
-    width: 100%;
-    max-width: 60rem;
+    height: 16rem;
+    width: 16rem;
+    max-width: 48rem;
     margin: 2.5rem auto;
     border-radius: 0.75rem;
     box-shadow: 0 0 0.75rem rgba(0, 0, 0, 0.4);
     display: block;
     overflow: hidden;
 }
-
 
 .leaflet-pane,
 .leaflet-tile,
