@@ -143,3 +143,18 @@ document.getElementById('sendRequest').addEventListener('click', function () {
     });
 });
 
+
+
+//PWA
+// PWA: Registracija Service Workera
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function () {
+    navigator.serviceWorker.register("sw.js")
+      .then(function (registration) {
+        console.log("✅ ServiceWorker registered: ", registration.scope);
+      })
+      .catch(function (error) {
+        console.error("❌ ServiceWorker registration failed: ", error);
+      });
+  });
+}
