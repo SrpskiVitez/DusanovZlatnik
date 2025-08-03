@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
-   if (L.DomUtil.get('map') != null && L.DomUtil.get('map')._leaflet_id) {
-    return; // već inicijalizovano
-  }
-  const map = L.map('map').setView([45.08, 19.75], 10);
+  setTimeout(() => {
+    if (L.DomUtil.get('map')?._leaflet_id) return; // sprečava dupli init
 
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© OpenStreetMap contributors'
-  }).addTo(map);
+    const map = L.map('map').setView([45.08, 19.75], 10);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
 
   const monasteries = [
     { name: 'Бешеново', coords: [45.0742, 19.6685], priority: 1, desc: 'Реконструкција после уништења' },
@@ -27,14 +27,15 @@ document.addEventListener("DOMContentLoaded", function () {
     { name: 'Привина Глава', coords: [45.1842, 19.5208], priority: 3, desc: 'Иконе и фреске' }
   ];
 
-  monasteries.forEach(function (m) {
-    L.circleMarker(m.coords, {
-      radius: 8,
-      fillColor: m.priority <= 2 ? 'red' : (m.priority <= 4 ? 'orange' : 'green'),
-      color: '#000',
-      weight: 1,
-      fillOpacity: 0.8
-    }).addTo(map)
-      .bindPopup('<b>' + m.name + '</b><br>Приоритет: ' + m.priority + '<br>' + m.desc);
-  });
+ monasteries.forEach(m => {
+      L.circleMarker(m.coords, {
+        radius: 8,
+        fillColor: m.priority <= 2 ? 'red' : (m.priority <= 4 ? 'orange' : 'green'),
+        color: '#000',
+        weight: 1,
+        fillOpacity: 0.8
+      }).addTo(map)
+        .bindPopup('<b>' + m.name + '</b><br>Приоритет: ' + m.priority + '<br>' + m.desc);
+    });
+  }, 100); // delay init za layout stabilizaciju
 });
