@@ -1,23 +1,28 @@
+/* Leaflet container */
 .leaflet-container {
-    height: 100%;
-    width: 100%;
-    position: relative;
-    outline: 0;
-    overflow: hidden;
-    z-index: 0;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  outline: 0;
+  overflow: hidden;
+  z-index: 0;
 }
 
+/* Tvoj map div */
 #map {
-    height: 16rem; /* možeš i više ako želiš veću mapu */
-    width: 32rem;
-    max-width: 48rem;
-    margin: 2.5rem auto;
-    border-radius: 0.75rem;
-    box-shadow: 0 0 0.75rem rgba(0, 0, 0, 0.4);
-    display: block;
-    overflow: hidden;
+  height: 30rem; /* ili više, po potrebi */
+  width: 100%;
+  max-width: 48rem;
+  margin: 2.5rem auto;
+  border-radius: 0.75rem;
+  box-shadow: 0 0 0.75rem rgba(0, 0, 0, 0.4);
+  display: block;
+  overflow: hidden;
 }
 
+/* Ne diraj .leaflet-tile dimenzije! Leaflet ih sam izračunava */
+
+/* Sprečavanje animacija ako ne želiš pomeranje (opciono) */
 .leaflet-pane,
 .leaflet-tile,
 .leaflet-marker-icon,
@@ -28,36 +33,37 @@
 .leaflet-marker-pane,
 .leaflet-tooltip-pane,
 .leaflet-popup-pane {
-    transform: none !important;
+  transform: none !important;
 }
 
+/* Tabela */
 table {
-    border-collapse: collapse;
-    width: 100%;
-    margin-top: 2rem;
-    font-size: 0.95rem;
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 2rem;
+  font-size: 0.95rem;
 }
 
 th,
 td {
-    border: 0.0625rem solid #999;
-    padding: 0.75rem;
-    text-align: left;
-    vertical-align: top;
+  border: 0.0625rem solid #999;
+  padding: 0.75rem;
+  text-align: left;
+  vertical-align: top;
 }
 
 th {
-    background-color: #1b2c3e;
-    color: #f7f3e9;
+  background-color: #1b2c3e;
+  color: #f7f3e9;
 }
 
 td .desc {
-    display: block;
-    font-size: 0.85rem;
-    color: #bbb;
-    margin-top: 0.3rem;
+  display: block;
+  font-size: 0.85rem;
+  color: #bbb;
+  margin-top: 0.3rem;
 }
 
 section {
-    margin-top: 2.5rem;
+  margin-top: 2.5rem;
 }
