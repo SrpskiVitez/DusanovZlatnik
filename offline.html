@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <title>Офлајн режим</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+
+    body {
+      font-family: 'Merriweather', serif;
+      background-color: #f7f1e1;
+      color: #3a2c1d;
+      text-align: center;
+      padding: 3rem 1rem;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 30rem;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #c2a457;
+      margin: 2rem 0;
+    }
+
+    button {
+      background-color: #c2a457;
+      color: white;
+      border: none;
+      border-radius: 0.5rem;
+      padding: 0.7rem 1.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 1rem;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #a88f46;
+    }
+
+    #rotating-coin {
+      width: 120px;
+      height: auto;
+      margin: 2rem auto 0;
+      transform-style: preserve-3d;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="favicon.svg" alt="Грб Душановог златника" style="max-width:5rem;" />
+
+    <!-- ЋИРИЛИЦА -->
+    <h1>📴 Офлајн сте</h1>
+    <p>Нисте повезани на интернет.<br>Садржај ће бити доступан чим се веза обнови.</p>
+
+    <hr>
+
+    <!-- ЛАТИНИЦА -->
+    <h1>📴 Oflajn ste</h1>
+    <p>Niste povezani na internet.<br>Sadržaj će biti dostupan čim se veza obnovi.</p>
+
+    <hr>
+
+    <!-- ENGLISH -->
+    <h1>📴 You are offline</h1>
+    <p>You are not connected to the internet.<br>Content will be available once the connection is restored.</p>
+
+    <!-- Дугме за освежавање -->
+    <button onclick="location.reload()">🔄 Покушај поново</button>
+
+    <!-- Новчић -->
+    <img id="rotating-coin" src="logo_500_tra.png" alt="Ротирајући новчић" />
+  </div>
+
+  <script>
+    const logo = document.getElementById("rotating-coin");
+
+    let currentRotation = 0;
+    let targetRotation = 360;
+
+    function animate() {
+      currentRotation += (targetRotation - currentRotation) * 0.05;
+      const rad = currentRotation * Math.PI / 180;
+      const scaleX = Math.abs(Math.cos(rad)) * 0.7 + 0.3;
+
+      logo.style.transform = `rotateY(${currentRotation}deg) scaleX(${scaleX})`;
+
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  </script>
+</body>
+</html>
