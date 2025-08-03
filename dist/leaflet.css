@@ -1,6 +1,6 @@
 .leaflet-container {
-    height: 100%;
-    width: 100%;
+    height: 20rem;
+    width: 20rem;
     position: relative;
     outline: 0;
     overflow: hidden;
@@ -8,14 +8,14 @@
 }
 
 .leaflet-tile {
-    width: 16rem;
-    height: 16rem;
+    width: 20rem;
+    height: 20rem;
 }
 
 
 #map {
-    height: 16rem;
-    width: 16rem;
+    height: 20rem;
+    width: 20rem;
     max-width: 48rem;
     margin: 2.5rem auto;
     border-radius: 0.75rem;
