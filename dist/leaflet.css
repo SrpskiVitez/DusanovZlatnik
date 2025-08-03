@@ -1,21 +1,15 @@
 .leaflet-container {
-    height: 20rem;
-    width: 20rem;
+    height: 100%;
+    width: 100%;
     position: relative;
     outline: 0;
     overflow: hidden;
     z-index: 0;
 }
 
-.leaflet-tile {
-    width: 20rem;
-    height: 20rem;
-}
-
-
 #map {
-    height: 20rem;
-    width: 20rem;
+    height: 30rem; /* možeš i više ako želiš veću mapu */
+    width: 100%;
     max-width: 48rem;
     margin: 2.5rem auto;
     border-radius: 0.75rem;
@@ -35,6 +29,11 @@
 .leaflet-tooltip-pane,
 .leaflet-popup-pane {
     transform: none !important;
+}
+
+.leaflet-tile {
+    width: auto !important;
+    height: auto !important;
 }
 
 table {
