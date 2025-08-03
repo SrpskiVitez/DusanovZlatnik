@@ -3,8 +3,8 @@
     "short_name": "Златник",
     "start_url": "./index.html",
     "display": "standalone",
-    "background_color": "#ffffff",
-    "theme_color": "#c2a457",
+    "background_color": "#0d1b2a",
+    "theme_color": "#0d1b2a",
     "orientation": "portrait",
     "icons": [
         {
