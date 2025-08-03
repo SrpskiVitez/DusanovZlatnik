@@ -1,12 +1,88 @@
 
-/* Leaflet 1.9.4 CSS - https://leafletjs.com/ */
+/* Leaflet rem-based CSS - customized */
+
+html {
+    font-size: 16px;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'Merriweather', serif;
+    background-color: #f9f9f9;
+}
+
 .leaflet-container {
     height: 100%;
     width: 100%;
     position: relative;
     outline: 0;
+    overflow: hidden;
+    z-index: 0;
 }
+
 .leaflet-tile {
-    width: 256px;
-    height: 256px;
+    width: 16rem;
+    height: 16rem;
+}
+
+#map {
+    height: 43.75rem !important;
+    width: 100% !important;
+    max-width: 100%;
+    margin: 2.5rem auto;
+    border-radius: 0.75rem;
+    box-shadow: 0 0 0.75rem rgba(0, 0, 0, 0.4);
+    display: block;
+    overflow: hidden;
+}
+
+.leaflet-pane,
+.leaflet-tile,
+.leaflet-marker-icon,
+.leaflet-marker-shadow,
+.leaflet-tile-container,
+.leaflet-overlay-pane,
+.leaflet-shadow-pane,
+.leaflet-marker-pane,
+.leaflet-tooltip-pane,
+.leaflet-popup-pane {
+    transform: none !important;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 2rem;
+    font-size: 0.95rem;
+}
+
+th,
+td {
+    border: 0.0625rem solid #999;
+    padding: 0.75rem;
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    background-color: #1b2c3e;
+    color: #f7f3e9;
+}
+
+td .desc {
+    display: block;
+    font-size: 0.85rem;
+    color: #bbb;
+    margin-top: 0.3rem;
+}
+
+section {
+    margin-top: 2.5rem;
 }
