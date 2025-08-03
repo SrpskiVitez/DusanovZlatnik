@@ -1,6 +1,6 @@
 .leaflet-container {
-    height: 100%;
-    width: 100%;
+    height: 16rem;
+    width: 48rem;
     position: relative;
     outline: 0;
     overflow: hidden;
@@ -12,8 +12,9 @@
     height: 16rem;
 }
 
+
 #map {
-    height: 30rem; /* oko 480px */
+    height: 100%; /* oko 480px */
     width: 100%;
     max-width: 60rem;
     margin: 2.5rem auto;
