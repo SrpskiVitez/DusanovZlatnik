@@ -1,6 +1,6 @@
 {
     "name": "Душанов Златник",
-    "short_name": "Златник",
+    "short_name": "Душанов Златник",
     "start_url": "./index.html",
     "display": "standalone",
     "background_color": "#0d1b2a",
