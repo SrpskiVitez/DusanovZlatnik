@@ -39,5 +39,5 @@ document.addEventListener("DOMContentLoaded", function () {
       }).addTo(map)
         .bindPopup('<b>' + m.name + '</b><br>Приоритет: ' + m.priority + '<br>' + m.desc);
     });
-  }, 200); // delay init za layout stabilizaciju
+  }, 400); // delay init za layout stabilizaciju
 });
