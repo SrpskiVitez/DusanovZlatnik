@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (L.DomUtil.get('map')?._leaflet_id) return; // sprečava dupli init
 
     const map = L.map('map').setView([45.08, 19.75], 10);
-    setTimeout(() => map.invalidateSize(), 400);
+    setTimeout(() => map.invalidateSize(), 800);
 
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
