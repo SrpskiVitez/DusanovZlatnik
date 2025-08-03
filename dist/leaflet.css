@@ -8,8 +8,8 @@
 }
 
 .leaflet-tile {
-    width: 16rem;
-    height: 16rem;
+    width: 20rem;
+    height: 20rem;
 }
 
 #map {
