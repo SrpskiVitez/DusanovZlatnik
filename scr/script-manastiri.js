@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
+   if (L.DomUtil.get('map') != null && L.DomUtil.get('map')._leaflet_id) {
+    return; // već inicijalizovano
+  }
   const map = L.map('map').setView([45.08, 19.75], 10);
 
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
