@@ -1,4 +1,4 @@
-const CACHE_NAME = "dusanov-zlatnik-cache-v3";
+const CACHE_NAME = "dusanov-zlatnik-cache-v1";
 
 const urlsToCache = [
   "./",
