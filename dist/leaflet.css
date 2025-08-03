@@ -13,7 +13,7 @@
 }
 
 #map {
-    height: 43.75rem !important;
+    height: 100% !important;
     width: 100% !important;
     max-width: 100%;
     margin: 2.5rem auto;
