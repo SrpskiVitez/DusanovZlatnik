@@ -149,8 +149,9 @@
         <img src="https://cdn.jsdelivr.net/gh/lucide-icons/lucide/icons/message-circle.svg" alt="Telegram група"
           title="Telegram група | заједница">
       </a>
-       <!-- Discord -->
-      <a href="https://discord.gg/Xu2eHkFM" target="_blank" target="_blank" rel="noopener noreferrer" title="Дискорд сервер">
+      <!-- Discord -->
+      <a href="https://discord.gg/Xu2eHkFM" target="_blank" target="_blank" rel="noopener noreferrer"
+        title="Дискорд сервер">
         <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/discord.svg" alt="Дискорд"
           title="Дискорд">
       </a>
@@ -187,9 +188,55 @@
       </div>
     </div>
 
+    <!-- Modal za otvaranje u MetaMask browser -->
+    <div id="metamaskModal" class="modal" style="display:none;">
+      <div class="modal-content">
+        <span class="close-metamask">&times;</span>
+        <h2>Отвори у MetaMask-у</h2>
+        <p>За куповину токена, молимо отвори овај сајт унутар MetaMask мобилне апликације (уграђени браузер).</p>
+        <a id="openInMetaMask" href="#" class="button">Отвори у MetaMask-у</a>
+      </div>
+    </div>
+
+
+    <!-- Modal za kupovinu -->
+    <div id="buyModal" class="modal">
+      <div class="modal-content">
+        <span class="close-buy">&times;</span>
+        <h2>Куповина Душановог Златника</h2>
+
+        <label class="terms-inline">
+          <input type="checkbox" id="buyTermsCheckbox" />
+          <span>Прихватам&nbsp;<a href="docs/terms.html" target="_blank">услове куповине</a></span>
+        </label>
+
+        <div id="presaleInfo">
+          <p><strong>У пресале-у:</strong> <span id="totalPresale">1.100.000,00</span> златника(10%)</p>
+          <p><strong>Цена:</strong> 1 динар ≈ <span id="bnbPrice">0.00001316</span> BNB по златнику</p>
+          <p><strong>Минимум:</strong> 1 златник</p>
+          <p><strong>Максимално по особи:</strong> 110.000,00(1%)</p>
+          <p><strong>Купљено укупно:</strong> <span id="totalSold">—</span></p>
+          <p><strong>Ти си купио:</strong> <span id="userPurchased">—</span></p>
+        </div>
+
+        <label for="buyAmount">Желим да купим:</label>
+        <input type="number" id="buyAmount" placeholder="Број златника" min="1" max="110000" disabled />
+
+        <button id="buyNowBtn" disabled>Купи златнике</button>
+      </div>
+    </div>
+
+
   </main>
 
   <script src="scr/script.js"></script>
+  <script src="scr/ethers.min.js"></script>
+  <script type="module" src="scr/script-buy.js"></script>
+  <!-- WalletConnect 
+  <script src="https://unpkg.com/@walletconnect/web3-provider@1.8.0/dist/umd/index.min.js"></script>
+  <script src="./scr/script-buy-wc.js"></script>
+
+  -->
 
 </body>
 
