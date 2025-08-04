@@ -11,6 +11,13 @@ const metamaskModal = document.getElementById("metamaskModal");
 const openInMetaMaskBtn = document.getElementById("openInMetaMask");
 const closeMetaMaskModalBtn = document.querySelector(".close-metamask");
 
+// Modal за куповину
+const buyModal = document.getElementById("buyModal");
+const closeBuyModalBtn = document.querySelector(".close-buy");
+
+// Dugme koje otvara modal
+const buyButton = document.getElementById("buy");
+
 // Језик
 const lang = document.documentElement.lang || "sr";
 
@@ -76,6 +83,25 @@ closeMetaMaskModalBtn.addEventListener("click", () => {
   metamaskModal.style.display = "none";
 });
 
+// Затварање Buy модала
+closeBuyModalBtn.addEventListener("click", () => {
+  buyModal.style.display = "none";
+});
+
+// Отварање модала при клику на дугме Куповина
+buyButton.addEventListener("click", () => {
+  // Ако је мобилни уређај, није MetaMask browser и нема Web3, отвори metamaskModal
+  if (isMobile() && !isMetaMaskBrowser() && !window.ethereum) {
+    metamaskModal.style.display = "flex";
+    const dappUrl = window.location.href.replace(/^https?:\/\//, "");
+    openInMetaMaskBtn.href = `metamask://dapp/${dappUrl}`;
+  } else {
+    // иначе отвори куповину
+    buyModal.style.display = "flex";
+    tokenAmountInput.disabled = false;
+  }
+});
+
 // Иницијализација Web3 и конекције са паметним уговором
 async function init() {
   if (!window.ethereum) {
@@ -93,6 +119,9 @@ async function init() {
     if (!isActive) {
       alert(messages[lang]?.not_active || messages["sr"].not_active);
       confirmButton.disabled = true;
+    } else {
+      confirmButton.disabled = true; // još uvek dok korisnik ne unese iznos i prihvati uslove
+      tokenAmountInput.disabled = false;
     }
   } catch (err) {
     console.error("Иницијација није успела:", err);
