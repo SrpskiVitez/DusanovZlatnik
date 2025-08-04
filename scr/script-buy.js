@@ -62,37 +62,6 @@ const ABI = [
 let signer, contract;
 let initialized = false;  // flag da init() bude pozvan samo jednom
 
-
-
-// Funkcija koja proverava uslove i omogućava/disabling dugme i input
-function updateBuyControls() {
-  const tokens = parseInt(tokenAmountInput.value);
-  const termsAccepted = checkbox.checked;
-
-  // Ako nije prihvaćeno ili nema validan pozitivan broj tokena, disable dugme i input
-  if (!termsAccepted) {
-    tokenAmountInput.disabled = true;
-    confirmButton.disabled = true;
-  } else {
-    tokenAmountInput.disabled = false;
-    // Dugme se omogućava samo ako je validan broj tokena (>0)
-    confirmButton.disabled = isNaN(tokens) || tokens <= 0;
-  }
-}
-
-// Event listeneri
-checkbox.addEventListener("change", () => {
-  updateBuyControls();
-});
-
-tokenAmountInput.addEventListener("input", () => {
-  updateBuyControls();
-});
-
-// Pozovi jednom na start da podesi stanje ispravno
-updateBuyControls();
-
-
 // Провера да ли је у питању мобилни уређај
 function isMobile() {
   return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
