@@ -170,10 +170,16 @@ confirmButton.addEventListener("click", async () => {
 
 // Otvaranje modala za kupovinu ili metamask modal ako je potrebno
 buyButton.addEventListener("click", async () => {
+  console.log("Kliknuto dugme za kupovinu");
+
   if (isMobile() && !isMetaMaskBrowser() && !window.ethereum) {
+    console.log("Prikazujem modal...");
     metamaskModal.style.display = "flex";
     const dappUrl = window.location.href.replace(/^https?:\/\//, "");
     openInMetaMaskBtn.href = `metamask://dapp/${dappUrl}`;
+
+    // Dodato za dijagnostiku i fallback
+    alert("Otvorite stranicu u MetaMask aplikaciji da biste nastavili.");
   } else {
     if (!initialized) {
       const success = await init();
@@ -186,6 +192,8 @@ buyButton.addEventListener("click", async () => {
     tokenAmountInput.disabled = false;
   }
 });
+
+
 
 // Pokreni proveru MetaMask mobilnog browser-a odmah na load
 checkMetaMaskMobile();
