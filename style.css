@@ -476,12 +476,12 @@ main.container {
 }
 
 #contractAddress {
-  padding-left: 0.5em;
-  /* malo prostora za tekst unutar inputa */
-  flex-grow: 1;
-  /* da input zauzme sav slobodan prostor */
-  border-radius: 4px 0 0 4px;
+  font-family: monospace;
+  font-size: 1rem;
   border: 1px solid #ccc;
+  padding: 0.4em;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 #copyContractBtn {
@@ -501,30 +501,32 @@ main.container {
 }
 
 
-#bnbAmountDisplay {
-  height: 2.5em;
+/* Zajednički stil za oba inputa */
+input#bnbAmountDisplay,
+input#buyAmount {
   width: 5rem;
+  height: 2.5em;
   font-family: monospace;
   font-size: 1rem;
-  padding: 0 0.5em;
+  padding: 0.4em;
   border: 1px solid #ccc;
-  /* isto kao i #contractAddress */
   border-radius: 4px;
-  /* zaobljeni uglovi */
-  background-color: white;
-  /* ili neka svetla boja */
-  color: red;
-  /* po želji crvena boja fonta */
   box-sizing: border-box;
   text-align: center;
+}
+
+/* Specifično za bnbAmountDisplay */
+#bnbAmountDisplay {
+  color: red;
+  background-color: white;
   user-select: all;
-  /* da može lako da se kopira */
 }
 
-
+/* Ako želiš da #buyAmount ostane editable, možeš dodati ovo radi konzistentnosti */
 #buyAmount {
-  width: 5rem;
+  background-color: white;
 }
+
 
 
 /* Mobile tweaki */
