@@ -42,9 +42,9 @@ function updateBNBDisplay() {
   if (!isNaN(amount) && amount > 0) {
     const totalRSD = amount * PRICE_PER_TOKEN_RSD;
     const totalBNB = (totalRSD * RSD_TO_BNB).toFixed(6);
-    bnbAmountDisplay.textContent = totalBNB;
+    bnbAmountDisplay.value = totalBNB;
   } else {
-    bnbAmountDisplay.textContent = "0.000000";
+    bnbAmountDisplay.value = "0.000000";
   }
 }
 
