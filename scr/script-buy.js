@@ -1,24 +1,22 @@
-// MODAL ZA KUPOVINU
-
 const buyButton = document.getElementById('buy');
 const buyModal = document.getElementById('buyModal');
 const closeBuyBtn = buyModal.querySelector('.close-buy');
 const buyTermsCheckbox = document.getElementById('buyTermsCheckbox');
 const contractInfo = document.getElementById('contractInfo');
-const buyAmountWrapper = document.getElementById('buyAmountWrapper');
 const buyAmountInput = document.getElementById('buyAmount');
-const tokenAmountDisplay = document.getElementById('tokenAmountDisplay');
 const bnbAmountDisplay = document.getElementById('bnbAmountDisplay');
 const copyContractBtn = document.getElementById('copyContractBtn');
 const contractAddressInput = document.getElementById('contractAddress');
 
-// 1 RSD = 0.00001316 BNB
-const RSD_TO_BNB = 0.00001316;
+// Cena 1 zlatnika = 100 RSD → u BNB
 const PRICE_PER_TOKEN_RSD = 100;
+const RSD_TO_BNB = 0.00001316;
 
-buyButton.addEventListener('click', () => {
-  buyModal.style.display = 'block';
-});
+if (buyButton) {
+  buyButton.addEventListener('click', () => {
+    buyModal.style.display = 'block';
+  });
+}
 
 closeBuyBtn.addEventListener('click', () => {
   buyModal.style.display = 'none';
@@ -30,28 +28,27 @@ window.addEventListener('click', (e) => {
   }
 });
 
-// Kad se čekira "prihvatam uslove" → prikaži polja
+// Prikazuj polje kad se čekira "prihvatam"
 buyTermsCheckbox.addEventListener('change', () => {
-  const show = buyTermsCheckbox.checked;
-  contractInfo.style.display = show ? 'block' : 'none';
-  buyAmountWrapper.style.display = show ? 'block' : 'none';
+  contractInfo.style.display = buyTermsCheckbox.checked ? 'block' : 'none';
+  if (buyTermsCheckbox.checked) updateBNBDisplay(); // inicijalni proračun
 });
 
-// Kada korisnik unese broj zlatnika, preračunaj BNB
-buyAmountInput.addEventListener('input', () => {
+// Ažuriraj BNB vrednost kada korisnik unese količinu
+buyAmountInput.addEventListener('input', updateBNBDisplay);
+
+function updateBNBDisplay() {
   const amount = parseInt(buyAmountInput.value, 10);
   if (!isNaN(amount) && amount > 0) {
     const totalRSD = amount * PRICE_PER_TOKEN_RSD;
     const totalBNB = (totalRSD * RSD_TO_BNB).toFixed(6);
-    tokenAmountDisplay.textContent = amount;
     bnbAmountDisplay.textContent = totalBNB;
   } else {
-    tokenAmountDisplay.textContent = "1";
-    bnbAmountDisplay.textContent = "0.001316";
+    bnbAmountDisplay.textContent = "0.000000";
   }
-});
+}
 
-// Kopiranje adrese
+// Kopiranje adrese klikom
 copyContractBtn.addEventListener('click', () => {
   contractAddressInput.select();
   contractAddressInput.setSelectionRange(0, 99999);
