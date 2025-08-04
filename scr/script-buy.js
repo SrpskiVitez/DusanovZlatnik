@@ -8,8 +8,8 @@ const bnbAmountDisplay = document.getElementById('bnbAmountDisplay');
 const copyContractBtn = document.getElementById('copyContractBtn');
 const contractAddressInput = document.getElementById('contractAddress');
 
-// Cena 1 zlatnika = 100 RSD → u BNB
-const PRICE_PER_TOKEN_RSD = 100;
+// Cena 1 zlatnika = 1 RSD → u BNB
+const PRICE_PER_TOKEN_RSD = 1;
 const RSD_TO_BNB = 0.00001316;
 
 if (buyButton) {
@@ -61,3 +61,8 @@ copyContractBtn.addEventListener('click', () => {
       alert("Грешка при копирању адресе.");
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  updateBNBDisplay(); // Inicijalni prikaz i kad modal nije otvoren
+});
+
