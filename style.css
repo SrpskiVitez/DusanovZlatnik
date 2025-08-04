@@ -458,28 +458,57 @@ main.container {
   transform: translate(-50%, -50%);
 }
 
-/* Input za adresu */
-#contractAddress, #copyContractBtn {
-  height: 2.5em;           /* isto kao što si koristio za input */
-  line-height: 2.5em;      /* da tekst centriran vertikalno */
-  vertical-align: middle;  /* dodatna sigurnost */
-  box-sizing: border-box;  /* da padding ne povećava visinu */
-  font-family: monospace;  /* isto kao input */
-  font-size: 1em;          /* isto kao input */
-}
-
+/* Stilovi za input i dugme u istom flex kontejneru */
+#contractAddress,
 #copyContractBtn {
+  height: 2.5em;
+  font-family: monospace;
+  font-size: 1rem;
+  box-sizing: border-box;
+  line-height: 1;
+  /* bitno da se ne raspada visina */
+  margin: 0;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  vertical-align: middle;
+}
+
+#contractAddress {
+  padding-left: 0.5em;
+  /* malo prostora za tekst unutar inputa */
+  flex-grow: 1;
+  /* da input zauzme sav slobodan prostor */
+  border-radius: 4px 0 0 4px;
+  border: 1px solid #ccc;
+}
+
+#copyContractBtn {
+  width: 2.5em;
+  border-left: none;
+  border: 1px solid #ccc;
+  border-radius: 0 4px 4px 0;
+  background: white;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s;
   padding: 0;
-  margin: 0;
 }
 
 #copyContractBtn:hover {
   background-color: #f0f0f0;
 }
 
+#bnbAmountDisplay {
+  width: 5rem;
+  color: red;  
+  font-weight: bold;
+}
+
+#buyAmount{
+  width: 5rem;
+}
 
 
 /* Mobile tweaki */
