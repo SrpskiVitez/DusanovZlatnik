@@ -1,19 +1,10 @@
 // script-buy.js
 
-
-
 // UI елементи
 const tokenAmountInput = document.getElementById("buyAmount");
 const priceDisplay = document.getElementById("bnbPrice");
 const confirmButton = document.getElementById("buyNowBtn");
 const checkbox = document.getElementById("buyTermsCheckbox");
-
-//checkbox prihvatam uslove
-// Kada korisnik čekira "Prihvatam uslove", omogući input
-buyTermsCheckbox.addEventListener('change', () => {
-  tokenAmountInput.disabled = !buyTermsCheckbox.checked;
-  confirmButton.disabled =! buyTermsCheckbox.checked;
-});
 
 // Modal за MetaMask мобилни browser
 const metamaskModal = document.getElementById("metamaskModal");
@@ -37,18 +28,21 @@ const messages = {
     error: "❌ Грешка при куповини. Проверите MetaMask и покушајте поново.",
     no_wallet: "Web3 новчаник није пронађен. Инсталирај MetaMask.",
     not_active: "⛔ Продаја још није активна.",
+    already_requested: "⏳ Већ је послат захтев за приступ MetaMask новчанику. Молимо сачекајте и покушајте касније."
   },
   "sr-latin": {
     success: "✅ Uspešna kupovina zlatnika!",
     error: "❌ Greška pri kupovini. Proverite MetaMask i pokušajte ponovo.",
     no_wallet: "Web3 novčanik nije pronađen. Instaliraj MetaMask.",
     not_active: "⛔ Prodaja još nije aktivna.",
+    already_requested: "⏳ Već je poslat zahtev za pristup MetaMask novčaniku. Molimo sačekajte i pokušajte kasnije."
   },
   "en": {
     success: "✅ Successful token purchase!",
     error: "❌ Error during purchase. Check MetaMask and try again.",
     no_wallet: "Web3 wallet not found. Please install MetaMask.",
     not_active: "⛔ Presale is not active.",
+    already_requested: "⏳ A request to access MetaMask wallet is already pending. Please wait and try again later."
   }
 };
 
@@ -66,6 +60,7 @@ const ABI = [
 ];
 
 let signer, contract;
+let initialized = false;  // flag da init() bude pozvan samo jednom
 
 // Провера да ли је у питању мобилни уређај
 function isMobile() {
@@ -97,55 +92,6 @@ closeBuyModalBtn.addEventListener("click", () => {
   buyModal.style.display = "none";
 });
 
-// Отварање модала при клику на дугме Куповина
-buyButton.addEventListener("click", () => {
-  // Ако је мобилни уређај, није MetaMask browser и нема Web3, отвори metamaskModal
-  if (isMobile() && !isMetaMaskBrowser() && !window.ethereum) {
-    metamaskModal.style.display = "flex";
-    const dappUrl = window.location.href.replace(/^https?:\/\//, "");
-    openInMetaMaskBtn.href = `metamask://dapp/${dappUrl}`;
-  } else {
-    // иначе отвори куповину
-    buyModal.style.display = "flex";
-    tokenAmountInput.disabled = false;
-  }
-});
-
-// Иницијализација Web3 и конекције са паметним уговором
-let initializing = false;
-
-async function init() {
-  if (initializing) return; // ako već traje inicijalizacija, ne radimo ponovo
-  initializing = true;
-
-  if (!window.ethereum) {
-    alert(messages[lang]?.no_wallet || messages["sr"].no_wallet);
-    initializing = false;
-    return;
-  }
-
-  try {
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
-    await provider.send("eth_requestAccounts", []);
-    signer = provider.getSigner();
-    contract = new ethers.Contract(PRESALE_CONTRACT_ADDRESS, ABI, signer);
-
-    const isActive = await contract.presaleActive();
-    if (!isActive) {
-      alert(messages[lang]?.not_active || messages["sr"].not_active);
-      confirmButton.disabled = true;
-    } else {
-      confirmButton.disabled = true; // još uvek dok korisnik ne unese iznos i prihvati uslove
-      tokenAmountInput.disabled = false;
-    }
-  } catch (err) {
-    console.error("Иницијација није успела:", err);
-    alert(messages[lang]?.error || messages["sr"].error);
-  } finally {
-    initializing = false;
-  }
-}
-
 // Израчунај вредност у BNB за дати број токена
 function calculateBNBAmount(tokens) {
   return tokens * TOKEN_PRICE_RSD * BNB_PER_RSD;
@@ -170,6 +116,40 @@ checkbox.addEventListener("change", () => {
   confirmButton.disabled = !(checkbox.checked && tokens > 0);
 });
 
+// Иницијализација Web3 и конекције са паметним уговором
+async function init() {
+  if (!window.ethereum) {
+    alert(messages[lang]?.no_wallet || messages["sr"].no_wallet);
+    return false;
+  }
+
+  try {
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    await provider.send("eth_requestAccounts", []);
+    signer = provider.getSigner();
+    contract = new ethers.Contract(PRESALE_CONTRACT_ADDRESS, ABI, signer);
+
+    const isActive = await contract.presaleActive();
+    if (!isActive) {
+      alert(messages[lang]?.not_active || messages["sr"].not_active);
+      confirmButton.disabled = true;
+      return false;
+    } else {
+      confirmButton.disabled = true; // još uvek dok korisnik ne unese iznos i prihvati uslove
+      tokenAmountInput.disabled = false;
+    }
+    return true;
+  } catch (err) {
+    if (err.code === -32002) {
+      alert(messages[lang]?.already_requested || messages["sr"].already_requested);
+    } else {
+      console.error("Иницијација није успела:", err);
+      alert(messages[lang]?.error || messages["sr"].error);
+    }
+    return false;
+  }
+}
+
 // Куповина токена - позив паметног уговора
 confirmButton.addEventListener("click", async () => {
   const tokens = parseInt(tokenAmountInput.value);
@@ -188,8 +168,24 @@ confirmButton.addEventListener("click", async () => {
   }
 });
 
-// Покрени проверу MetaMask мобилног browser-а
-checkMetaMaskMobile();
+// Otvaranje modala za kupovinu ili metamask modal ako je potrebno
+buyButton.addEventListener("click", async () => {
+  if (isMobile() && !isMetaMaskBrowser() && !window.ethereum) {
+    metamaskModal.style.display = "flex";
+    const dappUrl = window.location.href.replace(/^https?:\/\//, "");
+    openInMetaMaskBtn.href = `metamask://dapp/${dappUrl}`;
+  } else {
+    if (!initialized) {
+      const success = await init();
+      if (!success) {
+        return; // init nije uspeo, ne otvaraj modal za kupovinu
+      }
+      initialized = true;
+    }
+    buyModal.style.display = "flex";
+    tokenAmountInput.disabled = false;
+  }
+});
 
-// Покрени иницијализацију Web3
-init();
+// Pokreni proveru MetaMask mobilnog browser-a odmah na load
+checkMetaMaskMobile();
