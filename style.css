@@ -457,11 +457,12 @@ main.container {
   font-weight: bold;
   transform: translate(-50%, -50%);
 }
+
 /* Input za adresu */
 #contractAddress {
   flex: 1;
   height: 2.5rem;
-  font-size: 0.5rem;
+  font-size: 0.8rem;
   padding: 0 0.6rem;
   box-sizing: border-box;
   border: 1px solid #ccc;
@@ -473,6 +474,8 @@ main.container {
   width: 2.5rem;
   height: 2.5rem;
   font-size: 1.2rem;
+  line-height: 1;
+  /* VAŽNO za vertikalno centriranje */
   padding: 0;
   margin-left: 0.5rem;
   border: 1px solid #ccc;
@@ -481,6 +484,8 @@ main.container {
   display: flex;
   align-items: center;
   justify-content: center;
+  vertical-align: middle;
+  /* VAŽNO za inline align sa inputom */
   cursor: pointer;
   user-select: none;
   transition: background 0.2s ease;
@@ -489,9 +494,6 @@ main.container {
 #copyContractBtn:hover {
   background: #f0f0f0;
 }
-
-
-
 
 /* Mobile tweaki */
 @media (max-width: 700px) {
