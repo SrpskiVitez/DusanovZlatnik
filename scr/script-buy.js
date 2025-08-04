@@ -46,8 +46,8 @@ buyAmountInput.addEventListener('input', () => {
     tokenAmountDisplay.textContent = amount;
     bnbAmountDisplay.textContent = totalBNB;
   } else {
-    tokenAmountDisplay.textContent = "X";
-    bnbAmountDisplay.textContent = "Y";
+    tokenAmountDisplay.textContent = "1";
+    bnbAmountDisplay.textContent = "0.001316";
   }
 });
 

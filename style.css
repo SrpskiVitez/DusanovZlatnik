@@ -463,21 +463,21 @@ main.container {
   flex: 1;
   height: 2.5rem;
   font-size: 0.8rem;
-  padding: 0 0.6rem;
+  padding: 0 0.5rem;
   box-sizing: border-box;
   border: 1px solid #ccc;
-  border-radius: 0.4rem;
+  border-radius: 0.3rem;
 }
 
 /* Dugme za kopiranje sa ikonicom */
 #copyContractBtn {
   width: 2.5rem;
   height: 2.5rem;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   line-height: 1;
   /* VAŽNO za vertikalno centriranje */
   padding: 0;
-  margin-left: 0.5rem;
+  margin-left: 0.3rem;
   border: 1px solid #ccc;
   background: white;
   border-radius: 0.4rem;
