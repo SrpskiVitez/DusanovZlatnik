@@ -9,7 +9,7 @@ const copyContractBtn = document.getElementById('copyContractBtn');
 const contractAddressInput = document.getElementById('contractAddress');
 
 // Otvori modal
-buy.addEventListener('click', () => {
+buyButton.addEventListener('click', () => {
   buyModal.style.display = 'block';
 });
 
