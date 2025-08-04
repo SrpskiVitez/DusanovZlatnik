@@ -1,88 +1,60 @@
 // MODAL ZA KUPOVINU
 
-const buyButton = document.getElementById('buy'); // dugme koje otvara modal
+const buyButton = document.getElementById('buy');
 const buyModal = document.getElementById('buyModal');
 const closeBuyBtn = buyModal.querySelector('.close-buy');
 const buyTermsCheckbox = document.getElementById('buyTermsCheckbox');
 const contractInfo = document.getElementById('contractInfo');
-const copyContractBtn = document.getElementById('copyContractBtn');
-const contractAddressInput = document.getElementById('contractAddress');
-const tokenAmountInput = document.getElementById('buyAmount');
+const buyAmountWrapper = document.getElementById('buyAmountWrapper');
+const buyAmountInput = document.getElementById('buyAmount');
 const tokenAmountDisplay = document.getElementById('tokenAmountDisplay');
 const bnbAmountDisplay = document.getElementById('bnbAmountDisplay');
-const confirmButton = document.getElementById('buyNowBtn');
+const copyContractBtn = document.getElementById('copyContractBtn');
+const contractAddressInput = document.getElementById('contractAddress');
 
-// Cene i konverzija
-const TOKEN_PRICE_RSD = 100;
+// 1 RSD = 0.00001316 BNB
 const RSD_TO_BNB = 0.00001316;
+const PRICE_PER_TOKEN_RSD = 100;
 
-// Otvori modal
 buyButton.addEventListener('click', () => {
   buyModal.style.display = 'block';
-  resetModalState();
 });
 
-// Zatvori modal
 closeBuyBtn.addEventListener('click', () => {
   buyModal.style.display = 'none';
 });
 
-// Zatvori klikom van modala
 window.addEventListener('click', (e) => {
   if (e.target === buyModal) {
     buyModal.style.display = 'none';
   }
 });
 
-// Reset stanja kada se modal otvori
-function resetModalState() {
-  buyTermsCheckbox.checked = false;
-  contractInfo.style.display = 'none';
-  confirmButton.disabled = true;
-  tokenAmountDisplay.textContent = "X";
-  bnbAmountDisplay.textContent = "Y";
-  tokenAmountInput.value = "";
-}
-
-// Ažuriraj BNB kad se unosi broj zlatnika
-tokenAmountInput.addEventListener("input", () => {
-  updateContractInfo();
-  validateForm();
-});
-
-// Ažuriraj kada se čekira/odčekira uslov
+// Kad se čekira "prihvatam uslove" → prikaži polja
 buyTermsCheckbox.addEventListener('change', () => {
-  updateContractInfo();
-  validateForm();
+  const show = buyTermsCheckbox.checked;
+  contractInfo.style.display = show ? 'block' : 'none';
+  buyAmountWrapper.style.display = show ? 'block' : 'none';
 });
 
-// Izračunaj i prikaži broj tokena i BNB
-function updateContractInfo() {
-  const tokenCount = parseInt(tokenAmountInput.value) || 0;
-  const totalRSD = tokenCount * TOKEN_PRICE_RSD;
-  const bnbAmount = totalRSD * RSD_TO_BNB;
-
-  tokenAmountDisplay.textContent = tokenCount || "X";
-  bnbAmountDisplay.textContent = tokenCount ? bnbAmount.toFixed(6) : "Y";
-
-  contractInfo.style.display = buyTermsCheckbox.checked ? 'block' : 'none';
-}
-
-// Provera validnosti i aktiviranje dugmeta
-function validateForm() {
-  const tokenCount = parseInt(tokenAmountInput.value);
-  if (tokenCount > 0 && buyTermsCheckbox.checked) {
-    confirmButton.disabled = false;
+// Kada korisnik unese broj zlatnika, preračunaj BNB
+buyAmountInput.addEventListener('input', () => {
+  const amount = parseInt(buyAmountInput.value, 10);
+  if (!isNaN(amount) && amount > 0) {
+    const totalRSD = amount * PRICE_PER_TOKEN_RSD;
+    const totalBNB = (totalRSD * RSD_TO_BNB).toFixed(6);
+    tokenAmountDisplay.textContent = amount;
+    bnbAmountDisplay.textContent = totalBNB;
   } else {
-    confirmButton.disabled = true;
+    tokenAmountDisplay.textContent = "X";
+    bnbAmountDisplay.textContent = "Y";
   }
-}
+});
 
-// Dugme za kopiranje adrese
+// Kopiranje adrese
 copyContractBtn.addEventListener('click', () => {
   contractAddressInput.select();
-  contractAddressInput.setSelectionRange(0, 99999); // za mobilne
-
+  contractAddressInput.setSelectionRange(0, 99999);
   navigator.clipboard.writeText(contractAddressInput.value)
     .then(() => {
       copyContractBtn.textContent = "✅";

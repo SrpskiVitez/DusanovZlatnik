@@ -186,11 +186,18 @@
       </div>
     </div>
 
-    <!-- Modal za kupовину -->
+    <!-- Modal za куповину -->
     <div id="buyModal" class="modal">
       <div class="modal-content">
         <span class="close-buy">&times;</span>
         <h2>Желим да купим Душанов златник</h2>
+
+        <!-- Sakriven dok ne prihvati uslove -->
+        <div id="buyAmountWrapper" style="display: none;">
+          <label for="buyAmount">Број златника:</label>
+          <input type="number" id="buyAmount" min="1"
+            style="width: 100%; padding: 0.5em; font-size: 1em; margin-bottom: 1em;" />
+        </div>
 
         <label class="terms-inline">
           <input type="checkbox" id="buyTermsCheckbox" />
@@ -200,7 +207,7 @@
         <div id="contractInfo" style="display: none; margin-top: 1em;">
           <label for="contractAddress">
             Кроз <a href="docs/Uputstvo.html" class="bold-link">МетаМаск</a>
-            <img src="pic/metamask-icon.png" alt="MetaMask Logo">
+            <img src="pic/metamask-icon.png" alt="MetaMask Logo" style="height: 1em; vertical-align: middle;">
             за <span id="tokenAmountDisplay">X</span> Душанових златника пошаљите
             <span id="bnbAmountDisplay">Y</span> BNB
             <br />на ову адресу:
@@ -211,9 +218,9 @@
           </div>
           <small>Аутоматски ћете добити токене у вашој ризници.</small>
         </div>
-
       </div>
     </div>
+
 
   </main>
 
