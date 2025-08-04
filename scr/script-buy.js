@@ -169,44 +169,49 @@ confirmButton.addEventListener("click", async () => {
 });
 
 // Otvaranje modala za kupovinu ili metamask modal ako je potrebno
-buyButton.addEventListener("click", async () => {
-  console.log("Kliknuto dugme za kupovinu");
-
+bbuyButton.addEventListener("click", async () => {
+  const userAgent = window.navigator.userAgent || "";
   const isStandalone = window.navigator.standalone === true;
-  console.log("Je li standalone (ikona na homescreenu)?", isStandalone);
+  const isIOS = /iPad|iPhone|iPod/.test(userAgent);
+  const isSafari = /^((?!chrome|android).)*safari/i.test(userAgent);
+
+  console.log("Kliknuto dugme");
   console.log("isMobile:", isMobile());
   console.log("isMetaMaskBrowser:", isMetaMaskBrowser());
   console.log("window.ethereum:", window.ethereum);
+  console.log("isIOS:", isIOS);
+  console.log("isSafari:", isSafari);
+  console.log("isStandalone:", isStandalone);
 
+  // Safari na iOS-u (direktno iz browsera)
+  if (isMobile() && isIOS && isSafari && !isStandalone && !isMetaMaskBrowser()) {
+    alert("Отворите ову страницу у MetaMask апликацији да бисте наставили.");
+    const dappUrl = window.location.href.replace(/^https?:\/\//, "");
+    window.location.href = `metamask://dapp/${dappUrl}`;
+    return;
+  }
+
+  // Mobilni, nije MetaMask, ali nije Safari – prikazi modal
   if (isMobile() && !isMetaMaskBrowser() && !window.ethereum) {
-    console.log("Prikazujem metamaskModal za klasični mobilni browser");
     metamaskModal.style.display = "flex";
     const dappUrl = window.location.href.replace(/^https?:\/\//, "");
     openInMetaMaskBtn.href = `metamask://dapp/${dappUrl}`;
-    alert("Otvorite u MetaMask aplikaciji da biste nastavili."); // ovo ne radi u svakom scenariju
     return;
   }
 
-  // Fallback za Safari – može da ima ethereum, ali nije MetaMask
-  if (isMobile() && !isMetaMaskBrowser() && window.ethereum && !isStandalone) {
-    console.log("Safari + drugi wallet, prikazujem upozorenje");
-    alert("Овај претраживач није подржан. Молимо отворите у MetaMask апликацији.");
-    return;
-  }
-
+  // Normalno otvaranje modala
   if (!initialized) {
     const success = await init();
     if (!success) {
-      console.log("init nije uspeo");
       return;
     }
     initialized = true;
   }
 
-  console.log("Otvaram modal za kupovinu");
   buyModal.style.display = "flex";
   tokenAmountInput.disabled = false;
 });
+
 
 
 // Pokreni proveru MetaMask mobilnog browser-a odmah na load
