@@ -388,7 +388,7 @@ ul li::before {
 
 .close:hover,
 .close-buy:hover,
-.close-metamask {
+.close-metamask:hover {
   color: #d1c488;
 }
 
