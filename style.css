@@ -461,39 +461,36 @@ main.container {
 /* Input za adresu */
 #contractAddress {
   flex: 1;
-  height: 2.5rem;
-  font-size: 0.8rem;
-  padding: 0 0.5rem;
-  box-sizing: border-box;
+  height: 2.5em;         /* иста висина као копче */
+  padding: 0 0.5em;
+  font-family: monospace;
+  font-size: 1em;
   border: 1px solid #ccc;
-  border-radius: 0.3rem;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+  box-sizing: border-box;
 }
 
-/* Dugme za kopiranje sa ikonicom */
 #copyContractBtn {
-  width: 2.5rem;
-  height: 2.5rem;
-  font-size: 1.4rem;
-  line-height: 1;
-  /* VAŽNO za vertikalno centriranje */
-  padding: 0;
-  margin-left: 0.3rem;
+  height: 2.5em;          /* иста висина као input */
+  width: 3em;             /* не баш пресироко, али довољно за иконицу */
+  font-size: 1.2em;
+  cursor: pointer;
   border: 1px solid #ccc;
+  border-left: none;      /* да не дуплирамо ивицу између дугмета и input */
+  border-radius: 0 4px 4px 0;
   background: white;
-  border-radius: 0.4rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  vertical-align: middle;
-  /* VAŽNO za inline align sa inputom */
-  cursor: pointer;
   user-select: none;
-  transition: background 0.2s ease;
+  transition: background-color 0.3s;
 }
 
 #copyContractBtn:hover {
-  background: #f0f0f0;
+  background-color: #f0f0f0;
 }
+
 
 /* Mobile tweaki */
 @media (max-width: 700px) {
