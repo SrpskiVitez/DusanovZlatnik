@@ -112,6 +112,19 @@ tokenAmountInput.addEventListener("input", () => {
 
 // Омогућавање дугмета куповине само ако је услов прихваћен и унет број токена
 checkbox.addEventListener("change", () => {
+  if (checkbox.checked) {
+    tokenAmountInput.disabled = false;  // омогући унос броја
+    // Провери да ли је број валидан да би омогућио дугме
+    const tokens = parseInt(tokenAmountInput.value);
+    confirmButton.disabled = !(tokens > 0);
+  } else {
+    tokenAmountInput.disabled = true;   // онемогући унос
+    confirmButton.disabled = true;      // онемогући дугме
+  }
+});
+
+// Такође слушај промене у input-у да провериш услове
+tokenAmountInput.addEventListener("input", () => {
   const tokens = parseInt(tokenAmountInput.value);
   confirmButton.disabled = !(checkbox.checked && tokens > 0);
 });
@@ -120,12 +133,19 @@ checkbox.addEventListener("change", () => {
 async function init() {
   if (!window.ethereum) {
     alert(messages[lang]?.no_wallet || messages["sr"].no_wallet);
-    return false;
+    return;
   }
 
   try {
     const provider = new ethers.providers.Web3Provider(window.ethereum);
-    await provider.send("eth_requestAccounts", []);
+
+    // Proba da dohvati naloge, ako nema naloga (nije povezan), poziva zahtev za pristup
+    let accounts = await provider.listAccounts();
+    if (accounts.length === 0) {
+      // Nema naloga povezanih, traži od korisnika da poveže wallet
+      accounts = await provider.send("eth_requestAccounts", []);
+    }
+
     signer = provider.getSigner();
     contract = new ethers.Contract(PRESALE_CONTRACT_ADDRESS, ABI, signer);
 
@@ -133,22 +153,22 @@ async function init() {
     if (!isActive) {
       alert(messages[lang]?.not_active || messages["sr"].not_active);
       confirmButton.disabled = true;
-      return false;
     } else {
-      confirmButton.disabled = true; // još uvek dok korisnik ne unese iznos i prihvati uslove
+      confirmButton.disabled = true; // dok korisnik ne unese iznos i ne prihvati uslove
       tokenAmountInput.disabled = false;
     }
-    return true;
   } catch (err) {
-    if (err.code === -32002) {
-      alert(messages[lang]?.already_requested || messages["sr"].already_requested);
+    console.error("Иницијација није успела:", err);
+
+    if (err.code === 4001) {
+      // Korisnik je odbio zahtev za povezivanje
+      alert("Молимо те повежи MetaMask новчаник да би наставио.");
     } else {
-      console.error("Иницијација није успела:", err);
       alert(messages[lang]?.error || messages["sr"].error);
     }
-    return false;
   }
 }
+
 
 // Куповина токена - позив паметног уговора
 confirmButton.addEventListener("click", async () => {
