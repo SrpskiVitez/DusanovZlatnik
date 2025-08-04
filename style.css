@@ -460,8 +460,8 @@ main.container {
 
 /* Input za adresu */
 #contractAddress {
-  flex: 1;
-  height: 2.5em;         /* иста висина као копче */
+  flex-grow: 1;
+  height: 2.5em;
   padding: 0 0.5em;
   font-family: monospace;
   font-size: 1em;
@@ -469,15 +469,16 @@ main.container {
   border-radius: 4px 0 0 4px;
   outline: none;
   box-sizing: border-box;
+  min-width: 0; /* важан за флекс да не расте прекомерно */
 }
 
 #copyContractBtn {
-  height: 2.5em;          /* иста висина као input */
-  width: 3em;             /* не баш пресироко, али довољно за иконицу */
+  height: 2.5em;
+  width: 3em;
   font-size: 1.2em;
   cursor: pointer;
   border: 1px solid #ccc;
-  border-left: none;      /* да не дуплирамо ивицу између дугмета и input */
+  border-left: none;
   border-radius: 0 4px 4px 0;
   background: white;
   display: flex;
@@ -490,6 +491,7 @@ main.container {
 #copyContractBtn:hover {
   background-color: #f0f0f0;
 }
+
 
 
 /* Mobile tweaki */
