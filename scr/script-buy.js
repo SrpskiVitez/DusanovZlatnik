@@ -169,7 +169,7 @@ confirmButton.addEventListener("click", async () => {
 });
 
 // Otvaranje modala za kupovinu ili metamask modal ako je potrebno
-bbuyButton.addEventListener("click", async () => {
+buyButton.addEventListener("click", async () => {
   const userAgent = window.navigator.userAgent || "";
   const isStandalone = window.navigator.standalone === true;
   const isIOS = /iPad|iPhone|iPod/.test(userAgent);
