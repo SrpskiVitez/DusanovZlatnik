@@ -457,6 +457,39 @@ main.container {
   font-weight: bold;
   transform: translate(-50%, -50%);
 }
+/* Input za adresu */
+#contractAddress {
+  flex: 1;
+  height: 2.5rem;
+  font-size: 0.5rem;
+  padding: 0 0.6rem;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 0.4rem;
+}
+
+/* Dugme za kopiranje sa ikonicom */
+#copyContractBtn {
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.2rem;
+  padding: 0;
+  margin-left: 0.5rem;
+  border: 1px solid #ccc;
+  background: white;
+  border-radius: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.2s ease;
+}
+
+#copyContractBtn:hover {
+  background: #f0f0f0;
+}
+
 
 
 
