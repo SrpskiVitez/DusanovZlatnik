@@ -1,10 +1,19 @@
 // script-buy.js
 
+
+
 // UI елементи
 const tokenAmountInput = document.getElementById("buyAmount");
 const priceDisplay = document.getElementById("bnbPrice");
 const confirmButton = document.getElementById("buyNowBtn");
 const checkbox = document.getElementById("buyTermsCheckbox");
+
+//checkbox prihvatam uslove
+// Kada korisnik čekira "Prihvatam uslove", omogući input
+buyTermsCheckbox.addEventListener('change', () => {
+  tokenAmountInput.disabled = !buyTermsCheckbox.checked;
+  confirmButton.disabled =! buyTermsCheckbox.checked;
+});
 
 // Modal за MetaMask мобилни browser
 const metamaskModal = document.getElementById("metamaskModal");

@@ -373,7 +373,9 @@ ul li::before {
   background-color: #d1c488;
 }
 
-.close {
+.close,
+.close-buy,
+.close-metamask {
   position: absolute;
   top: 12px;
   right: 16px;
@@ -384,9 +386,12 @@ ul li::before {
   transition: color 0.3s ease;
 }
 
-.close:hover {
+.close:hover,
+.close-buy:hover,
+.close-metamask {
   color: #d1c488;
 }
+
 
 html,
 body {
@@ -401,7 +406,8 @@ main.container {
   padding-right: 1.5rem;
 }
 
-#sendRequest:disabled {
+#sendRequest:disabled,
+#buyNowBtn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
