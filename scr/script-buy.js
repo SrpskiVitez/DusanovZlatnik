@@ -97,18 +97,6 @@ function calculateBNBAmount(tokens) {
   return tokens * TOKEN_PRICE_RSD * BNB_PER_RSD;
 }
 
-// Ажурирање приказа цене у BNB
-tokenAmountInput.addEventListener("input", () => {
-  const tokens = parseInt(tokenAmountInput.value);
-  if (!isNaN(tokens) && tokens > 0) {
-    const bnb = calculateBNBAmount(tokens);
-    priceDisplay.textContent = bnb.toFixed(6);
-    confirmButton.disabled = !checkbox.checked;
-  } else {
-    priceDisplay.textContent = "—";
-    confirmButton.disabled = true;
-  }
-});
 
 // Омогућавање дугмета куповине само ако је услов прихваћен и унет број токена
 checkbox.addEventListener("change", () => {
@@ -133,7 +121,7 @@ tokenAmountInput.addEventListener("input", () => {
 async function init() {
   if (!window.ethereum) {
     alert(messages[lang]?.no_wallet || messages["sr"].no_wallet);
-    return;
+    return false;
   }
 
   try {
@@ -157,6 +145,7 @@ async function init() {
       confirmButton.disabled = true; // dok korisnik ne unese iznos i ne prihvati uslove
       tokenAmountInput.disabled = false;
     }
+    return true;
   } catch (err) {
     console.error("Иницијација није успела:", err);
 
@@ -166,6 +155,7 @@ async function init() {
     } else {
       alert(messages[lang]?.error || messages["sr"].error);
     }
+    return false;
   }
 }
 
