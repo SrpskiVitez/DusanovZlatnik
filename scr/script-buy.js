@@ -172,27 +172,41 @@ confirmButton.addEventListener("click", async () => {
 buyButton.addEventListener("click", async () => {
   console.log("Kliknuto dugme za kupovinu");
 
+  const isStandalone = window.navigator.standalone === true;
+  console.log("Je li standalone (ikona na homescreenu)?", isStandalone);
+  console.log("isMobile:", isMobile());
+  console.log("isMetaMaskBrowser:", isMetaMaskBrowser());
+  console.log("window.ethereum:", window.ethereum);
+
   if (isMobile() && !isMetaMaskBrowser() && !window.ethereum) {
-    console.log("Prikazujem modal...");
+    console.log("Prikazujem metamaskModal za klasični mobilni browser");
     metamaskModal.style.display = "flex";
     const dappUrl = window.location.href.replace(/^https?:\/\//, "");
     openInMetaMaskBtn.href = `metamask://dapp/${dappUrl}`;
-
-    // Dodato za dijagnostiku i fallback
-    alert("Otvorite stranicu u MetaMask aplikaciji da biste nastavili.");
-  } else {
-    if (!initialized) {
-      const success = await init();
-      if (!success) {
-        return; // init nije uspeo, ne otvaraj modal za kupovinu
-      }
-      initialized = true;
-    }
-    buyModal.style.display = "flex";
-    tokenAmountInput.disabled = false;
+    alert("Otvorite u MetaMask aplikaciji da biste nastavili."); // ovo ne radi u svakom scenariju
+    return;
   }
-});
 
+  // Fallback za Safari – može da ima ethereum, ali nije MetaMask
+  if (isMobile() && !isMetaMaskBrowser() && window.ethereum && !isStandalone) {
+    console.log("Safari + drugi wallet, prikazujem upozorenje");
+    alert("Овај претраживач није подржан. Молимо отворите у MetaMask апликацији.");
+    return;
+  }
+
+  if (!initialized) {
+    const success = await init();
+    if (!success) {
+      console.log("init nije uspeo");
+      return;
+    }
+    initialized = true;
+  }
+
+  console.log("Otvaram modal za kupovinu");
+  buyModal.style.display = "flex";
+  tokenAmountInput.disabled = false;
+});
 
 
 // Pokreni proveru MetaMask mobilnog browser-a odmah na load
