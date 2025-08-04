@@ -112,9 +112,15 @@ buyButton.addEventListener("click", () => {
 });
 
 // Иницијализација Web3 и конекције са паметним уговором
+let initializing = false;
+
 async function init() {
+  if (initializing) return; // ako već traje inicijalizacija, ne radimo ponovo
+  initializing = true;
+
   if (!window.ethereum) {
     alert(messages[lang]?.no_wallet || messages["sr"].no_wallet);
+    initializing = false;
     return;
   }
 
@@ -135,6 +141,8 @@ async function init() {
   } catch (err) {
     console.error("Иницијација није успела:", err);
     alert(messages[lang]?.error || messages["sr"].error);
+  } finally {
+    initializing = false;
   }
 }
 
