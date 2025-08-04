@@ -500,13 +500,29 @@ main.container {
   background-color: #f0f0f0;
 }
 
+
 #bnbAmountDisplay {
+  height: 2.5em;
   width: 5rem;
-  color: red;  
-  font-weight: bold;
+  font-family: monospace;
+  font-size: 1rem;
+  padding: 0 0.5em;
+  border: 1px solid #ccc;
+  /* isto kao i #contractAddress */
+  border-radius: 4px;
+  /* zaobljeni uglovi */
+  background-color: white;
+  /* ili neka svetla boja */
+  color: red;
+  /* po želji crvena boja fonta */
+  box-sizing: border-box;
+  text-align: center;
+  user-select: all;
+  /* da može lako da se kopira */
 }
 
-#buyAmount{
+
+#buyAmount {
   width: 5rem;
 }
 
