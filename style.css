@@ -474,7 +474,7 @@ main.container {
 #contractInfo input[type="text"] {
   margin-top: 0.3em;
   font-size: 1rem;
-  padding: 0.5em;
+  padding: 0.3em;
   width: 100%;
   max-width: 200px;
   box-sizing: border-box;
@@ -491,7 +491,7 @@ main.container {
   display: flex;
   align-items: center;
   gap: 0.6em;
-  margin-top: 0.5em;
+  margin-top: 0.3em;
 }
 
 #contractInfo .input-row input {
