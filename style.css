@@ -513,6 +513,22 @@ main.container {
   background: #ddd;
 }
 
+.horizontal-label {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.horizontal-label span {
+  font-weight: bold;
+}
+#contractInfo label.horizontal-label {
+  flex-direction: row !important;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
 
 /* Mobile tweaki */
 @media (max-width: 700px) {
