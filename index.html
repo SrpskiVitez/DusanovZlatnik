@@ -200,36 +200,34 @@
         <!-- Sakriven dok ne prihvati uslove -->
         <div id="contractInfo" style="display: none; margin-top: 1em;">
 
-          <span style="display: inline-flex; align-items: center; gap: 0.3em;">
-            <label>Кроз ваш новчаник</label>
-            <a href="docs/Uputstvo.html" class="bold-link">МетаМаск</a>
-            <img src="pic/metamask-icon.png" alt="MetaMask Logo" style="height: 1.2em; vertical-align: middle;">
-          </span>
+          <label>
+            Кроз ваш новчаник
+            <span style="display: inline-flex; align-items: center; gap: 0.3em;"></span>
+              <a href="docs/Uputstvo.html" class="bold-link">МетаМаск</a>
+              <img src="pic/metamask-icon.png" alt="MetaMask Logo" style="height: 1.2em; vertical-align: middle;">
+            <span style="display: inline-flex; align-items: center; gap: 0.3em;"></span>
+          </label>
 
+          <label>
+            За колико златника?
+            <input type="number" id="buyAmount" min="1" max="110000" value="1" />
+          </label>
 
-          <span style="display: inline-flex; align-items: center; gap: 0.3em;">
-            <label>Желим да купим?</label>
-            <img src="pic/favicon.png" alt="Душанов златник" style="height: 1.2em; vertical-align: middle;">
-          </span>
-          <input type="number" id="buyAmount" min="1" max="110000" value="1" />
+          <label>
+            Укупно за уплату (BNB):
+            <input type="text" id="bnbAmountDisplay" value="0.001316" readonly />
+          </label>
 
-
-
-          <span style="display: inline-flex; align-items: center; gap: 0.3em;">
-            <label>Укупно за уплату (BNB): </label>
-            <img src="pic/BNB_icon.png" alt="BNB Logo" style="height: 1.2em; vertical-align: middle;">
-          </span>
-          <input type="text" id="bnbAmountDisplay" value="0.001316" readonly />
-
-
-          <label>Адреса за уплату:</label>
-          <div class="input-row">
-            <input type="text" id="contractAddress" readonly value="0xF173D56F1893aE48A42566EA4f56062e48682F67" />
-            <button id="copyContractBtn" aria-label="Копирај адресу">📋</button>
-          </div>
-
+          <label>
+            Адреса за уплату:
+            <div class="input-row">
+              <input type="text" id="contractAddress" readonly value="0xF173D56F1893aE48A42566EA4f56062e48682F67" />
+              <button id="copyContractBtn" aria-label="Копирај адресу">📋</button>
+            </div>
+          </label>
 
           <small>Аутоматски ћете добити токене у вашој ризници.</small>
+
 
         </div>
       </div>
