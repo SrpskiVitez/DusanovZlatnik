@@ -458,75 +458,60 @@ main.container {
   transform: translate(-50%, -50%);
 }
 
-/* Stilovi za input i dugme u istom flex kontejneru */
-#contractAddress,
-#copyContractBtn {
-  height: 2.5em;
-  font-family: monospace;
+/* Ulepšavanje redova unutar contractInfo */
+#contractInfo label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+  font-weight: bold;
+  margin-bottom: 1em;
   font-size: 1rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+#contractInfo input[type="number"],
+#contractInfo input[type="text"] {
+  margin-top: 0.3em;
+  font-size: 1rem;
+  padding: 0.5em;
+  width: 100%;
+  max-width: 200px;
   box-sizing: border-box;
-  line-height: 1;
-  /* bitno da se ne raspada visina */
-  margin: 0;
-  padding: 0;
+}
+
+#contractInfo small {
+  display: block;
+  margin-top: 1em;
+  font-size: 0.85rem;
+  color: #444;
+}
+
+#contractInfo .input-row {
   display: flex;
   align-items: center;
-  justify-content: center;
-  vertical-align: middle;
+  gap: 0.6em;
+  margin-top: 0.5em;
 }
 
-#contractAddress {
-  font-family: monospace;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  padding: 0.4em;
-  border-radius: 4px;
-  box-sizing: border-box;
+#contractInfo .input-row input {
+  flex: 1;
 }
 
-#copyContractBtn {
-  width: 2.5em;
-  border-left: none;
-  border: 1px solid #ccc;
-  border-radius: 0 4px 4px 0;
-  background: white;
-  cursor: pointer;
-  user-select: none;
-  transition: background-color 0.3s;
-  padding: 0;
-}
-
-#copyContractBtn:hover {
-  background-color: #f0f0f0;
-}
-
-
-/* Zajednički stil za oba inputa */
-input#bnbAmountDisplay,
-input#buyAmount {
-  width: 5rem;
+#contractInfo .input-row button {
+  padding: 0.4em 0.6em;
   height: 2.5em;
-  font-family: monospace;
-  font-size: 1rem;
-  padding: 0.4em;
+  font-size: 1.1rem;
+  border-radius: 5px;
   border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  text-align: center;
+  background: #eee;
+  cursor: pointer;
+  transition: background 0.2s ease;
 }
 
-/* Specifično za bnbAmountDisplay */
-#bnbAmountDisplay {
-  color: red;
-  background-color: white;
-  user-select: all;
+#contractInfo .input-row button:hover {
+  background: #ddd;
 }
-
-/* Ako želiš da #buyAmount ostane editable, možeš dodati ovo radi konzistentnosti */
-#buyAmount {
-  background-color: white;
-}
-
 
 
 /* Mobile tweaki */
