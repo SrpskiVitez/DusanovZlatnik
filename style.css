@@ -459,12 +459,6 @@ main.container {
 }
 
 /* Ulepšavanje redova unutar contractInfo */
-.input-row {
-  display: flex;
-  align-items: center;
-  gap: 0.5em;
-}
-
 #contractInfo label {
   display: flex;
   flex-direction: column;
