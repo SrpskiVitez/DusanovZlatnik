@@ -95,21 +95,24 @@ h3 {
 }
 
 li a.bold-link {
-  animation: pulse-color 2s infinite ease-in-out;
+  animation: pulse-color 1.8s infinite ease-in-out;
 }
 
 @keyframes pulse-color {
   0% {
     color: #b9a46c;
     text-shadow: 0 0 3px rgba(185, 164, 108, 0.5);
+    transform: scale(1);
   }
   50% {
     color: #b9a46c;
     text-shadow: 0 0 10px rgba(185, 164, 108, 0.85);
+    transform: scale(1.05);
   }
   100% {
     color: #b9a46c;
     text-shadow: 0 0 3px rgba(185, 164, 108, 0.5);
+    transform: scale(1);
   }
 }
 
