@@ -101,15 +101,15 @@ li a.bold-link {
 @keyframes pulse-color {
   0% {
     color: #b9a46c;
-    text-shadow: 0 0 2px rgba(185, 164, 108, 0.4);
+    text-shadow: 0 0 3px rgba(185, 164, 108, 0.5);
   }
   50% {
     color: #b9a46c;
-    text-shadow: 0 0 8px rgba(185, 164, 108, 0.8);
+    text-shadow: 0 0 10px rgba(185, 164, 108, 0.85);
   }
   100% {
     color: #b9a46c;
-    text-shadow: 0 0 2px rgba(185, 164, 108, 0.4);
+    text-shadow: 0 0 3px rgba(185, 164, 108, 0.5);
   }
 }
 
