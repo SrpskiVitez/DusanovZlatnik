@@ -94,6 +94,26 @@ h3 {
   text-decoration: underline solid;
 }
 
+li a.bold-link {
+  animation: pulse-color 2s infinite ease-in-out;
+}
+
+@keyframes pulse-color {
+  0% {
+    color: #b9a46c;
+    text-shadow: 0 0 2px rgba(185, 164, 108, 0.4);
+  }
+  50% {
+    color: #b9a46c;
+    text-shadow: 0 0 8px rgba(185, 164, 108, 0.8);
+  }
+  100% {
+    color: #b9a46c;
+    text-shadow: 0 0 2px rgba(185, 164, 108, 0.4);
+  }
+}
+
+
 main.container {
   max-width: 850px;
   width: 100%;
