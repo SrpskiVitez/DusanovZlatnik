@@ -1,27 +1,34 @@
-.lang-section ol li p {
-  display: none; /* Odgovori su sakriveni po defaultu */
-  margin-top: 0.5em;
-  padding-left: 1em;
-  color: #333;
-  transition: max-height 0.3s ease;
-  overflow: hidden;
-}
-
-.lang-section ol li.open p {
-  display: block; /* Kada je otvoreno, odgovor se vidi */
-}
-
-.lang-section ol li strong {
+.lang-section ol li {
+  padding: 1em;
+  margin-bottom: 1.5em;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
   cursor: pointer;
   user-select: none;
 }
 
-.lang-section ol li strong::after {
-  content: " \25B6"; /* Strelica desno */
-  float: right;
-  transition: transform 0.3s ease;
+.lang-section ol li:hover {
+  background-color: #f0e8c4;
 }
 
-.lang-section ol li.open strong::after {
-  transform: rotate(90deg); /* Strelica na dole kada je otvoreno */
+.lang-section ol li p,
+.lang-section ol li ul {
+  display: none;
+  margin-top: 0.7em;
+  padding: 1em;
+  background-color: #b9a46c;
+  border-radius: 4px;
+  color: inherit;
+}
+
+.lang-section ol li.open > p,
+.lang-section ol li.open > ul {
+  display: block;
+}
+
+.lang-section ol li strong {
+  display: block;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0;
 }
