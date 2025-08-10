@@ -26,9 +26,17 @@
   display: block;
 }
 
+/* Pitanja - slova bela */
 .lang-section ol li strong {
   display: block;
   font-weight: 700;
-  color: #333;
+  color: white;
   margin-bottom: 0;
+  transition: color 0.3s ease;
+}
+
+/* Boja pitanja na hover i kada je otvoreno */
+.lang-section ol li:hover > strong,
+.lang-section ol li.open > strong {
+  color: #0d1b2a;
 }
