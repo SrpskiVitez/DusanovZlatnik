@@ -2,31 +2,43 @@
   padding: 1em;
   margin-bottom: 1.5em;
   border-radius: 6px;
-  transition: background-color 0.3s ease;
   cursor: pointer;
   user-select: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: transparent;
+  color: white;
 }
 
+/* Hover ceo blok */
 .lang-section ol li:hover {
   background-color: #f0e8c4;
+  color: #0d1b2a;
 }
 
+/* Odgovori i pitanja sakriveni po defaultu */
 .lang-section ol li p,
 .lang-section ol li ul {
   display: none;
   margin-top: 0.7em;
   padding: 1em;
-  background-color: #b9a46c;
   border-radius: 4px;
-  color: inherit;
+  background-color: #b9a46c; /* ne koristi se sada, jer ce ceo li imati pozadinu */
+  color: inherit; /* nasledjuje boju od roditelja */
 }
 
+/* Kada je otvoreno, prikazi odgovor */
 .lang-section ol li.open > p,
 .lang-section ol li.open > ul {
   display: block;
 }
 
-/* Pitanja - slova bela */
+/* Kada je otvoreno, ceo blok menja pozadinu i boju slova */
+.lang-section ol li.open {
+  background-color: #f0e8c4;
+  color: #0d1b2a;
+}
+
+/* Pitanja u strong su belo po defaultu */
 .lang-section ol li strong {
   display: block;
   font-weight: 700;
@@ -35,8 +47,17 @@
   transition: color 0.3s ease;
 }
 
-/* Boja pitanja na hover i kada je otvoreno */
+/* Kad je li hoverovan ili otvoren, pitanje menja boju */
 .lang-section ol li:hover > strong,
 .lang-section ol li.open > strong {
   color: #0d1b2a;
+}
+
+/* Da odgovor ima tamno plavu boju slova kao pitanje */
+.lang-section ol li.open > p,
+.lang-section ol li.open > ul {
+  color: #0d1b2a;
+  background-color: transparent; /* da ne kvari uniformnost */
+  padding-left: 1em;
+  border-left: 4px solid #0d1b2a;
 }
