@@ -1,0 +1,27 @@
+.lang-section ol li p {
+  display: none; /* Odgovori su sakriveni po defaultu */
+  margin-top: 0.5em;
+  padding-left: 1em;
+  color: #333;
+  transition: max-height 0.3s ease;
+  overflow: hidden;
+}
+
+.lang-section ol li.open p {
+  display: block; /* Kada je otvoreno, odgovor se vidi */
+}
+
+.lang-section ol li strong {
+  cursor: pointer;
+  user-select: none;
+}
+
+.lang-section ol li strong::after {
+  content: " \25B6"; /* Strelica desno */
+  float: right;
+  transition: transform 0.3s ease;
+}
+
+.lang-section ol li.open strong::after {
+  transform: rotate(90deg); /* Strelica na dole kada je otvoreno */
+}
