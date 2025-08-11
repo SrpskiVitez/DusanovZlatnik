@@ -201,14 +201,14 @@
         <!-- Hidden until terms are accepted -->
         <div id="contractInfo" style="display: none; margin-top: 1em;">
 
-          <div id="contractInfo" style="display: none; margin-top: 1em;">
-            <label>Koliko zlatnika?</label>
-            <input type="number" id="buyAmount" min="1" max="110000" value="1" />
 
-            <p>Platićeš (BNB): <span id="bnbPrice">—</span></p>
+          <label>Koliko zlatnika?</label>
+          <input type="number" id="buyAmount" min="1" max="110000" value="1" />
 
-            <button id="buyNowBtn">Kupi sada</button>
-          </div>
+          <p>Platićeš (BNB): <span id="bnbPrice">—</span></p>
+
+          <button id="buy">Kupi sada</button>
+
 
         </div>
       </div>
@@ -219,11 +219,11 @@
 
   <script src="scr/script.js"></script>
   <script src="scr/ethers.min.js"></script>
-  <script type="module" src="scr/script-buy.js" defer></script>
+  <script src="./scr/script-buy.js"></script>
+
   <!-- WalletConnect 
   <script src="https://unpkg.com/@walletconnect/web3-provider@1.8.0/dist/umd/index.min.js"></script>-->
-  <script src="./scr/script-buy-wc.js"></script> 
-  <script src="./scr/script-buy.js"></script>
+ 
 
 </body>
 
