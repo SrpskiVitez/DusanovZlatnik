@@ -192,14 +192,14 @@
         <span class="close-buy">&times;</span>
         <h2>Purchase Coins</h2>
 
-        <label>If you are using mobile, 
-          <a href="https://metamask.app.link/dapp/srpskivitez.github.io/DusanovZlatnik/index-en.html" target="_blank">
-        👉 Open site in MetaMask app
-      </a>
-        </label>
+        <label>If you are using mobile </label>
+        <a href="https://metamask.app.link/dapp/srpskivitez.github.io/DusanovZlatnik/index-en.html" target="_blank">
+          👉 Open site in MetaMask
+        </a>
+
         <label class="terms-inline">
           <input type="checkbox" id="buyTermsCheckbox" />
-          <span>I accept the&nbsp;<a href="docs/terms-en.html" target="_blank">terms of purchase</a></span>          
+          <span>I accept the&nbsp;<a href="docs/terms-en.html" target="_blank">terms of purchase</a></span>
         </label>
 
         <!-- Hidden until terms are accepted -->
@@ -218,10 +218,11 @@
             <input type="number" id="buyAmount" min="1" max="110000" value="1" />
           </div>
 
-         <span style="display: inline-flex; align-items: center; gap: 0.3em;">
-            <label>You will pay (BNB): <span id="bnbPrice">0.000013</span></label>
-         </span>
-          
+          <div class="input-row">
+            <label>You will pay (BNB):</label>
+            <span id="bnbPrice">0.000013</span>
+          </div>
+
           <button id="buyNowBtn">Buy tokens</button>
 
         </div>
