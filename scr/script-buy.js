@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   // KONFIGURACIJA
-  const PRESALE_CONTRACT_ADDRESS = "0xF173D56F1893aE48A42566EA4f56062e48682F67"; // promeni po potrebi
+  const PRESALE_CONTRACT_ADDRESS = "0xF173D56F1893aE48A42566EA4f56062e48682F67";
   const TOKEN_PRICE_RSD = 1;
-  const BNB_PER_RSD = 1 / 76000; // kurs 1 BNB = 76.000 RSD
+  const BNB_PER_RSD = 1 / 76000;
 
   const ABI = [
     "function buyTokens() payable",
@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const priceDisplay = document.getElementById("bnbPrice");
   const buyButton = document.getElementById("buy");
   const termsCheckbox = document.getElementById("buyTermsCheckbox");
+  const contractInfo = document.getElementById("contractInfo");
 
   let signer, contract;
 
@@ -88,9 +89,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // EVENTI
-  tokenAmountInput.addEventListener("input", updatePrice);
-  buyButton.addEventListener("click", handlePurchase);
+  // EVENTI — dodaju se samo ako elementi postoje
+  if (tokenAmountInput) {
+    tokenAmountInput.addEventListener("input", updatePrice);
+  }
+  if (buyButton) {
+    buyButton.addEventListener("click", handlePurchase);
+  }
+  if (termsCheckbox && contractInfo) {
+    termsCheckbox.addEventListener("change", () => {
+      contractInfo.style.display = termsCheckbox.checked ? "block" : "none";
+    });
+  }
 
   // Inicijalni prikaz
   updatePrice();
