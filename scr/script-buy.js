@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ELEMENTI IZ HTML
   const tokenAmountInput = document.getElementById("buyAmount");
   const priceDisplay = document.getElementById("bnbPrice");
-  const buyButton = document.getElementById("buy");
+  const buyNowButton = document.getElementById("buyNow"); // ✅ novo dugme
   const termsCheckbox = document.getElementById("buyTermsCheckbox");
   const contractInfo = document.getElementById("contractInfo");
 
@@ -89,16 +89,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // EVENTI — dodaju se samo ako elementi postoje
+  // EVENTI
   if (tokenAmountInput) {
     tokenAmountInput.addEventListener("input", updatePrice);
   }
-  if (buyButton) {
-    buyButton.addEventListener("click", handlePurchase);
+  if (buyNowButton) {
+    buyNowButton.addEventListener("click", handlePurchase);
   }
   if (termsCheckbox && contractInfo) {
     termsCheckbox.addEventListener("change", () => {
       contractInfo.style.display = termsCheckbox.checked ? "block" : "none";
+      if (termsCheckbox.checked) updatePrice();
     });
   }
 
