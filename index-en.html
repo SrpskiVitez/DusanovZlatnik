@@ -165,7 +165,7 @@
         <a href="docs/privacy-en.html" class="bold-link">Privacy Policy</a>
         <a href="docs/utility-status-en.html" class="bold-link">Utility Status</a>
         <a href="docs/whitepaper-en.html" class="bold-link">Whitepaper (Tech Doc)</a>
-         <a href="docs/faq-en.html" class="bold-link">FAQ</a>
+        <a href="docs/faq-en.html" class="bold-link">FAQ</a>
       </div>
     </div>
 
@@ -193,41 +193,22 @@
         <h2>Purchase Coins</h2>
 
         <label class="terms-inline">
-        <!--  <input type="checkbox" id="buyTermsCheckbox" />
-          <span>I accept the&nbsp;<a href="docs/terms-en.html" target="_blank">terms of purchase</a></span>-->
-          <p>Soon!</p>
+          <input type="checkbox" id="buyTermsCheckbox" />
+          <span>I accept the&nbsp;<a href="docs/terms-en.html" target="_blank">terms of purchase</a></span>
+          <!-- <p>Soon!</p>-->
         </label>
 
         <!-- Hidden until terms are accepted -->
         <div id="contractInfo" style="display: none; margin-top: 1em;">
 
-          <label>
-            Through your wallet
-            <span style="display: inline-flex; align-items: center; gap: 0.3em;">
-              <a href="docs/Uputstvo-en.html" class="bold-link">MetaMask</a>
-              <img src="pic/metamask-icon.png" alt="MetaMask Logo" style="height: 1.2em; vertical-align: middle;">
-            </span>
-          </label>
-
-          <label>
-            How many coins?
+          <div id="contractInfo" style="display: none; margin-top: 1em;">
+            <label>Koliko zlatnika?</label>
             <input type="number" id="buyAmount" min="1" max="110000" value="1" />
-          </label>
 
-          <label>
-            Total amount to pay (BNB):
-            <input type="text" id="bnbAmountDisplay" value="0.001316" readonly />
-          </label>
+            <p>Platićeš (BNB): <span id="bnbPrice">—</span></p>
 
-          <label>
-            Payment address:
-            <div class="input-row">
-              <input type="text" id="contractAddress" readonly value="0xF173D56F1893aE48A42566EA4f56062e48682F67" />
-              <button id="copyContractBtn" aria-label="Copy address">📋</button>
-            </div>
-          </label>
-
-          <small>You will automatically receive the tokens in your treasury.</small>
+            <button id="buyNowBtn">Kupi sada</button>
+          </div>
 
         </div>
       </div>
@@ -240,8 +221,9 @@
   <script src="scr/ethers.min.js"></script>
   <script type="module" src="scr/script-buy.js" defer></script>
   <!-- WalletConnect 
-  <script src="https://unpkg.com/@walletconnect/web3-provider@1.8.0/dist/umd/index.min.js"></script>
-  <script src="./scr/script-buy-wc.js"></script> -->
+  <script src="https://unpkg.com/@walletconnect/web3-provider@1.8.0/dist/umd/index.min.js"></script>-->
+  <script src="./scr/script-buy-wc.js"></script> 
+  <script src="./scr/script-buy.js"></script>
 
 </body>
 
