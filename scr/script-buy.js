@@ -65,3 +65,4 @@ copyContractBtn.addEventListener('click', () => {
 document.addEventListener("DOMContentLoaded", () => {
   updateBNBDisplay(); // Inicijalni prikaz i kad modal nije otvoren
 });
+
