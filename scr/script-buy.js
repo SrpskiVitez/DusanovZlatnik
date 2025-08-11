@@ -1,4 +1,4 @@
-const buyButton = document.getElementById('buyNow');
+const buyButton = document.getElementById('buy');
 const buyModal = document.getElementById('buyModal');
 const closeBuyBtn = buyModal.querySelector('.close-buy');
 const buyTermsCheckbox = document.getElementById('buyTermsCheckbox');
