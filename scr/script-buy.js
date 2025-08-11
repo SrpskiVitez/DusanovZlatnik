@@ -59,7 +59,7 @@ function updateBNBDisplay() {
     const totalBNB = calculateBNBAmount(amount);
     bnbAmountDisplay.textContent = totalBNB.toFixed(6);
   } else {
-    bnbAmountDisplay.textContent = "0.000000";
+    bnbAmountDisplay.textContent = "0.000013";
   }
 }
 
@@ -118,7 +118,7 @@ confirmButton.addEventListener('click', async () => {
     alert("✅ Uspešna kupovina zlatnika!");
     // Resetuj formu ako želiš:
     buyAmountInput.value = '';
-    bnbAmountDisplay.textContent = "0.000000";
+    bnbAmountDisplay.textContent = "0.000013";
     buyTermsCheckbox.checked = false;
     contractInfo.style.display = 'none';
     confirmButton.disabled = true;
