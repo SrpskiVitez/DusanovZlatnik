@@ -13,7 +13,7 @@ const PRICE_PER_TOKEN_RSD = 1;
 const RSD_TO_BNB = 0.00001316;
 
 if (buyButton) {
-  buyButton.addEventListener('click', () => {z
+  buyButton.addEventListener('click', () => {
     buyModal.style.display = 'block';
   });
 }
@@ -65,4 +65,3 @@ copyContractBtn.addEventListener('click', () => {
 document.addEventListener("DOMContentLoaded", () => {
   updateBNBDisplay(); // Inicijalni prikaz i kad modal nije otvoren
 });
-
