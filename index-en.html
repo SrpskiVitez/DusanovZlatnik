@@ -192,13 +192,15 @@
         <span class="close-buy">&times;</span>
         <h2>Purchase Coins</h2>
 
-        <div class="input-row">
-          <label>If you are using mobile </label>
-          <span>
+        <label>
+          <span style="display: inline-flex; align-items: center; gap: 0.3em;">
+            <label>If you are using mobile </label>
+
             <a href="https://metamask.app.link/dapp/srpskivitez.github.io/DusanovZlatnik/index-en.html" target="_blank">
-              Open site in MetaMask 👉</a>
+              open site in MetaMask 👉</a>
           </span>
-        </div>
+        </label>
+
 
         <label class="terms-inline">
           <input type="checkbox" id="buyTermsCheckbox" />
@@ -208,23 +210,17 @@
         <!-- Hidden until terms are accepted -->
         <div id="contractInfo" style="display: none; margin-top: 1em;">
 
-          <!--<label>
-            Through your wallet
-            <span style="display: inline-flex; align-items: center; gap: 0.3em;">
-              <a href="docs/Uputstvo-en.html" class="bold-link">MetaMask</a>
-              <img src="pic/metamask-icon.png" alt="MetaMask Logo" style="height: 1.2em; vertical-align: middle;">
-            </span>
-          </label>-->
-
           <div class="input-row">
             <label>Amount</label>
             <input type="number" id="buyAmount" min="1" max="110000" value="1" />
           </div>
 
-          <div class="input-row">
-            <label>You will pay (BNB):</label>
-            <strong><span id="bnbPrice">0.000013</span></strong>
-          </div>
+          <label>
+            <span style="display: inline-flex; align-items: center; gap: 0.3em;">
+              <label>You will pay (BNB):</label>
+              <strong><span id="bnbPrice">0.000013</span></strong>
+            </span>
+          </label>
 
           <button id="buyNowBtn">Buy tokens</button>
 
