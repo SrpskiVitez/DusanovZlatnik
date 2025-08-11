@@ -1,108 +1,68 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // KONFIGURACIJA
-  const PRESALE_CONTRACT_ADDRESS = "0xF173D56F1893aE48A42566EA4f56062e48682F67";
-  const TOKEN_PRICE_RSD = 1;
-  const BNB_PER_RSD = 1 / 76000;
+const buyButton = document.getElementById('buyNow');
+const buyModal = document.getElementById('buyModal');
+const closeBuyBtn = buyModal.querySelector('.close-buy');
+const buyTermsCheckbox = document.getElementById('buyTermsCheckbox');
+const contractInfo = document.getElementById('contractInfo');
+const buyAmountInput = document.getElementById('buyAmount');
+const bnbAmountDisplay = document.getElementById('bnbAmountDisplay');
+const copyContractBtn = document.getElementById('copyContractBtn');
+const contractAddressInput = document.getElementById('contractAddress');
 
-  const ABI = [
-    "function buyTokens() payable",
-    "function presaleActive() view returns (bool)"
-  ];
+// Cena 1 zlatnika = 1 RSD → u BNB
+const PRICE_PER_TOKEN_RSD = 1;
+const RSD_TO_BNB = 0.00001316;
 
-  // ELEMENTI IZ HTML
-  const tokenAmountInput = document.getElementById("buyAmount");
-  const priceDisplay = document.getElementById("bnbPrice");
-  const buyNowButton = document.getElementById("buyNow"); // ✅ novo dugme
-  const termsCheckbox = document.getElementById("buyTermsCheckbox");
-  const contractInfo = document.getElementById("contractInfo");
+if (buyButton) {
+  buyButton.addEventListener('click', () => {z
+    buyModal.style.display = 'block';
+  });
+}
 
-  let signer, contract;
-
-  // Izračunavanje BNB vrednosti
-  function calculateBNBAmount(tokens) {
-    return tokens * TOKEN_PRICE_RSD * BNB_PER_RSD;
-  }
-
-  // Ažuriranje prikaza cene
-  function updatePrice() {
-    const tokens = parseInt(tokenAmountInput.value);
-    if (!isNaN(tokens) && tokens > 0) {
-      priceDisplay.textContent = calculateBNBAmount(tokens).toFixed(6);
-    } else {
-      priceDisplay.textContent = "—";
-    }
-  }
-
-  // Povezivanje sa Web3
-  async function initWeb3() {
-    try {
-      let provider;
-      if (window.ethereum) {
-        provider = new ethers.providers.Web3Provider(window.ethereum);
-        await provider.send("eth_requestAccounts", []);
-      } else {
-        alert("Web3 novčanik nije pronađen. Instaliraj MetaMask.");
-        return false;
-      }
-
-      signer = provider.getSigner();
-      contract = new ethers.Contract(PRESALE_CONTRACT_ADDRESS, ABI, signer);
-
-      const isActive = await contract.presaleActive();
-      if (!isActive) {
-        alert("⛔ Prodaja još nije aktivna.");
-        return false;
-      }
-      return true;
-    } catch (err) {
-      console.error("Greška pri povezivanju:", err);
-      alert("❌ Greška pri povezivanju sa novčanikom.");
-      return false;
-    }
-  }
-
-  // Kupovina tokena
-  async function handlePurchase() {
-    const tokens = parseInt(tokenAmountInput.value);
-    if (isNaN(tokens) || tokens <= 0) {
-      alert("Unesi validan broj zlatnika.");
-      return;
-    }
-    if (!termsCheckbox.checked) {
-      alert("Moraš prihvatiti uslove kupovine.");
-      return;
-    }
-
-    const connected = await initWeb3();
-    if (!connected) return;
-
-    try {
-      const bnbToSend = calculateBNBAmount(tokens);
-      const valueToSend = ethers.utils.parseUnits(bnbToSend.toString(), "ether");
-
-      const tx = await contract.buyTokens({ value: valueToSend });
-      await tx.wait();
-      alert("✅ Uspešna kupovina zlatnika!");
-    } catch (err) {
-      console.error("Greška tokom kupovine:", err);
-      alert("❌ Greška pri kupovini. Proverite novčanik i pokušajte ponovo.");
-    }
-  }
-
-  // EVENTI
-  if (tokenAmountInput) {
-    tokenAmountInput.addEventListener("input", updatePrice);
-  }
-  if (buyNowButton) {
-    buyNowButton.addEventListener("click", handlePurchase);
-  }
-  if (termsCheckbox && contractInfo) {
-    termsCheckbox.addEventListener("change", () => {
-      contractInfo.style.display = termsCheckbox.checked ? "block" : "none";
-      if (termsCheckbox.checked) updatePrice();
-    });
-  }
-
-  // Inicijalni prikaz
-  updatePrice();
+closeBuyBtn.addEventListener('click', () => {
+  buyModal.style.display = 'none';
 });
+
+window.addEventListener('click', (e) => {
+  if (e.target === buyModal) {
+    buyModal.style.display = 'none';
+  }
+});
+
+// Prikazuj polje kad se čekira "prihvatam"
+buyTermsCheckbox.addEventListener('change', () => {
+  contractInfo.style.display = buyTermsCheckbox.checked ? 'block' : 'none';
+  if (buyTermsCheckbox.checked) updateBNBDisplay(); // inicijalni proračun
+});
+
+// Ažuriraj BNB vrednost kada korisnik unese količinu
+buyAmountInput.addEventListener('input', updateBNBDisplay);
+
+function updateBNBDisplay() {
+  const amount = parseInt(buyAmountInput.value, 10);
+  if (!isNaN(amount) && amount > 0) {
+    const totalRSD = amount * PRICE_PER_TOKEN_RSD;
+    const totalBNB = (totalRSD * RSD_TO_BNB).toFixed(6);
+    bnbAmountDisplay.value = totalBNB;
+  } else {
+    bnbAmountDisplay.value = "0.000000";
+  }
+}
+
+// Kopiranje adrese klikom
+copyContractBtn.addEventListener('click', () => {
+  contractAddressInput.select();
+  contractAddressInput.setSelectionRange(0, 99999);
+  navigator.clipboard.writeText(contractAddressInput.value)
+    .then(() => {
+      copyContractBtn.textContent = "✅";
+      setTimeout(() => copyContractBtn.textContent = "📋", 2000);
+    })
+    .catch(() => {
+      alert("Грешка при копирању адресе.");
+    });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  updateBNBDisplay(); // Inicijalni prikaz i kad modal nije otvoren
+});
+
